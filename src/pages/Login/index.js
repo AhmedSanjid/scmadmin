@@ -17,7 +17,7 @@ function Login(){
         let check = await login(inputs);
         console.log(check)
         if(check){
-            window.location="http://localhost:3000/"
+			window.location=process.env.REACT_APP_BASE_URL
         }else{
             alert("Sorry password or email address is wrong!");
         }
