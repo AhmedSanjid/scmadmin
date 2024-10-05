@@ -13,9 +13,9 @@ function App() {
     <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path={"/"} element={
-            <Protected isSignedIn={isSignedIn} >
+            // <Protected isSignedIn={isSignedIn} >
               <Dashboard />
-            </Protected>
+            // </Protected>
           } />
       {/* <Route path="/" element={<Dashboard />} /> */}
     </Routes>
