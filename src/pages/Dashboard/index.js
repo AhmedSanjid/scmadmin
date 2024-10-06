@@ -314,76 +314,85 @@ function Dashboard() {
     
               {/*Recent Activity */}
               <div className="card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-    
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-    
-                <div className="card-body">
-                  <h5 className="card-title"> Air Freight <span>| Today</span></h5>
-    
-                  <div className="activity">
-    
-                    <div className="activity-item d-flex">
-                      <div className="activite-label">32 min</div>
-                      <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-                      <div className="activity-content">
-                        Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-                      </div>
-                    </div>{/*End activity item*/}
-    
-                    <div className="activity-item d-flex">
-                      <div className="activite-label">56 min</div>
-                      <i className='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-                      <div className="activity-content">
-                        Voluptatem blanditiis blanditiis eveniet
-                      </div>
-                    </div>{/*End activity item*/}
-    
-                    <div className="activity-item d-flex">
-                      <div className="activite-label">2 hrs</div>
-                      <i className='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-                      <div className="activity-content">
-                        Voluptates corrupti molestias voluptatem
-                      </div>
-                    </div>{/*End activity item*/}
-    
-                    <div className="activity-item d-flex">
-                      <div className="activite-label">1 day</div>
-                      <i className='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-                      <div className="activity-content">
-                        Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
-                      </div>
-                    </div>{/*End activity item*/}
-    
-                    <div className="activity-item d-flex">
-                      <div className="activite-label">2 days</div>
-                      <i className='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-                      <div className="activity-content">
-                        Est sit eum reiciendis exercitationem
-                      </div>
-                    </div>{/*End activity item*/}
-    
-                    <div className="activity-item d-flex">
-                      <div className="activite-label">4 weeks</div>
-                      <i className='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-                      <div className="activity-content">
-                        Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-                      </div>
-                    </div>{/*End activity item*/}
-    
-                  </div>
-    
-                </div>
-              </div>{/*End Recent Activity */}
+  <div className="filter">
+    <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
+    <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+      <li className="dropdown-header text-start">
+        <h6>Filter</h6>
+      </li>
+      <li><a className="dropdown-item" href="#">Today</a></li>
+      <li><a className="dropdown-item" href="#">This Month</a></li>
+      <li><a className="dropdown-item" href="#">This Year</a></li>
+    </ul>
+  </div>
+
+  <div className="card-body">
+    <h5 className="card-title">Recent Activity <span>| Today</span></h5>
+
+    <div className="activity">
+      <div className="activity-item d-flex align-items-center mb-2">
+        <div className="activite-label col-auto">32 min</div>
+        <div className="col-auto">
+          <i className='bi bi-circle-fill activity-badge text-success'></i>
+        </div>
+        <div className="col activity-content">
+          Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
+        </div>
+      </div>{/*End activity item*/}
+
+      <div className="activity-item d-flex align-items-center mb-2">
+        <div className="activite-label col-auto">56 min</div>
+        <div className="col-auto">
+          <i className='bi bi-circle-fill activity-badge text-danger'></i>
+        </div>
+        <div className="col activity-content">
+          Voluptatem blanditiis blanditiis eveniet
+        </div>
+      </div>{/*End activity item*/}
+
+      <div className="activity-item d-flex align-items-center mb-2">
+        <div className="activite-label col-auto">2 hrs</div>
+        <div className="col-auto">
+          <i className='bi bi-circle-fill activity-badge text-primary'></i>
+        </div>
+        <div className="col activity-content">
+          Voluptates corrupti molestias voluptatem
+        </div>
+      </div>{/*End activity item*/}
+
+      <div className="activity-item d-flex align-items-center mb-2">
+        <div className="activite-label col-auto">1 day</div>
+        <div className="col-auto">
+          <i className='bi bi-circle-fill activity-badge text-info'></i>
+        </div>
+        <div className="col activity-content">
+          Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
+        </div>
+      </div>{/*End activity item*/}
+
+      <div className="activity-item d-flex align-items-center mb-2">
+        <div className="activite-label col-auto">2 days</div>
+        <div className="col-auto">
+          <i className='bi bi-circle-fill activity-badge text-warning'></i>
+        </div>
+        <div className="col activity-content">
+          Est sit eum reiciendis exercitationem
+        </div>
+      </div>{/*End activity item*/}
+
+      <div className="activity-item d-flex align-items-center mb-2">
+        <div className="activite-label col-auto">4 weeks</div>
+        <div className="col-auto">
+          <i className='bi bi-circle-fill activity-badge text-muted'></i>
+        </div>
+        <div className="col activity-content">
+          Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
+        </div>
+      </div>{/*End activity item*/}
+    </div>
+  </div>
+</div>{/*End Recent Activity */}
+
     
               {/*Budget Report */}
               <div className="card">
@@ -401,73 +410,8 @@ function Dashboard() {
                 </div>
     
                 <div className="card-body pb-0">
-                  <h5 className="card-title"> Sailing Freight <span>| This Month</span></h5>
-                  <div className="activity">
-    
-    <div className="activity-item d-flex">
-      <div className="activite-label">32 min</div>
-      <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-      <div className="activity-content">
-        Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">56 min</div>
-      <i className='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-      <div className="activity-content">
-        Voluptatem blanditiis blanditiis eveniet
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">2 hrs</div>
-      <i className='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-      <div className="activity-content">
-        Voluptates corrupti molestias voluptatem
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">1 day</div>
-      <i className='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-      <div className="activity-content">
-        Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">2 days</div>
-      <i className='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-      <div className="activity-content">
-        Est sit eum reiciendis exercitationem
-      </div>
-    </div>{/*End activity item*/}
-    <div className="activity-item d-flex">
-      <div className="activite-label">32 min</div>
-      <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-      <div className="activity-content">
-        Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">56 min</div>
-      <i className='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-      <div className="activity-content">
-        Voluptatem blanditiis blanditiis eveniet
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">4 weeks</div>
-      <i className='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-      <div className="activity-content">
-        Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-      </div>
-    </div>{/*End activity item*/}
-
-  </div>
+                  <h5 className="card-title">Budget Report <span>| This Month</span></h5>
+                  <div id="budgetChart" style={{ minHeight: "400px" }} className="echart"></div>
                 </div>
               </div>{/*End Budget Report */}
     
@@ -487,109 +431,11 @@ function Dashboard() {
                 </div>
     
                 <div className="card-body pb-0">
-                  <h5 className="card-title"> High Way Freight <span>| Today</span></h5>
-                  <div className="activity">
+                  <h5 className="card-title">Website Traffic <span>| Today</span></h5>
     
-    <div className="activity-item d-flex">
-      <div className="activite-label">32 min</div>
-      <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-      <div className="activity-content">
-        Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">56 min</div>
-      <i className='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-      <div className="activity-content">
-        Voluptatem blanditiis blanditiis eveniet
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">2 hrs</div>
-      <i className='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-      <div className="activity-content">
-        Voluptates corrupti molestias voluptatem
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">1 day</div>
-      <i className='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-      <div className="activity-content">
-        Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">2 days</div>
-      <i className='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-      <div className="activity-content">
-        Est sit eum reiciendis exercitationem
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">4 weeks</div>
-      <i className='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-      <div className="activity-content">
-        Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-      </div>
-    </div>{/*End activity item*/}
-
-  </div>
-  <div className="activity">
+                  <div id="trafficChart" style={{ minHeight: "400px" }} className="echart"></div>
     
-    <div className="activity-item d-flex">
-      <div className="activite-label">56 min</div>
-      <i className='bi bi-circle-fill activity-badge text-success align-self-start'></i>
-      <div className="activity-content">
-        Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">1 days</div>
-      <i className='bi bi-circle-fill activity-badge text-danger align-self-start'></i>
-      <div className="activity-content">
-        Voluptatem blanditiis blanditiis eveniet
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">5 days</div>
-      <i className='bi bi-circle-fill activity-badge text-primary align-self-start'></i>
-      <div className="activity-content">
-        Voluptates corrupti molestias voluptatem
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">3 weeks</div>
-      <i className='bi bi-circle-fill activity-badge text-info align-self-start'></i>
-      <div className="activity-content">
-        Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">5 weeks</div>
-      <i className='bi bi-circle-fill activity-badge text-warning align-self-start'></i>
-      <div className="activity-content">
-        Est sit eum reiciendis exercitationem
-      </div>
-    </div>{/*End activity item*/}
-
-    <div className="activity-item d-flex">
-      <div className="activite-label">8 weeks</div>
-      <i className='bi bi-circle-fill activity-badge text-muted align-self-start'></i>
-      <div className="activity-content">
-        Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-      </div>
-    </div>{/*End activity item*/}
-
-  </div>
+                  
     
                 </div>
               </div>{/*End Website Traffic */}
