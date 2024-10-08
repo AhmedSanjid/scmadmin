@@ -1,6 +1,24 @@
-import React from "react";
+import React from 'react';
+import AdminLayout from '../../layouts/AdminLayout';
+import { useLocation, Link} from 'react-router-dom';
 
 function Sidebar() {
+  const activeMenu = (e) => {
+    document.querySelectorAll('.submenu').forEach(
+        function (e) {
+            e.classList.remove('active');
+        }
+    )
+    const childElement = e.target.parentElement.querySelector('.submenu');
+    if (childElement && childElement.classList.contains('submenu')) {
+        childElement.classList.add('active');
+    }
+}
+
+const location = useLocation();
+const isLinkActive = (path) => {
+    return location.pathname == path ? 'active':"";
+  }
                 
     return(
         <aside id="sidebar" className="sidebar">
@@ -21,14 +39,12 @@ function Sidebar() {
             </a>
             <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="components-alerts.html">
-                  <i className="bi bi-circle"></i><span>Alerts</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Insurance")}`}>
+                    <Link to="/Insurance" className="sidebar-link">Insurance Claim</Link></p>
               </li>
               <li>
-                <a href="components-accordion.html">
-                  <i className="bi bi-circle"></i><span>Accordion</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Warehouse")}`}>
+              <Link to="/Warehouse" className="sidebar-link">Warehouse</Link></p>
               </li>
               <li>
                 <a href="components-badges.html">
