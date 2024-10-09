@@ -40,23 +40,23 @@ function Insurance() {
         </tr>
       </thead>
       <tbody>
-                                    {data && data.map((d, key) =>
-                                        <tr key={d.id}>
-                                            <td>{d.name}</td>
-                                            <td>{d.company_name}</td>
-                                            <td>{d.product_name}</td>
-                                            <td>{d.weight}</td>
-                                            <td>{d.destination}</td>
-                                            <td>{d.bank_name}</td>
-                                            <td>{d.cargo_serial_number}</td>
-                                            <td>{d.claim_period}</td>
-                                            <td>
-                                                <Link to={`/insuranceclaim/edit/${d.id}`} className='btn btn-info' >Edit</Link>
-                                                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
-                                            </td>
-                                        </tr>
-                                    )}
-                                    </tbody>
+    {data && data.map((d, key) =>
+        <tr key={d.id}>
+            <td>{d.name}</td>
+            <td>{d.company_name}</td>
+            <td>{d.product_name}</td>
+            <td>{d.weight}</td>
+            <td>{d.destination}</td>
+            <td>{d.bank_name}</td>
+            <td>{d.cargo_serial_number}</td>
+            <td>{d.claim_period}</td>
+            <td>
+                <Link to={`/insuranceclaim/edit/${d.id}`} className='btn btn-info' >Edit</Link>
+                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+            </td>
+        </tr>
+    )}
+        </tbody>
     </table>
   </div>
 

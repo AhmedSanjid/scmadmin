@@ -4,13 +4,13 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
-function Insuranceadd() {
-  const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', product_name: '', weight: '', destination: '', bank_name: '', cargo_serial_number: '', claim_period: ''});
+function Airfreightadd() {
+  const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', flight_number: '', arrival_airport_name: '', insurance_number: ''});
     const navigate = useNavigate();
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/insuranceclaim/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/Airfreight/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Insuranceadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/insuranceclaim/edit/${inputs.id}`;
+                apiurl =`/Airfreight/edit/${inputs.id}`;
             } else {
-                apiurl =`/insuranceclaim/create`;
+                apiurl =`/Airfreight/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Insuranceadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/insuranceclaim')
+            navigate('/Airfreight')
         }
         catch (e) {
             console.log(e);
@@ -55,7 +55,7 @@ function Insuranceadd() {
     <AdminLayout>
   
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Insurance Information</h2>
+    <h2 class="text-center mb-4">Airfreight Information</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
@@ -67,28 +67,16 @@ function Insuranceadd() {
     <input defaultValue={inputs.company_name} name="company_name" onChange={handleChange} type="text" id="company_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">product_name</label>
-    <input defaultValue={inputs.product_name} name="product_name" onChange={handleChange} type="product_name" id="name" className="form-control" required />
+    <label forhtml="blog-date">flight_number</label>
+    <input defaultValue={inputs.flight_number} name="flight_number" onChange={handleChange} type="text" id="name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">weight</label>
-    <input defaultValue={inputs.weight} name="weight" onChange={handleChange} type="text" id="weight" className="form-control" required />
+    <label forhtml="blog-date">arrival_airport_name</label>
+    <input defaultValue={inputs.arrival_airport_name} name="arrival_airport_name" onChange={handleChange} type="text" id="arrival_airport_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">destination</label>
-    <input defaultValue={inputs.destination} name="destination" onChange={handleChange} type="text" id="destination" className="form-control" required />
-</div>
-<div className="form-group">
-    <label forhtml="blog-date">bank_name</label>
-    <input defaultValue={inputs.bank_name} name="bank_name" onChange={handleChange} type="text" id="bank_name" className="form-control" required />
-</div>
-<div className="form-group">
-    <label forhtml="blog-date">cargo_serial_number</label>
-    <input defaultValue={inputs.cargo_serial_number} name="cargo_serial_number" onChange={handleChange} type="text" id="cargo_serial_number" className="form-control" required />
-</div>
-<div className="form-group">
-    <label forhtml="blog-date">claim_period</label>
-    <input defaultValue={inputs.claim_period} name="claim_period" onChange={handleChange} type="text" id="claim_period" className="form-control" required />
+    <label forhtml="blog-date">insurance_number</label>
+    <input defaultValue={inputs.insurance_number} name="insurance_number" onChange={handleChange} type="text" id="insurance_number" className="form-control" required />
 </div>
 
 <button type="submit" class="btn btn-primary">Create Blog Post</button>
@@ -99,4 +87,4 @@ function Insuranceadd() {
   )
 }
 
-export default Insuranceadd
+export default Airfreightadd

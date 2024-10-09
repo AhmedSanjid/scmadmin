@@ -115,24 +115,21 @@ const isLinkActive = (path) => {
             </a>
             <ul id="forms-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="forms-elements.html">
-                  <i className="bi bi-circle"></i><span>Form Elements</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Airfreight")}`}>
+              <Link to="/Airfreight" className="sidebar-link">Air Freight</Link></p>
               </li>
               <li>
-                <a href="forms-layouts.html">
-                  <i className="bi bi-circle"></i><span>Form Layouts</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Sailingfreight")}`}>
+              <Link to="/Sailingfreight" className="sidebar-link">Sailing Freight</Link></p>
+              </li>
+              
+              <li>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Highwayfreight")}`}>
+              <Link to="/Highwayfreight" className="sidebar-link">Highway freight</Link></p>
               </li>
               <li>
-                <a href="forms-editors.html">
-                  <i className="bi bi-circle"></i><span>Form Editors</span>
-                </a>
-              </li>
-              <li>
-                <a href="forms-validation.html">
-                  <i className="bi bi-circle"></i><span>Form Validation</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Warehouse")}`}>
+              <Link to="/Warehouse" className="sidebar-link">Warehouse</Link></p>
               </li>
             </ul>
           </li>{/*End Forms Nav */}

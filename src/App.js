@@ -7,6 +7,10 @@ import Protected from './components/protected';
 import Insurance from './pages/Insurance';
 import Insuranceadd from './pages/Insurance/Insuranceadd';
 import Warehouse from './pages/Warehouse';
+import Airfreight from './pages/Airfreight';
+import Airfreightadd from './pages/Airfreight/Airfreightadd';
+import Sailingfreight from './pages/Sailingfreight';
+import Highwayfreight from './pages/Highwayfreight';
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -15,10 +19,15 @@ function App() {
     <Routes>
     <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Insurance" element={<Insurance />} />
+          <Route path="/insurance" element={<Insurance />} />
           <Route path={"/insuranceclaim/edit/:id"} element={<Insuranceadd />} />
           <Route path={"/insuranceclaim/add"} element={<Insuranceadd />} />
           <Route path="/Warehouse" element={<Warehouse />} />
+          <Route path="/Airfreight" element={<Airfreight />} />
+          <Route path="/Airfreight/edit/:id" element={<Airfreightadd />} />
+          <Route path="/Airfreight/add" element={<Airfreightadd />} />
+          <Route path="/Sailingfreight" element={<Sailingfreight />} />
+          <Route path="/Highwayfreight" element={<Highwayfreight />} />
           <Route path={"/"} element={
             // <Protected isSignedIn={isSignedIn} >
               <Dashboard />
