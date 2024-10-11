@@ -10,12 +10,12 @@ function Insurance() {
     }, []);
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/insuranceclaim/`).then(function(response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/insurance/`).then(function(response) {
             setData(response.data.data);
         });
     }
     const deleteData = (id) => {
-        axios.delete(`${process.env.REACT_APP_API_URL}/insuranceclaim/${id}`).then(function(response){
+        axios.delete(`${process.env.REACT_APP_API_URL}/insurance/${id}`).then(function(response){
             getDatas();
         });
     }
@@ -24,7 +24,7 @@ function Insurance() {
   
   <div class="container mt-5">
     <h2 class="text-center mb-4">Insurance Information</h2>
-    <Link to={'/insuranceclaim/add'} className='btn btn-primary float-end' >Add New</Link>
+    <Link to={'/insurance/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-bordered table-striped">
       <thead class="table-Dark">
         <tr>
@@ -51,8 +51,9 @@ function Insurance() {
             <td>{d.cargo_serial_number}</td>
             <td>{d.claim_period}</td>
             <td>
-                <Link to={`/insuranceclaim/edit/${d.id}`} className='btn btn-info' >Edit</Link>
-                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
+                <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>
         </tr>
     )}

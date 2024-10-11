@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import axios from 'axios';
 
-function Airfreightadd() {
-  const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', flight_number: '', arrival_airport_name: '', insurance_number: ''});
+function Sailingfreightadd() {
+  const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', ship_name: '', arrival_port_name: '', insurance_number: ''});
     const navigate = useNavigate();
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/airfreight/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/Sailingfreight/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Airfreightadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/airfreight/edit/${inputs.id}`;
+                apiurl =`/sailingfreight/edit/${inputs.id}`;
             } else {
-                apiurl =`/airfreight/create`;
+                apiurl =`/sailingfreight/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Airfreightadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/airfreight')
+            navigate('/sailingfreight')
         }
         catch (e) {
             console.log(e);
@@ -54,8 +54,8 @@ function Airfreightadd() {
   return (
     <AdminLayout>
   
-  <div className="container mt-5">
-    <h2 className="text-center mb-4">Airfreight Information</h2>
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Sailingfreight Information</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
@@ -67,19 +67,19 @@ function Airfreightadd() {
     <input defaultValue={inputs.company_name} name="company_name" onChange={handleChange} type="text" id="company_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">flight_number</label>
-    <input defaultValue={inputs.flight_number} name="flight_number" onChange={handleChange} type="text" id="flight_number" className="form-control" required />
+    <label forhtml="blog-date">ship_name</label>
+    <input defaultValue={inputs.ship_name} name="ship_name" onChange={handleChange} type="text" id="ship_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">arrival_airport_name</label>
-    <input defaultValue={inputs.arrival_airport_name} name="arrival_airport_name" onChange={handleChange} type="text" id="arrival_airport_name" className="form-control" required />
+    <label forhtml="blog-date">arrival_port_name</label>
+    <input defaultValue={inputs.arrival_port_name} name="arrival_port_name" onChange={handleChange} type="text" id="arrival_port_name" className="form-control" required />
 </div>
 <div className="form-group">
     <label forhtml="blog-date">insurance_number</label>
     <input defaultValue={inputs.insurance_number} name="insurance_number" onChange={handleChange} type="text" id="insurance_number" className="form-control" required />
 </div>
 
-<button type="submit" className="btn btn-primary">Create</button>
+<button type="submit" class="btn btn-primary">Create</button>
   </form>
   </div>
 
@@ -87,4 +87,4 @@ function Airfreightadd() {
   )
 }
 
-export default Airfreightadd
+export default Sailingfreightadd

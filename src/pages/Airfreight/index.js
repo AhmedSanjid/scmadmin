@@ -23,7 +23,7 @@ function Airfreight() {
     <AdminLayout>
 <div class="container mt-5">
     <h2>Flight Insurance Claims Form</h2>
-    <Link to={'/airfreight/add'} className='btn btn-info float-end' >Add New</Link>
+    <Link to={'/airfreight/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
@@ -39,14 +39,16 @@ function Airfreight() {
         <tbody>
         {data && data.map((d, key) =>
         <tr key={d.id}>
+            <td>{d.id}</td>
             <td>{d.name}</td>
             <td>{d.company_name}</td>
             <td>{d.flight_number}</td>
             <td>{d.arrival_airport_name}</td>
             <td>{d.insurance_number}</td>
             <td>
-                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-info' >Edit</Link>
-                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-danger'>Delete</button>
+                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
+                <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>
         </tr>
     )}

@@ -40,7 +40,7 @@ const isLinkActive = (path) => {
             <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
               <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Insurance")}`}>
-                    <Link to="/Insurance" className="sidebar-link">Insurance Claim</Link></p>
+                    <Link to="/Insurance" className="sidebar-link">Insurance</Link></p>
               </li>
               <li>
               <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Warehouse")}`}>
@@ -111,7 +111,7 @@ const isLinkActive = (path) => {
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-journal-text"></i><span>Forms</span><i className="bi bi-chevron-down ms-auto"></i>
+              <i className="bi bi-journal-text"></i><span>Booking list</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="forms-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
@@ -154,23 +154,20 @@ const isLinkActive = (path) => {
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-bar-chart"></i><span>Charts</span><i className="bi bi-chevron-down ms-auto"></i>
+              <i className="bi bi-bar-chart"></i><span>Company Information</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="charts-chartjs.html">
-                  <i className="bi bi-circle"></i><span>Chart.js</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Info")}`}>
+              <Link to="/Info" className="sidebar-link">Companies Name</Link></p>
               </li>
               <li>
-                <a href="charts-apexcharts.html">
-                  <i className="bi bi-circle"></i><span>ApexCharts</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Companieslist")}`}>
+              <Link to="/Companieslist" className="sidebar-link">Authorised Person</Link></p>
               </li>
               <li>
-                <a href="charts-echarts.html">
-                  <i className="bi bi-circle"></i><span>ECharts</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Deals")}`}>
+              <Link to="/Deals" className="sidebar-link">Transactions Summary</Link></p>
               </li>
             </ul>
           </li>{/*End Charts Nav */}

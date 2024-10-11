@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
+import axios from 'axios';
 
 function Insuranceadd() {
   const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', product_name: '', weight: '', destination: '', bank_name: '', cargo_serial_number: '', claim_period: ''});
@@ -10,7 +10,7 @@ function Insuranceadd() {
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/insuranceclaim/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/insurance/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Insuranceadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/insuranceclaim/edit/${inputs.id}`;
+                apiurl =`/insurance/edit/${inputs.id}`;
             } else {
-                apiurl =`/insuranceclaim/create`;
+                apiurl =`/insurance/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Insuranceadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/insuranceclaim')
+            navigate('/insurance')
         }
         catch (e) {
             console.log(e);
