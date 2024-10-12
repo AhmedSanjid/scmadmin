@@ -10,8 +10,9 @@ import Warehouse from './pages/Warehouse';
 import Airfreight from './pages/Airfreight';
 import Airfreightadd from './pages/Airfreight/Airfreightadd';
 import Sailingfreight from './pages/Sailingfreight';
-import Highwayfreight from './pages/Highwayfreight';
 import Sailingfreightadd from './pages/Sailingfreight/Sailingfreightadd';
+import Highwayfreight from './pages/Highwayfreight';
+import Highwayfreightadd from './pages/Highwayfreight/Highwayfreightadd';
 import Companieslist from './pages/Companieslist';
 import Info from './pages/Info';
 import Deals from './pages/Deals';
@@ -43,7 +44,9 @@ function App() {
           <Route path="/sailingfreight" element={<Sailingfreight />} />
           <Route path={"/sailingfreight/edit/:id"} element={<Sailingfreightadd />} />
           <Route path={"/sailingfreight/add"} element={<Sailingfreightadd />} />
-          <Route path="/Highwayfreight" element={<Highwayfreight />} />
+          <Route path="/highwayfreight" element={<Highwayfreight />} />
+          <Route path={"/highwayfreight/edit/:id"} element={<Highwayfreightadd />} />
+          <Route path={"/highwayfreight/add"} element={<Highwayfreightadd />} />
           <Route path="Companieslist" element={<Companieslist />} />
           <Route path="Info" element={<Info />} />
           <Route path="Deals" element={<Deals />} />

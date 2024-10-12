@@ -22,7 +22,7 @@ function Sailingfreight() {
   return (
     <AdminLayout>
 <div class="container mt-5">
-    <h2>Sailingfreight Information</h2>
+    <h2>Sailingfreight Info</h2>
     <Link to={'/sailingfreight/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
@@ -46,7 +46,7 @@ function Sailingfreight() {
             <td>{d.arrival_port_name}</td>
             <td>{d.insurance_number}</td>
             <td>
-                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <Link to={`/sailingfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
                 <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>

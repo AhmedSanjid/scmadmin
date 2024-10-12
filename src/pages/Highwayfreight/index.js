@@ -1,39 +1,59 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
+import { Link } from 'react-router-dom';
 
 function Highwayfreight() {
+    const[data, setData]=useState([]);
+    useEffect(() => {
+        getDatas();
+    }, []);
+  
+    function getDatas() {
+        axios.get(`${process.env.REACT_APP_API_URL}/highwayfreight/`).then(function(response) {
+            setData(response.data.data);
+        });
+    }
+    const deleteData = (id) => {
+        axios.delete(`${process.env.REACT_APP_API_URL}/highwayfreight/${id}`).then(function(response){
+            getDatas();
+        });
+    }
   return (
     <AdminLayout>
 <div class="container mt-5">
-    <h2>Vehicle Insurance Claims Form</h2>
+    <h2>Highway Freight</h2>
+    <Link to={'/highwayfreight/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th>Company</th>
-            <th>Vehicle ID</th>
+            <th>Company Name</th>
+            <th>vehicle id</th>
             <th>Arrival Location</th>
             <th>Insurance Number</th>
             <th>Actions</th>
         </tr>
         </thead>
-    
-        <tr>
-            <input type="text" class="form-control" placeholder="ID"/>
-            <input type="text" class="form-control" placeholder="Name"/>
-            <input type="text" class="form-control" placeholder="Company"/>
-            <input type="text" class="form-control" placeholder="Vehicle ID"/>
-            <input type="text" class="form-control" placeholder="Arrival Location"/>
-            <input type="text" class="form-control" placeholder="Insurance Number"/>
+        <tbody>
+        {data && data.map((d, key) =>
+        <tr key={d.id}>
+            <td>{d.id}</td>
+            <td>{d.name}</td>
+            <td>{d.company_name}</td>
+            <td>{d.vehicle_id}</td>
+            <td>{d.arrival_location}</td>
+            <td>{d.insurance_number}</td>
             <td>
-                <button class="btn btn-primary btn-sm">Edit</button>
-                <button class="btn btn-danger btn-sm">Decline</button>
-                <button class="btn btn-success btn-sm">Approve</button>
+                <Link to={`/highwayfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
+                <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>
         </tr>
+    )}
         
-    
+        </tbody>
     </table>
 </div>
     </AdminLayout>

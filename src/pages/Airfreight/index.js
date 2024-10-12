@@ -22,7 +22,7 @@ function Airfreight() {
   return (
     <AdminLayout>
 <div class="container mt-5">
-    <h2>Flight Insurance Claims Form</h2>
+    <h2>Air Freight Info</h2>
     <Link to={'/airfreight/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">

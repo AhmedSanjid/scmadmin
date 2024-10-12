@@ -4,13 +4,13 @@ import AdminLayout from '../../../layouts/AdminLayout';
 import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 
-function Airfreightadd() {
-  const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', flight_number: '', arrival_airport_name: '', insurance_number: ''});
+function Highwayfreightadd() {
+  const [inputs, setInputs] = useState({ id: '', name: '', company_name: '', vehicle_id: '', arrival_location: '', insurance_number: ''});
     const navigate = useNavigate();
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/airfreight/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/highwayfreight/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Airfreightadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/airfreight/edit/${inputs.id}`;
+                apiurl =`/highwayfreight/edit/${inputs.id}`;
             } else {
-                apiurl =`/airfreight/create`;
+                apiurl =`/highwayfreight/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Airfreightadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/airfreight')
+            navigate('/highwayfreight')
         }
         catch (e) {
             console.log(e);
@@ -55,7 +55,7 @@ function Airfreightadd() {
     <AdminLayout>
   
   <div className="container mt-5">
-    <h2 className="text-center mb-4">New Air Freight</h2>
+    <h2 className="text-center mb-4">Editation</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
@@ -67,12 +67,12 @@ function Airfreightadd() {
     <input defaultValue={inputs.company_name} name="company_name" onChange={handleChange} type="text" id="company_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">flight_number</label>
-    <input defaultValue={inputs.flight_number} name="flight_number" onChange={handleChange} type="text" id="flight_number" className="form-control" required />
+    <label forhtml="blog-date">vehicle_id</label>
+    <input defaultValue={inputs.vehicle_id} name="vehicle_id" onChange={handleChange} type="text" id="vehicle_id" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">arrival_airport_name</label>
-    <input defaultValue={inputs.arrival_airport_name} name="arrival_airport_name" onChange={handleChange} type="text" id="arrival_airport_name" className="form-control" required />
+    <label forhtml="blog-date">arrival_location</label>
+    <input defaultValue={inputs.arrival_location} name="arrival_location" onChange={handleChange} type="text" id="arrival_location" className="form-control" required />
 </div>
 <div className="form-group">
     <label forhtml="blog-date">insurance_number</label>
@@ -87,4 +87,4 @@ function Airfreightadd() {
   )
 }
 
-export default Airfreightadd
+export default Highwayfreightadd

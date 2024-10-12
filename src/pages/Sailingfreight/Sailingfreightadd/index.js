@@ -55,7 +55,7 @@ function Sailingfreightadd() {
     <AdminLayout>
   
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Sailingfreight Information</h2>
+    <h2 class="text-center mb-4">Editation</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
