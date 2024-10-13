@@ -22,9 +22,9 @@ function Sailingfreight() {
   return (
     <AdminLayout>
 <div class="container mt-5">
-    <h2>Sailingfreight Info</h2>
-    <Link to={'/sailingfreight/add'} className='btn btn-primary float-end' >Add New</Link>
-    <table class="table table-striped table-bordered">
+    <h2>Sailing Freight Info</h2>
+    <Link to={'/sailingfreight/add'} className='btn btn-primary float-end' >Add New</Link>
+    <table class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
         <tr>
             <th>ID</th>

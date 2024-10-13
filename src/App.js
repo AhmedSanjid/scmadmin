@@ -7,6 +7,7 @@ import Protected from './components/protected';
 import Insurance from './pages/Insurance';
 import Insuranceadd from './pages/Insurance/Insuranceadd';
 import Warehouse from './pages/Warehouse';
+import Warehouseadd from './pages/Warehouse/Warehouseadd';
 import Airfreight from './pages/Airfreight';
 import Airfreightadd from './pages/Airfreight/Airfreightadd';
 import Sailingfreight from './pages/Sailingfreight';
@@ -38,6 +39,8 @@ function App() {
           <Route path={"/insurance/edit/:id"} element={<Insuranceadd />} />
           <Route path={"/insurance/add"} element={<Insuranceadd />} />
           <Route path="/warehouse" element={<Warehouse />} />
+          <Route path={"/warehouse/edit/:id"} element={<Warehouseadd />} />
+          <Route path={"/warehouse/add"} element={<Warehouseadd />} />
           <Route path={"/airfreight"} element={<Airfreight />} />
           <Route path={"/airfreight/edit/:id"} element={<Airfreightadd />} />
           <Route path={"/airfreight/add"} element={<Airfreightadd />} />

@@ -26,7 +26,7 @@ function Insurance() {
     <h2 class="text-center mb-4">Insurance Information</h2>
     <Link to={'/insurance/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-bordered table-striped">
-      <thead class="table-Dark">
+      <thead class="table-dark">
         <tr>
           <th>Name</th>
           <th>Company Name</th>
@@ -51,7 +51,7 @@ function Insurance() {
             <td>{d.cargo_serial_number}</td>
             <td>{d.claim_period}</td>
             <td>
-                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <Link to={`/insurance/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
                 <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>

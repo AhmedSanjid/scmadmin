@@ -55,27 +55,27 @@ function Airfreightadd() {
     <AdminLayout>
   
   <div className="container mt-5">
-    <h2 className="text-center mb-4">New Air Freight</h2>
+    <h2 className="text-center mb-4">New Info</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
-    <label forhtml="blog-date">name</label>
+    <label forhtml="blog-date">Name</label>
     <input defaultValue={inputs.name} name="name" onChange={handleChange} type="text" id="name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">company_name</label>
+    <label forhtml="blog-date">Company Name</label>
     <input defaultValue={inputs.company_name} name="company_name" onChange={handleChange} type="text" id="company_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">flight_number</label>
+    <label forhtml="blog-date">Flight Number</label>
     <input defaultValue={inputs.flight_number} name="flight_number" onChange={handleChange} type="text" id="flight_number" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">arrival_airport_name</label>
+    <label forhtml="blog-date">Arrival Airport Name</label>
     <input defaultValue={inputs.arrival_airport_name} name="arrival_airport_name" onChange={handleChange} type="text" id="arrival_airport_name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">insurance_number</label>
+    <label forhtml="blog-date">Insurance Number</label>
     <input defaultValue={inputs.insurance_number} name="insurance_number" onChange={handleChange} type="text" id="insurance_number" className="form-control" required />
 </div>
 

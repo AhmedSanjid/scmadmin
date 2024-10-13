@@ -1,43 +1,57 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
+import { Link } from 'react-router-dom';
 
 function Warehouse() {
+  const[data, setData]=useState([]);
+  useEffect(() => {
+      getDatas();
+  }, []);
+
+  function getDatas() {
+      axios.get(`${process.env.REACT_APP_API_URL}/warehouse/`).then(function(response) {
+          setData(response.data.data);
+      });
+  }
+  const deleteData = (id) => {
+      axios.delete(`${process.env.REACT_APP_API_URL}/warehouse/${id}`).then(function(response){
+          getDatas();
+      });
+  }
   return (
     <AdminLayout>
       <div class="container mt-5">
-    <h2>Warehouse booking</h2>
+    <h2>Warehouse Booking</h2>
+    <Link to={'/warehouse/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered">
         <thead class="table-dark">
         <tr>
-            <th>ID Number</th>
             <th>Name</th>
             <th>Company Name</th>
-            <th>Product Details</th>
             <th>Category</th>
+            <th>Product Details</th>
             <th>Insurance Number</th>
             <th>Invoice Number</th>
-            <th>Tax</th>
-            <th>Total Amount</th>
             <th>Actions</th>
         </tr>
         </thead>
         <tbody>
-        <tr>
-            <input type="text" class="form-control" placeholder="ID Number"/>
-            <input type="text" class="form-control" placeholder="Name"/>
-            <input type="text" class="form-control" placeholder="Company Name"/>
-            <input type="text" class="form-control" placeholder="Product Details"/>
-            <input type="text" class="form-control" placeholder="Category"/>
-            <input type="text" class="form-control" placeholder="Insurance Number"/>
-            <input type="text" class="form-control" placeholder="Invoice Number"/>
-            <input type="number" class="form-control" placeholder="Tax"/>
-            <input type="number" class="form-control" placeholder="Total Amount"/>
+    {data && data.map((d, key) =>
+        <tr key={d.id}>
+            <td>{d.name}</td>
+            <td>{d.company_name}</td>
+            <td>{d.category}</td>
+            <td>{d.product_details}</td>
+            <td>{d.insurance_number}</td>
+            <td>{d.invoice_number}</td>
             <td>
-                <button class="btn btn-primary btn-sm">Edit</button>
-                <button class="btn btn-danger btn-sm">Decline</button>
-                <button class="btn btn-success btn-sm">Approve</button>
+                <Link to={`/warehouse/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
+                <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>
         </tr>
+    )}
         </tbody>
     </table>
 </div>

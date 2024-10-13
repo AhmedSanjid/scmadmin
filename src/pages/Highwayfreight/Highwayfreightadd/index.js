@@ -55,27 +55,27 @@ function Highwayfreightadd() {
     <AdminLayout>
   
   <div className="container mt-5">
-    <h2 className="text-center mb-4">Editation</h2>
+    <h2 className="text-center mb-4">New Info</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
-    <label forhtml="blog-date">name</label>
+    <label forhtml="blog-date">Name</label>
     <input defaultValue={inputs.name} name="name" onChange={handleChange} type="text" id="name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">company_name</label>
-    <input defaultValue={inputs.company_name} name="company_name" onChange={handleChange} type="text" id="company_name" className="form-control" required />
+    <label forhtml="blog-date">Company</label>
+    <input defaultValue={inputs.company} name="company" onChange={handleChange} type="text" id="company" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">vehicle_id</label>
+    <label forhtml="blog-date">Vehicle</label>
     <input defaultValue={inputs.vehicle_id} name="vehicle_id" onChange={handleChange} type="text" id="vehicle_id" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">arrival_location</label>
+    <label forhtml="blog-date">Arrival Location</label>
     <input defaultValue={inputs.arrival_location} name="arrival_location" onChange={handleChange} type="text" id="arrival_location" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">insurance_number</label>
+    <label forhtml="blog-date">Insurance Number</label>
     <input defaultValue={inputs.insurance_number} name="insurance_number" onChange={handleChange} type="text" id="insurance_number" className="form-control" required />
 </div>
 

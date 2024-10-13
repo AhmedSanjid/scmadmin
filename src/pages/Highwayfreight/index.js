@@ -22,9 +22,9 @@ function Highwayfreight() {
   return (
     <AdminLayout>
 <div class="container mt-5">
-    <h2>Highway Freight</h2>
+    <h2>Highway Freight Info</h2>
     <Link to={'/highwayfreight/add'} className='btn btn-primary float-end' >Add New</Link>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -41,7 +41,7 @@ function Highwayfreight() {
         <tr key={d.id}>
             <td>{d.id}</td>
             <td>{d.name}</td>
-            <td>{d.company_name}</td>
+            <td>{d.company}</td>
             <td>{d.vehicle_id}</td>
             <td>{d.arrival_location}</td>
             <td>{d.insurance_number}</td>

@@ -24,7 +24,7 @@ function Airfreight() {
 <div class="container mt-5">
     <h2>Air Freight Info</h2>
     <Link to={'/airfreight/add'} className='btn btn-primary float-end' >Add New</Link>
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered table-hover">
         <thead class="table-dark">
         <tr>
             <th>ID</th>
@@ -46,7 +46,7 @@ function Airfreight() {
             <td>{d.arrival_airport_name}</td>
             <td>{d.insurance_number}</td>
             <td>
-                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <Link to={`/airfreight/edit/${d.id}`} className='btn btn-secondary'>Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
                 <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>

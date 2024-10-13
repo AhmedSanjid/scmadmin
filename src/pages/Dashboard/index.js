@@ -40,15 +40,15 @@ function Dashboard() {
                     </div>
     
                     <div className="card-body">
-                      <h5 className="card-title">Sales <span>| Today</span></h5>
+                      <h5 className="card-title">Air <span></span></h5>
     
                       <div className="d-flex align-items-center">
                         <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                          <i className="bi bi-cart"></i>
+                          <i className="bi bi-airplane-engines-fill"></i>
                         </div>
                         <div className="ps-3">
                           <h6>145</h6>
-                          <span className="text-success small pt-1 fw-bold">12%</span> <span className="text-muted small pt-2 ps-1">increase</span>
+                          <span className="text-success small pt-1 fw-bold">5%</span> <span className="text-muted small pt-2 ps-1">increase</span>
     
                         </div>
                       </div>
@@ -75,14 +75,14 @@ function Dashboard() {
                     </div>
     
                     <div className="card-body">
-                      <h5 className="card-title">Revenue <span>| This Month</span></h5>
+                      <h5 className="card-title">Ship <span></span></h5>
     
                       <div className="d-flex align-items-center">
                         <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                          <i className="bi bi-currency-dollar"></i>
+                          <i className="bi bi-tsunami"></i>
                         </div>
                         <div className="ps-3">
-                          <h6>$3,264</h6>
+                          <h6>3,264</h6>
                           <span className="text-success small pt-1 fw-bold">8%</span> <span className="text-muted small pt-2 ps-1">increase</span>
     
                         </div>
@@ -111,15 +111,15 @@ function Dashboard() {
                     </div>
     
                     <div className="card-body">
-                      <h5 className="card-title">Customers <span>| This Year</span></h5>
+                      <h5 className="card-title">Highway<span></span></h5>
     
                       <div className="d-flex align-items-center">
                         <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                          <i className="bi bi-people"></i>
+                          <i className="bi bi-truck"></i>
                         </div>
                         <div className="ps-3">
                           <h6>1244</h6>
-                          <span className="text-danger small pt-1 fw-bold">12%</span> <span className="text-muted small pt-2 ps-1">decrease</span>
+                          <span className="text-success small pt-1 fw-bold">12%</span> <span className="text-muted small pt-2 ps-1">increase</span>
     
                         </div>
                       </div>
@@ -176,53 +176,60 @@ function Dashboard() {
                     </div>
     
                     <div className="card-body">
-                      <h5 className="card-title">Recent Sales <span>| Today</span></h5>
+                      <h5 className="card-title">Warehousing <span>| Today</span></h5>
     
                       <table className="table table-borderless datatable">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Customer</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Companies</th>
                             <th scope="col">Product</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Via</th>
                             <th scope="col">Status</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row"><a href="#">#2457</a></th>
-                            <td>Brandon Jacob</td>
-                            <td><a href="#" className="text-primary">At praesentium minu</a></td>
-                            <td>$64</td>
+                            <td>H&M Group</td>
+                            <td>Denim & Shoes</td>
+                            <td>Air</td>
                             <td><span className="badge bg-success">Approved</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#">#2147</a></th>
-                            <td>Bridie Kessler</td>
-                            <td><a href="#" className="text-primary">Blanditiis dolor omnis similique</a></td>
-                            <td>$47</td>
+                            <td>Microsoft</td>
+                            <td>Xbox & HoloLens</td>
+                            <td>Ship</td>
                             <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#">#2049</a></th>
-                            <td>Ashleigh Langosh</td>
-                            <td><a href="#" className="text-primary">At recusandae consectetur</a></td>
-                            <td>$147</td>
+                            <td>Ford Motor Company</td>
+                            <td>Rims & V12 Engines</td>
+                            <td>Highway</td>
                             <td><span className="badge bg-success">Approved</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#">#2644</a></th>
-                            <td>Angus Grady</td>
-                            <td><a href="#" className="text-primar">Ut voluptatem id earum et</a></td>
-                            <td>$67</td>
+                            <td>Amazon</td>
+                            <td>Cell Phones & Accessories</td>
+                            <td>Highway</td>
                             <td><span className="badge bg-danger">Rejected</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#">#2644</a></th>
-                            <td>Raheem Lehner</td>
-                            <td><a href="#" className="text-primary">Sunt similique distinctio</a></td>
-                            <td>$165</td>
+                            <td>Dow Chemical Company</td>
+                            <td>Einsteinium, Californium, Copper & Hydrogen </td>
+                            <td>Ship</td>
                             <td><span className="badge bg-success">Approved</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><a href="#">#2147</a></th>
+                            <td>	Johnson & Johnson</td>
+                            <td>Duct tape, First aid kits & Dental floss </td>
+                            <td>Air</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                         </tbody>
                       </table>
@@ -250,53 +257,99 @@ function Dashboard() {
                     </div>
     
                     <div className="card-body pb-0">
-                      <h5 className="card-title">Top Selling <span>| Today</span></h5>
+                      <h5 className="card-title">Delivery <span>| Next Week</span></h5>
     
                       <table className="table table-borderless">
                         <thead>
                           <tr>
-                            <th scope="col">Preview</th>
-                            <th scope="col">Product</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Sold</th>
-                            <th scope="col">Revenue</th>
+                            <th scope="col">Companies</th>
+                            <th scope="col">Products</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Destination Locations</th>
+                            <th scope="col">Status</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""/></a></th>
-                            <td><a href="#" className="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                            <td>$64</td>
-                            <td className="fw-bold">124</td>
-                            <td>$5,828</td>
+                            <td>Polly packs, Boards, It parts & goods materials</td>
+                            <td>21-Oct</td>
+                            <td className="fw-bold">1232</td>
+                            <td>EastBay Storage Facility</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""/></a></th>
-                            <td><a href="#" className="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                            <td>$46</td>
-                            <td className="fw-bold">98</td>
-                            <td>$4,508</td>
+                            <td>engine, gearbox, clutch, battery, brakes, radiator, steering & suspension</td>
+                            <td>20-Oct</td>
+                            <td className="fw-bold">2754</td>
+                            <td>BlueOcean Storage Center</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""/></a></th>
-                            <td><a href="#" className="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                            <td>$59</td>
-                            <td className="fw-bold">74</td>
-                            <td>$4,366</td>
+                            <td>DScissors, Needle Holders, Curette & Forceps</td>
+                            <td>21-Oct</td>
+                            <td className="fw-bold">1458</td>
+                            <td>IronGate Logistics Warehouse</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""/></a></th>
-                            <td><a href="#" className="text-primary fw-bold">Officiis quaerat sint rerum error</a></td>
-                            <td>$32</td>
-                            <td className="fw-bold">63</td>
-                            <td>$2,016</td>
+                            <td>Home, Furniture & Appliances</td>
+                            <td>22-Oct</td>
+                            <td className="fw-bold">9863</td>
+                            <td>KDS Depot</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""/></a></th>
-                            <td><a href="#" className="text-primary fw-bold">Sit unde debitis delectus repellendus</a></td>
-                            <td>$79</td>
-                            <td className="fw-bold">41</td>
-                            <td>$3,239</td>
+                            <td>Raw materials for Architectural & Decorative Coatings</td>
+                            <td>20-Oct</td>
+                            <td className="fw-bold">4230</td>
+                            <td>BSRM Depot</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><a href="#"><img src="assets/img/product-6.jpg" alt=""/></a></th>
+                            <td>Gillette, Bounty, Pampers & Febreze</td>
+                            <td>23-Oct</td>
+                            <td className="fw-bold">1242</td>
+                            <td>Golden Depot</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><a href="#"><img src="assets/img/product-7.jpg" alt=""/></a></th>
+                            <td>KNITWEAR, JEANS & T-shirts</td>
+                            <td>22-Oct</td>
+                            <td className="fw-bold">4659</td>
+                            <td>BrightPath Fulfillment Hub</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><a href="#"><img src="assets/img/product-8.jpg" alt=""/></a></th>
+                            <td>Mac, Ipad, Iphone, Watch & TV</td>
+                            <td>21-Oct</td>
+                            <td className="fw-bold">4847</td>
+                            <td>GreenField Storage Depot</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><a href="#"><img src="assets/img/product-9.jpg" alt=""/></a></th>
+                            <td>Polypropylene,Ethylene Acrylic Acid, & Foamed</td>
+                            <td>22-Oct</td>
+                            <td className="fw-bold">5644</td>
+                            <td>Global Logistics Hub</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
+                          </tr>
+                          <tr>
+                            <th scope="row"><a href="#"><img src="assets/img/product-10.jpg" alt=""/></a></th>
+                            <td>Furnitures,It parts</td>
+                            <td>19-Oct</td>
+                            <td className="fw-bold">9842</td>
+                            <td>Atlas Cargo Hub</td>
+                            <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
                         </tbody>
                       </table>

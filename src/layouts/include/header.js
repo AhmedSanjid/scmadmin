@@ -30,7 +30,7 @@ const isLinkActive = (path) => {
     <div className="d-flex align-items-center justify-content-between">
       <a href="index.html" className="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt=""/>
-        <span className="d-none d-lg-block">NiceAdmin</span>
+        <span className="d-none d-lg-block">DiaDem</span>
       </a>
       <i className="bi bi-list toggle-sidebar-btn"></i>
     </div>{/*End Logo */}
@@ -55,7 +55,7 @@ const isLinkActive = (path) => {
 
           <a className="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i className="bi bi-bell"></i>
-            <span className="badge bg-primary badge-number">4</span>
+            <span className="badge bg-dark badge-number">4</span>
           </a>{/*End Notification Icon */}
 
           <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
@@ -70,8 +70,8 @@ const isLinkActive = (path) => {
             <li className="notification-item">
               <i className="bi bi-exclamation-circle text-warning"></i>
               <div>
-                <h4>Lorem Ipsum</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
+                <h4>Flight JKL789</h4>
+                <p>2 cargo missing!</p>
                 <p>30 min. ago</p>
               </div>
             </li>
@@ -83,8 +83,8 @@ const isLinkActive = (path) => {
             <li className="notification-item">
               <i className="bi bi-x-circle text-danger"></i>
               <div>
-                <h4>Atque rerum nesciunt</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
+                <h4>Ware House</h4>
+                <p>Downtown Dubai warehouse are flodded</p>
                 <p>1 hr. ago</p>
               </div>
             </li>
@@ -96,8 +96,8 @@ const isLinkActive = (path) => {
             <li className="notification-item">
               <i className="bi bi-check-circle text-success"></i>
               <div>
-                <h4>Sit rerum fuga</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
+                <h4>MV Harmony</h4>
+                <p>Arrived at port Singapur</p>
                 <p>2 hrs. ago</p>
               </div>
             </li>
@@ -109,8 +109,8 @@ const isLinkActive = (path) => {
             <li className="notification-item">
               <i className="bi bi-info-circle text-primary"></i>
               <div>
-                <h4>Dicta reprehenderit</h4>
-                <p>Quae dolorem earum veritatis oditseno</p>
+                <h4>Law issues!</h4>
+                <p>Police retures the Vehicle at base (TRK-75982)</p>
                 <p>4 hrs. ago</p>
               </div>
             </li>
@@ -130,7 +130,7 @@ const isLinkActive = (path) => {
 
           <a className="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i className="bi bi-chat-left-text"></i>
-            <span className="badge bg-success badge-number">3</span>
+            <span className="badge bg-dark badge-number">3</span>
           </a>{/*End Messages Icon */}
 
           <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
@@ -146,8 +146,8 @@ const isLinkActive = (path) => {
               <a href="#">
                 <img src="assets/img/messages-1.jpg" alt="" className="rounded-circle"/>
                 <div>
-                  <h4>Maria Hudson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>Amazon</h4>
+                  <p>Delivery is taking too long today!</p>
                   <p>4 hrs. ago</p>
                 </div>
               </a>
@@ -160,8 +160,8 @@ const isLinkActive = (path) => {
               <a href="#">
                 <img src="assets/img/messages-2.jpg" alt="" className="rounded-circle"/>
                 <div>
-                  <h4>Anna Nelson</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>Toyota Motor Corporation</h4>
+                  <p>Shipment under loding, Thank you!</p>
                   <p>6 hrs. ago</p>
                 </div>
               </a>
@@ -174,8 +174,8 @@ const isLinkActive = (path) => {
               <a href="#">
                 <img src="assets/img/messages-3.jpg" alt="" className="rounded-circle"/>
                 <div>
-                  <h4>David Muldon</h4>
-                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <h4>Unilever</h4>
+                  <p>Cargo left on time, freezing container damaged slightly</p>
                   <p>8 hrs. ago</p>
                 </div>
               </a>
@@ -196,13 +196,13 @@ const isLinkActive = (path) => {
 
           <a className="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" className="rounded-circle"/>
-            <span className="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+            <span className="d-none d-md-block dropdown-toggle ps-2">Admin</span>
           </a>{/*End Profile Iamge Icon */}
 
           <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li className="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6>Sanjid Ahmed Mukut</h6>
+              <span>Admin</span>
             </li>
             <li>
               <hr className="dropdown-divider"/>
