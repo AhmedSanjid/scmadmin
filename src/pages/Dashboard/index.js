@@ -5,15 +5,15 @@ function Dashboard() {
     return(
         <AdminLayout>
     
-        <div className="pagetitle">
+        {/* <div className="pagetitle">
           <h1>Dashboard</h1>
           <nav>
             <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li className="breadcrumb-item"><a href="#">Home</a></li>
               <li className="breadcrumb-item active">Dashboard</li>
             </ol>
           </nav>
-        </div>{/*End Page Title */}
+        </div> */}
     
         <section className="section dashboard">
           <div className="row">
@@ -24,9 +24,9 @@ function Dashboard() {
     
                 {/*Sales Card */}
                 <div className="col-xxl-4 col-md-6">
-                  <div className="card info-card sales-card">
+                  <div className=" info-card sales-card">
     
-                    <div className="filter">
+                    {/* <div className="filter">
                       <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
                       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <li className="dropdown-header text-start">
@@ -37,9 +37,9 @@ function Dashboard() {
                         <li><a className="dropdown-item" href="#">This Month</a></li>
                         <li><a className="dropdown-item" href="#">This Year</a></li>
                       </ul>
-                    </div>
+                    </div> */}
     
-                    <div className="card-body">
+                    {/* <div className="card-body"> */}
                       <h5 className="card-title">Air <span></span></h5>
     
                       <div className="d-flex align-items-center">
@@ -52,16 +52,16 @@ function Dashboard() {
     
                         </div>
                       </div>
-                    </div>
+                    {/* </div> */}
     
                   </div>
                 </div>{/*End Sales Card */}
     
                 {/*Revenue Card */}
                 <div className="col-xxl-4 col-md-6">
-                  <div className="card info-card revenue-card">
+                  <div className=" info-card revenue-card">
     
-                    <div className="filter">
+                    {/* <div className="filter">
                       <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
                       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <li className="dropdown-header text-start">
@@ -72,10 +72,10 @@ function Dashboard() {
                         <li><a className="dropdown-item" href="#">This Month</a></li>
                         <li><a className="dropdown-item" href="#">This Year</a></li>
                       </ul>
-                    </div>
+                    </div> */}
     
-                    <div className="card-body">
-                      <h5 className="card-title">Ship <span></span></h5>
+                    {/* <div className="card-body"> */}
+                      <h5 className="card-title">Ship<span></span></h5>
     
                       <div className="d-flex align-items-center">
                         <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
@@ -87,7 +87,7 @@ function Dashboard() {
     
                         </div>
                       </div>
-                    </div>
+                    {/* </div> */}
     
                   </div>
                 </div>{/*End Revenue Card */}
@@ -95,9 +95,9 @@ function Dashboard() {
                 {/*Customers Card */}
                 <div className="col-xxl-4 col-xl-12">
     
-                  <div className="card info-card customers-card">
+                  <div className=" info-card customers-card">
     
-                    <div className="filter">
+                    {/* <div className="filter">
                       <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
                       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <li className="dropdown-header text-start">
@@ -108,9 +108,9 @@ function Dashboard() {
                         <li><a className="dropdown-item" href="#">This Month</a></li>
                         <li><a className="dropdown-item" href="#">This Year</a></li>
                       </ul>
-                    </div>
+                    </div> */}
     
-                    <div className="card-body">
+                    {/* <div className="card-body"> */}
                       <h5 className="card-title">Highway<span></span></h5>
     
                       <div className="d-flex align-items-center">
@@ -124,7 +124,7 @@ function Dashboard() {
                         </div>
                       </div>
     
-                    </div>
+                    {/* </div> */}
                   </div>
     
                 </div>{/*End Customers Card */}
@@ -132,8 +132,8 @@ function Dashboard() {
                 {/*Reports */}
                 <div className="col-12">
                   <div className="card">
-    
-                    <div className="filter">
+
+                    {/* <div className="filter">
                       <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
                       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <li className="dropdown-header text-start">
@@ -144,25 +144,23 @@ function Dashboard() {
                         <li><a className="dropdown-item" href="#">This Month</a></li>
                         <li><a className="dropdown-item" href="#">This Year</a></li>
                       </ul>
-                    </div>
+                    </div> */}
     
-                    <div className="card-body">
-                      <h5 className="card-title">Reports <span>/Today</span></h5>
-    
-                      {/*Line Chart */}
-                      <div id="reportsChart"></div>
+                    {/* <div className="card-body">
+                      <h5 className="card-title">Reports<span>/Today</span></h5>
     
                       
-                    </div>
+                      <div id="reportsChart"></div>
+                       </div> */}
     
                   </div>
                 </div>{/*End Reports */}
     
                 {/*Recent Sales */}
-                <div className="col-12">
-                  <div className="card recent-sales overflow-auto">
+                <div className="col-12" style={{marginTop:"200px"}}>
+                  <div className=" recent-sales overflow-auto">
     
-                    <div className="filter">
+                    {/* <div className="filter">
                       <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
                       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <li className="dropdown-header text-start">
@@ -173,10 +171,10 @@ function Dashboard() {
                         <li><a className="dropdown-item" href="#">This Month</a></li>
                         <li><a className="dropdown-item" href="#">This Year</a></li>
                       </ul>
-                    </div>
+                    </div> */}
     
-                    <div className="card-body">
-                      <h5 className="card-title">Warehousing <span>| Today</span></h5>
+                    {/* <div className="card-body"> */}
+                      <h5 className="card-title text-info">Warehousing <span>| Today</span></h5>
     
                       <table className="table table-borderless datatable">
                         <thead>
@@ -234,16 +232,16 @@ function Dashboard() {
                         </tbody>
                       </table>
     
-                    </div>
+                    {/* </div> */}
     
                   </div>
                 </div>
     
                 {/*Top Selling */}
-                <div className="col-12">
-                  <div className="card top-selling overflow-auto">
+                <div className="col-12" style={{marginTop:"200px"}}>
+                  <div className="top-selling overflow-auto">
     
-                    <div className="filter">
+                    {/* <div className="filter">
                       <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
                       <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
                         <li className="dropdown-header text-start">
@@ -255,9 +253,9 @@ function Dashboard() {
                         <li><a className="dropdown-item" href="#">This Year</a></li>
                       </ul>
                     </div>
-    
-                    <div className="card-body pb-0">
-                      <h5 className="card-title">Delivery <span>| Next Week</span></h5>
+     */}
+                    <div className=" mt-0 pb-0" style={{marginTop:"150px"}}>
+                      <h5 className="card-title text-info ">Delivery <span>| Next Week</span></h5>
     
                       <table className="table table-borderless">
                         <thead>
@@ -343,7 +341,7 @@ function Dashboard() {
                             <td>Global Logistics Hub</td>
                             <td><span className="badge bg-warning">Pending</span></td>
                           </tr>
-                          <tr>
+                          <tr className="mt-3">
                             <th scope="row"><a href="#"><img src="assets/img/product-10.jpg" alt=""/></a></th>
                             <td>Furnitures,It parts</td>
                             <td>19-Oct</td>
@@ -366,8 +364,8 @@ function Dashboard() {
             <div className="col-lg-4">
     
               {/*Recent Activity */}
-              <div className="card">
-  <div className="filter">
+              {/* <div className="card"> */}
+  {/* <div className="filter">
     <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
     <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
       <li className="dropdown-header text-start">
@@ -377,175 +375,224 @@ function Dashboard() {
       <li><a className="dropdown-item" href="#">This Month</a></li>
       <li><a className="dropdown-item" href="#">This Year</a></li>
     </ul>
-  </div>
+  </div> */}
 
   <div className="card-body">
-    <h5 className="card-title">Recent Activity <span>| Today</span></h5>
+    <h5 className="card-title text-primary">Air Freight <span>| Update</span></h5>
 
     <div className="activity">
-      <div className="activity-item d-flex align-items-center mb-2">
-        <div className="activite-label col-auto">32 min</div>
-        <div className="col-auto">
-          <i className='bi bi-circle-fill activity-badge text-success'></i>
-        </div>
-        <div className="col activity-content">
-          Quia quae rerum <a href="#" className="fw-bold text-dark">explicabo officiis</a> beatae
-        </div>
-      </div>{/*End activity item*/}
-
-      <div className="activity-item d-flex align-items-center mb-2">
-        <div className="activite-label col-auto">56 min</div>
-        <div className="col-auto">
-          <i className='bi bi-circle-fill activity-badge text-danger'></i>
-        </div>
-        <div className="col activity-content">
-          Voluptatem blanditiis blanditiis eveniet
-        </div>
-      </div>{/*End activity item*/}
-
-      <div className="activity-item d-flex align-items-center mb-2">
-        <div className="activite-label col-auto">2 hrs</div>
-        <div className="col-auto">
-          <i className='bi bi-circle-fill activity-badge text-primary'></i>
-        </div>
-        <div className="col activity-content">
-          Voluptates corrupti molestias voluptatem
-        </div>
-      </div>{/*End activity item*/}
-
-      <div className="activity-item d-flex align-items-center mb-2">
-        <div className="activite-label col-auto">1 day</div>
-        <div className="col-auto">
-          <i className='bi bi-circle-fill activity-badge text-info'></i>
-        </div>
-        <div className="col activity-content">
-          Tempore autem saepe <a href="#" className="fw-bold text-dark">occaecati voluptatem</a> tempore
-        </div>
-      </div>{/*End activity item*/}
-
-      <div className="activity-item d-flex align-items-center mb-2">
-        <div className="activite-label col-auto">2 days</div>
-        <div className="col-auto">
-          <i className='bi bi-circle-fill activity-badge text-warning'></i>
-        </div>
-        <div className="col activity-content">
-          Est sit eum reiciendis exercitationem
-        </div>
-      </div>{/*End activity item*/}
-
-      <div className="activity-item d-flex align-items-center mb-2">
-        <div className="activite-label col-auto">4 weeks</div>
-        <div className="col-auto">
-          <i className='bi bi-circle-fill activity-badge text-muted'></i>
-        </div>
-        <div className="col activity-content">
-          Dicta dolorem harum nulla eius. Ut quidem quidem sit quas
-        </div>
-      </div>{/*End activity item*/}
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">32 min</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-success"></i>
+    </div>
+    <div className="col activity-content">
+      Shipment from <strong>New York</strong> to <a href="#" className="fw-bold text-dark">London Heathrow</a> cleared customs
     </div>
   </div>
-</div>{/*End Recent Activity */}
+  
 
-    
-              {/*Budget Report */}
-              <div className="card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-    
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-    
-                <div className="card-body pb-0">
-                  <h5 className="card-title">Budget Report <span>| This Month</span></h5>
-                  <div id="budgetChart" style={{ minHeight: "400px" }} className="echart"></div>
-                </div>
-              </div>{/*End Budget Report */}
-    
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">56 min</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-danger"></i>
+    </div>
+    <div className="col activity-content">
+      Delayed due to <strong>bad weather</strong> at Frankfurt Airport
+    </div>
+  </div>
+  
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">2 hrs</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-primary"></i>
+    </div>
+    <div className="col activity-content">
+      <strong>Airway Bill</strong> generated for shipment to Singapore
+    </div>
+  </div>
+  
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">1 day</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-info"></i>
+    </div>
+    <div className="col activity-content">
+      In transit: <strong>Los Angeles</strong> to <a href="#" className="fw-bold text-dark">Tokyo Narita</a> 
+    </div>
+  </div>
+  
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">2 days</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-warning"></i>
+    </div>
+    <div className="col activity-content">
+      Customs inspection required for shipment from <strong>Dubai</strong> to <strong>Berlin</strong>
+    </div>
+  </div>
+
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">4 weeks</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-muted"></i>
+    </div>
+    <div className="col activity-content">
+      Shipment delayed: awaiting clearance in <strong>Hong Kong</strong> due to local holidays
+    </div>
+  </div>
+  
+</div>
+
+  </div>
+{/* </div> */}
+
+{/* <div className="card"> */}
+<div className="activity" style={{marginTop:"150px"}} >
+<h5 className="card-title text-success">Sailing Freight <span>| Update</span></h5>
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">32 min</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-success"></i>
+    </div>
+    <div className="col activity-content">
+      Shipment departed from <strong>New York</strong> en route to <a href="#" className="fw-bold text-dark">Port of Rotterdam</a>
+    </div>
+  </div>
+
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">56 min</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-danger"></i>
+    </div>
+    <div className="col activity-content">
+      Delay reported due to <strong>rough seas</strong> near the Gulf of Mexico
+    </div>
+  </div>
+  
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">2 hrs</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-primary"></i>
+    </div>
+    <div className="col activity-content">
+      <strong>Bill of Lading</strong> issued for shipment to <strong>Singapore Port</strong>
+    </div>
+  </div>
+  
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">1 day</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-info"></i>
+    </div>
+    <div className="col activity-content">
+      Container in transit from <strong>Los Angeles</strong> to <a href="#" className="fw-bold text-dark">Tokyo Port</a>
+    </div>
+  </div>
+
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">2 days</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-warning"></i>
+    </div>
+    <div className="col activity-content">
+      Customs inspection required at <strong>Dubai Port</strong> for shipment bound to <strong>Hamburg Port</strong>
+    </div>
+  </div>
+  
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">4 weeks</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-muted"></i>
+    </div>
+    <div className="col activity-content">
+      Shipment awaiting clearance at <strong>Hong Kong</strong> due to local port congestion
+    </div>
+  </div>
+  
+</div>
+    {/* </div> */}
               {/*Website Traffic */}
-              <div className="card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-    
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-    
-                <div className="card-body pb-0">
-                  <h5 className="card-title">Website Traffic <span>| Today</span></h5>
-    
-                  <div id="trafficChart" style={{ minHeight: "400px" }} className="echart"></div>
-    
-                  
-    
-                </div>
-              </div>{/*End Website Traffic */}
-    
-              {/*News & Updates Traffic */}
-              <div className="card">
-                <div className="filter">
-                  <a className="icon" href="#" data-bs-toggle="dropdown"><i className="bi bi-three-dots"></i></a>
-                  <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                    <li className="dropdown-header text-start">
-                      <h6>Filter</h6>
-                    </li>
-    
-                    <li><a className="dropdown-item" href="#">Today</a></li>
-                    <li><a className="dropdown-item" href="#">This Month</a></li>
-                    <li><a className="dropdown-item" href="#">This Year</a></li>
-                  </ul>
-                </div>
-    
-                <div className="card-body pb-0">
-                  <h5 className="card-title">News &amp; Updates <span>| Today</span></h5>
-    
-                  <div className="news">
-                    <div className="post-item clearfix">
-                      <img src="assets/img/news-1.jpg" alt=""/>
-                      <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                      <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
-                    </div>
-    
-                    <div className="post-item clearfix">
-                      <img src="assets/img/news-2.jpg" alt=""/>
-                      <h4><a href="#">Quidem autem et impedit</a></h4>
-                      <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-                    </div>
-    
-                    <div className="post-item clearfix">
-                      <img src="assets/img/news-3.jpg" alt=""/>
-                      <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                      <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-                    </div>
-    
-                    <div className="post-item clearfix">
-                      <img src="assets/img/news-4.jpg" alt=""/>
-                      <h4><a href="#">Laborum corporis quo dara net para</a></h4>
-                      <p>Qui enim quia optio. Eligendi aut asperiores enim repellendusvel rerum cuder...</p>
-                    </div>
-    
-                    <div className="post-item clearfix">
-                      <img src="assets/img/news-5.jpg" alt=""/>
-                      <h4><a href="#">Et dolores corrupti quae illo quod dolor</a></h4>
-                      <p>Odit ut eveniet modi reiciendis. Atque cupiditate libero beatae dignissimos eius...</p>
-                    </div>
-    
-                  </div>{/*End sidebar recent posts*/}
-    
-                </div>
-              </div>{/*End News & Updates */}
+              {/* <div className="card"> */}
+            <div className="activity" style={{marginTop:"150px"}}>
+        <h5 className="card-title text-danger">Highway Freight <span>| Update</span></h5>
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">32 min</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-success"></i>
+    </div>
+    <div className="col activity-content">
+      Truck departed from <strong>New York</strong> heading to <a href="#" className="fw-bold text-dark">Chicago Distribution Center</a>
+    </div>
+  </div>
+  {/*End activity item*/}
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">56 min</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-danger"></i>
+    </div>
+    <div className="col activity-content">
+      Delay due to <strong>traffic congestion</strong> on I-80 near Pittsburgh
+    </div>
+  </div>
+  {/*End activity item*/}
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">2 hrs</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-primary"></i>
+    </div>
+    <div className="col activity-content">
+      <strong>Waybill</strong> generated for delivery to <strong>Dallas Warehouse</strong>
+    </div>
+  </div>
+  {/*End activity item*/}
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">1 day</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-info"></i>
+    </div>
+    <div className="col activity-content">
+      Shipment in transit from <strong>Los Angeles</strong> to <a href="#" className="fw-bold text-dark">Houston Terminal</a>
+    </div>
+  </div>
+  {/*End activity item*/}
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">2 days</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-warning"></i>
+    </div>
+    <div className="col activity-content">
+      Inspection required at <strong>Denver Weigh Station</strong> for freight bound to <strong>St. Louis</strong>
+    </div>
+  </div>
+  {/*End activity item*/}
+
+  <div className="activity-item d-flex align-items-center mb-2">
+    <div className="activity-label col-auto">4 weeks</div>
+    <div className="col-auto">
+      <i className="bi bi-circle-fill activity-badge text-muted"></i>
+    </div>
+    <div className="col activity-content">
+      Shipment delayed at <strong>Portland</strong> due to highway repairs on I-5
+    </div>
+  </div>
+  {/*End activity item*/}
+</div>
+
+              {/* </div> */}
     
             </div>{/*End Right side columns */}
     

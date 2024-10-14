@@ -24,10 +24,11 @@ function Login(){
     }
     return(
         <AuthLayout>
-           
+
             
             	<div className="text-center mb-5">
-				<img src="./assets/images/home/logo.png" height="48" className='mb-4' />
+					
+				<img src="../../layouts/assets/img/logo.png" height="48" className="mb-4"/>
 				<h3> Ocean Transportation Login</h3>
 				<p>Please sign in to continue</p>
 			</div>

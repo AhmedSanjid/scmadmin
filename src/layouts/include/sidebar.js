@@ -26,11 +26,11 @@ const isLinkActive = (path) => {
         <ul className="sidebar-nav" id="sidebar-nav">
     
           <li className="nav-item">
-            <a className="nav-link " href="index.html">
+            <Link className="nav-link " to="/">
               <i className="bi bi-grid"></i>
               
               <span>Dashboard</span>
-            </a>
+            </Link>
           </li>
     
           <li className="nav-item">
@@ -195,56 +195,56 @@ const isLinkActive = (path) => {
             </ul>
           </li>{/*End Icons Nav */}
     
-          <li className="nav-heading">Pages</li>
+          {/* <li className="nav-heading">Pages</li> */}
     
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link collapsed" href="users-profile.html">
               <i className="bi bi-person"></i>
               <span>Profile</span>
             </a>
-          </li>{/*End Profile Page Nav */}
+          </li> */}
     
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link collapsed" href="pages-faq.html">
               <i className="bi bi-question-circle"></i>
               <span>F.A.Q</span>
             </a>
-          </li>{/*End F.A.Q Page Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" href="pages-contact.html">
               <i className="bi bi-envelope"></i>
               <span>Contact</span>
             </a>
-          </li>{/*End Contact Page Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" href="pages-register.html">
               <i className="bi bi-card-list"></i>
               <span>Register</span>
             </a>
-          </li>{/*End Register Page Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" href="pages-login.html">
               <i className="bi bi-box-arrow-in-right"></i>
               <span>Login</span>
             </a>
-          </li>{/*End Login Page Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" href="pages-error-404.html">
               <i className="bi bi-dash-circle"></i>
               <span>Error 404</span>
             </a>
-          </li>{/*End Error 404 Page Nav */}
+          </li> */}
     
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link collapsed" href="pages-blank.html">
               <i className="bi bi-file-earmark"></i>
               <span>Blank</span>
             </a>
-          </li>{/*End Blank Page Nav */}
+          </li> */}
     
         </ul>
     
