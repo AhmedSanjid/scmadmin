@@ -22,10 +22,10 @@ function Airfreight() {
   return (
     <AdminLayout>
 <div class="container mt-5">
-    <h2>Air Freight Info</h2>
+    <h2 class="text-center mb-4">Air Freight Info</h2>
     <Link to={'/airfreight/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered table-hover">
-        <thead class="table-dark">
+        <thead class="table-success">
         <tr>
             <th>ID</th>
             <th>Name</th>

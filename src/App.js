@@ -27,6 +27,11 @@ import Ford from './pages/Ford';
 import HSBC from './pages/HSBC';
 import Johnson from './pages/Johnson';
 import UPS from './pages/UPS';
+import Admin from './pages/Admin';
+import Person from './pages/Person';
+import Staffs from './pages/Staffs';
+import Dues from './pages/Dues';
+import Pay from './pages/Pay';
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -63,6 +68,11 @@ function App() {
           <Route path="HSBC" element={<HSBC />} />
           <Route path="Johnson" element={<Johnson />} />
           <Route path="UPS" element={<UPS />} />
+          <Route path="Admin" element={<Admin />} />
+          <Route path="Person" element={<Person />} />
+          <Route path="Staffs" element={<Staffs />} />
+          <Route path="Dues" element={<Dues />} />
+          <Route path="Pay" element={<Pay />} />
           <Route path={"/"} element={
             // <Protected isSignedIn={isSignedIn} >
               <Dashboard />

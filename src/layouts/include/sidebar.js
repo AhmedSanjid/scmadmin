@@ -21,7 +21,7 @@ const isLinkActive = (path) => {
   }
                 
     return(
-        <aside id="sidebar" className="sidebar">
+        <aside id="sidebar" className="sidebar"img src="../assets/img/img2.png">
     
         <ul className="sidebar-nav" id="sidebar-nav">
     
@@ -136,61 +136,66 @@ const isLinkActive = (path) => {
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-layout-text-window-reverse"></i><span>Tables</span><i className="bi bi-chevron-down ms-auto"></i>
+              <i className="bi bi-layout-text-window-reverse"></i><span>General Accounts</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="tables-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="tables-general.html">
-                  <i className="bi bi-circle"></i><span>General Tables</span>
-                </a>
+                
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Dues")}`}>
+              <Link to="/Dues" className="sidebar-link">Accounts Receivable</Link></p>
+              
               </li>
               <li>
-                <a href="tables-data.html">
-                  <i className="bi bi-circle"></i><span>Data Tables</span>
-                </a>
-              </li>
-            </ul>
-          </li>{/*End Tables Nav */}
-    
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-bar-chart"></i><span>Company Information</span><i className="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Info")}`}>
-              <Link to="/Info" className="sidebar-link">Companies Name</Link></p>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Companieslist")}`}>
-              <Link to="/Companieslist" className="sidebar-link">Authorised Person</Link></p>
+                
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Pay")}`}>
+              <Link to="/Pay" className="sidebar-link">Accounts Payable</Link></p>
+              
               </li>
               <li>
               <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Deals")}`}>
               <Link to="/Deals" className="sidebar-link">Transactions Summary</Link></p>
               </li>
             </ul>
+          </li>{/*End Tables Nav */}
+    
+          <li className="nav-item">
+            <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
+              <i className="bi bi-bar-chart"></i><span>Vendors Info</span><i className="bi bi-chevron-down ms-auto"></i>
+            </a>
+            <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
+              <li>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Info")}`}>
+              <Link to="/Info" className="sidebar-link">Established Client</Link></p>
+              </li>
+              <li>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Companieslist")}`}>
+              <Link to="/Companieslist" className="sidebar-link">Vendor Representative</Link></p>
+              </li>
+            </ul>
           </li>{/*End Charts Nav */}
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-gem"></i><span>Icons</span><i className="bi bi-chevron-down ms-auto"></i>
+              <i className="bi bi-gem"></i><span>Authorised Person</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="icons-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
-                <a href="icons-bootstrap.html">
-                  <i className="bi bi-circle"></i><span>Bootstrap Icons</span>
-                </a>
+              
+                <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Admin")}`}>
+                <Link to="/Admin" className="sidebar-link">Admin</Link></p>
+              
               </li>
               <li>
-                <a href="icons-remix.html">
-                  <i className="bi bi-circle"></i><span>Remix Icons</span>
-                </a>
+                
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Staffs")}`}>
+              <Link to="/Staffs" className="sidebar-link">Authorised Stuffs</Link></p>
+                
               </li>
               <li>
-                <a href="icons-boxicons.html">
-                  <i className="bi bi-circle"></i><span>Boxicons</span>
-                </a>
+                
+                <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Person")}`}>
+                <Link to="/Person" className="sidebar-link">Authorised Members</Link></p>
+                
               </li>
             </ul>
           </li>{/*End Icons Nav */}

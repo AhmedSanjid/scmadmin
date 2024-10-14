@@ -22,10 +22,10 @@ function Warehouse() {
   return (
     <AdminLayout>
       <div class="container mt-5">
-    <h2>Warehouse Booking</h2>
+    <h2 class="text-center mb-4">Warehouse Booking</h2>
     <Link to={'/warehouse/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered">
-        <thead class="table-dark">
+        <thead class="table-success">
         <tr>
             <th>Name</th>
             <th>Company Name</th>

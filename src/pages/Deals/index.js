@@ -23,9 +23,11 @@ const isLinkActive = (path) => {
     <AdminLayout>
 
 <div class="container my-4">
-    <h2 class="text-center">Company Dealings</h2>
+    <h2 class="text-center">Transaction Summary</h2>
+    <Link to={'/'} className='btn btn-primary float-end' >Add New</Link>
+    <Link to={'/'} className='btn btn-secondary float-end' >Edit</Link>
     <table class="table table-striped table-bordered table-hover">
-      <thead class="table-dark">
+      <thead class="table-info">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Transaction Date</th>

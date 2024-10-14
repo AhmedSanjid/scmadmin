@@ -1,14 +1,16 @@
 import React from 'react';
 import AdminLayout from '../../layouts/AdminLayout';
-
+import { Link } from 'react-router-dom';
 function Info() {
   return (
     <AdminLayout>
 
 <div class="container my-4">
-    <h2 class="text-center">Global Companies Across Multiple Sectors</h2>
+    <h2 class="text-center">Preferred Vendor</h2>
+    <Link to={'/'} className='btn btn-primary float-end' >Add New</Link>
+    <Link to={'/'} className='btn btn-secondary float-end' >Edit</Link>
     <table class="table table-striped table-bordered">
-      <thead class="table-dark">
+      <thead class="table-info">
         <tr>
           <th scope="col">#</th>
           <th scope="col">Company Name</th>
