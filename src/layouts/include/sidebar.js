@@ -160,12 +160,12 @@ const isLinkActive = (path) => {
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-bar-chart"></i><span>Vendors Info</span><i className="bi bi-chevron-down ms-auto"></i>
+              <i className="bi bi-bar-chart"></i><span>Vendors</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
             <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
               <li>
               <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Info")}`}>
-              <Link to="/Info" className="sidebar-link">Established Client</Link></p>
+              <Link to="/Info" className="sidebar-link">Established Vendors</Link></p>
               </li>
               <li>
               <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Companieslist")}`}>
