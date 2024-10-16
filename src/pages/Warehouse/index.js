@@ -27,6 +27,7 @@ function Warehouse() {
     <table class="table table-striped table-bordered">
         <thead class="table-success">
         <tr>
+            <th>SL</th>
             <th>Name</th>
             <th>Company Name</th>
             <th>Category</th>
@@ -39,6 +40,7 @@ function Warehouse() {
         <tbody>
     {data && data.map((d, key) =>
         <tr key={d.id}>
+            <td>{d.id}</td>
             <td>{d.name}</td>
             <td>{d.company_name}</td>
             <td>{d.category}</td>

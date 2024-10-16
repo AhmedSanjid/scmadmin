@@ -5,8 +5,9 @@ function Dashboard() {
     return(
         <AdminLayout>
     
-        {/* <div className="pagetitle">
-          <h1>Dashboard</h1>
+       {/* <div className="pagetitle">
+      
+           <h1>Dashboard</h1>
           <nav>
             <ol className="breadcrumb">
               <li className="breadcrumb-item"><a href="#">Home</a></li>
@@ -14,7 +15,6 @@ function Dashboard() {
             </ol>
           </nav>
         </div> */}
-    
         <section className="section dashboard">
           <div className="row">
     
