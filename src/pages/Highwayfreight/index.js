@@ -27,7 +27,7 @@ function Highwayfreight() {
     <table class="table table-striped table-bordered table-hover">
         <thead class="table-success">
         <tr>
-            <th>ID</th>
+            <th>SL</th>
             <th>Name</th>
             <th>Company Name</th>
             <th>vehicle id</th>

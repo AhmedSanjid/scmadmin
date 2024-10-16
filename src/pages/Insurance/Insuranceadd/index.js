@@ -63,8 +63,8 @@ function Insuranceadd() {
     <input defaultValue={inputs.name} name="name" onChange={handleChange} type="text" id="name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">Company Name</label>
-    <input defaultValue={inputs.company_name} name="company_name" onChange={handleChange} type="text" id="company_name" className="form-control" required />
+    <label forhtml="companyy">Company Name</label>
+    <input defaultValue={inputs.company} name="company" onChange={handleChange} type="text" id="company" className="form-control" required />
 </div>
 <div className="form-group">
     <label forhtml="blog-date">Product Name</label>

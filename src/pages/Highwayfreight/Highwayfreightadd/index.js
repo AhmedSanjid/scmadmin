@@ -63,7 +63,7 @@ function Highwayfreightadd() {
     <input defaultValue={inputs.name} name="name" onChange={handleChange} type="text" id="name" className="form-control" required />
 </div>
 <div className="form-group">
-    <label forhtml="blog-date">Company</label>
+    <label forhtml="company">Company</label>
     <input defaultValue={inputs.company} name="company" onChange={handleChange} type="text" id="company" className="form-control" required />
 </div>
 <div className="form-group">

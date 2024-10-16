@@ -43,17 +43,16 @@ const isLinkActive = (path) => {
                     <Link to="/Insurance" className="sidebar-link">Insurance</Link></p>
               </li>
               <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/staffs")}`}>
-              <Link to="/staffs" className="sidebar-link">Staff's Report</Link></p>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/staff")}`}>
+              <Link to="/staff" className="sidebar-link">Staff's Report</Link></p>
               </li>
               <li>
-                <a href="components-badges.html">
-                  <i className="bi bi-circle"></i><span>Staff's Reports</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link">Vendor's Report</Link></p>
               </li>
               <li>
                 <a href="components-breadcrumbs.html">
-                  <i className="bi bi-circle"></i><span>Vendor's Report</span>
+                  <i className="bi bi-circle"></i><span>Providers</span>
                 </a>
               </li>
               <li>

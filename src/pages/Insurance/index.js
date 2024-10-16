@@ -28,6 +28,7 @@ function Insurance() {
     <table class="table table-bordered table-striped">
       <thead class="table-success">
         <tr>
+        <th>SL</th>
           <th>Name</th>
           <th>Company Name</th>
           <th>Product Name</th>
@@ -42,6 +43,7 @@ function Insurance() {
       <tbody>
     {data && data.map((d, key) =>
         <tr key={d.id}>
+            <td>{d.id}</td>
             <td>{d.name}</td>
             <td>{d.company_name}</td>
             <td>{d.product_name}</td>
