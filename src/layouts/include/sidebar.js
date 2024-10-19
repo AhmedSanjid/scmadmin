@@ -51,59 +51,48 @@ const isLinkActive = (path) => {
               <Link to="/vendors" className="sidebar-link">Vendor's Report</Link></p>
               </li>
               <li>
-                <a href="components-breadcrumbs.html">
-                  <i className="bi bi-circle"></i><span>Providers</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link">Service Providers</Link></i>
               </li>
               <li>
-                <a href="components-buttons.html">
-                  <i className="bi bi-circle"></i><span>Buttons</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Banks</i>
               </li>
               <li>
-                <a href="components-cards.html">
-                  <i className="bi bi-circle"></i><span>Cards</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Transactions</i>
               </li>
               <li>
-                <a href="components-carousel.html">
-                  <i className="bi bi-circle"></i><span>Carousel</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Transportation Companies</i>
               </li>
               <li>
-                <a href="components-list-group.html">
-                  <i className="bi bi-circle"></i><span>List group</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Warehouse Hubs</i>
               </li>
               <li>
-                <a href="components-modal.html">
-                  <i className="bi bi-circle"></i><span>Modal</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>C&F Companies</i>
               </li>
               <li>
-                <a href="components-tabs.html">
-                  <i className="bi bi-circle"></i><span>Tabs</span>
-                </a>
+              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Renewals & Expirations</p>
               </li>
               <li>
-                <a href="components-pagination.html">
-                  <i className="bi bi-circle"></i><span>Pagination</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Invoices</i>
               </li>
               <li>
-                <a href="components-progress.html">
-                  <i className="bi bi-circle"></i><span>Progress</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Cost Insights</i>
               </li>
               <li>
-                <a href="components-spinners.html">
-                  <i className="bi bi-circle"></i><span>Spinners</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Warehouse Stock Levels</i>
               </li>
               <li>
-                <a href="components-tooltips.html">
-                  <i className="bi bi-circle"></i><span>Tooltips</span>
-                </a>
+              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
+              <Link to="/vendors" className="sidebar-link"></Link>Help Desk</i>
               </li>
             </ul>
           </li>{/*End Components Nav */}
