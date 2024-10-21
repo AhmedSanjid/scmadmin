@@ -30,7 +30,7 @@ const isLinkActive = (path) => {
     <div className="d-flex align-items-center justify-content-between">
       <Link to="/" className="logo d-flex align-items-center">
         <img src="assets/img/logo.png" alt=""/>
-        <span className="d-none d-lg-block">DiaDem</span>
+        <span className="d-none d-lg-block">ThiKana</span>
       </Link>
       {/* <i className="bi bi-list toggle-sidebar-btn"></i> */}
     </div>{/*End Logo */}

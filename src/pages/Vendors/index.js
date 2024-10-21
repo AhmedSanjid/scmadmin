@@ -41,6 +41,7 @@ function Vendors() {
         <tbody>
     {data && data.map((d, key) =>
         <tr key={d.id}>
+            <td>{d.id}</td>
             <td>{d.name}</td>
             <td>{d.designation}</td>
             <td>{d.work_status}</td>

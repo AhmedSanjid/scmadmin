@@ -25,7 +25,7 @@ function Insurance() {
   <div class="container mt-5">
     <h2 class="text-center mb-4">Insurance Information</h2>
     <Link to={'/insurance/add'} className='btn btn-primary float-end' >Add New</Link>
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped table-hover">
       <thead class="table-success">
         <tr>
         <th>SL</th>

@@ -41,6 +41,7 @@ function Staff() {
         <tbody>
     {data && data.map((d, key) =>
         <tr key={d.id}>
+            <td>{d.id}</td>
             <td>{d.name}</td>
             <td>{d.location}</td>
             <td>{d.title}</td>
