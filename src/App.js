@@ -78,9 +78,9 @@ function App() {
           <Route path="Staff" element={<Staff />} />
           <Route path="Vendors" element={<Vendors />} />
           <Route path={"/"} element={
-            // <Protected isSignedIn={isSignedIn} >
+            <Protected isSignedIn={isSignedIn} >
               <Dashboard />
-            // </Protected>
+            </Protected>
           } />
       {/* <Route path="/" element={<Dashboard />} /> */}
     </Routes>

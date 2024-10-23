@@ -271,7 +271,7 @@ function Dashboard() {
                         <tbody>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-1.jpg" alt=""/></a></th>
-                            <td>Polly packs, Boards, It parts & goods materials</td>
+                            <td>Deutsche Post DHL Group</td>
                             <td>21-Oct</td>
                             <td className="fw-bold">1232</td>
                             <td>EastBay Storage Facility</td>
@@ -279,7 +279,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-2.jpg" alt=""/></a></th>
-                            <td>engine, gearbox, clutch, battery, brakes, radiator, steering & suspension</td>
+                            <td>Ford Motor Company</td>
                             <td>20-Oct</td>
                             <td className="fw-bold">2754</td>
                             <td>BlueOcean Storage Center</td>
@@ -287,7 +287,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-3.jpg" alt=""/></a></th>
-                            <td>DScissors, Needle Holders, Curette & Forceps</td>
+                            <td>Pfizer Inc.</td>
                             <td>21-Oct</td>
                             <td className="fw-bold">1458</td>
                             <td>IronGate Logistics Warehouse</td>
@@ -295,7 +295,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-4.jpg" alt=""/></a></th>
-                            <td>Home, Furniture & Appliances</td>
+                            <td>Walmart Inc.</td>
                             <td>22-Oct</td>
                             <td className="fw-bold">9863</td>
                             <td>KDS Depot</td>
@@ -303,7 +303,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-5.jpg" alt=""/></a></th>
-                            <td>Raw materials for Architectural & Decorative Coatings</td>
+                            <td>Dow Chemical Company</td>
                             <td>20-Oct</td>
                             <td className="fw-bold">4230</td>
                             <td>BSRM Depot</td>
@@ -311,7 +311,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-6.jpg" alt=""/></a></th>
-                            <td>Gillette, Bounty, Pampers & Febreze</td>
+                            <td>Procter & Gamble</td>
                             <td>23-Oct</td>
                             <td className="fw-bold">1242</td>
                             <td>Golden Depot</td>
@@ -319,7 +319,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-7.jpg" alt=""/></a></th>
-                            <td>KNITWEAR, JEANS & T-shirts</td>
+                            <td>Zara (Inditex Group)</td>
                             <td>22-Oct</td>
                             <td className="fw-bold">4659</td>
                             <td>BrightPath Fulfillment Hub</td>
@@ -327,7 +327,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-8.jpg" alt=""/></a></th>
-                            <td>Mac, Ipad, Iphone, Watch & TV</td>
+                            <td>	Apple Inc.	</td>
                             <td>21-Oct</td>
                             <td className="fw-bold">4847</td>
                             <td>GreenField Storage Depot</td>
@@ -335,7 +335,7 @@ function Dashboard() {
                           </tr>
                           <tr>
                             <th scope="row"><a href="#"><img src="assets/img/product-9.jpg" alt=""/></a></th>
-                            <td>Polypropylene,Ethylene Acrylic Acid, & Foamed</td>
+                            <td>BASF SE</td>
                             <td>22-Oct</td>
                             <td className="fw-bold">5644</td>
                             <td>Global Logistics Hub</td>
@@ -343,7 +343,7 @@ function Dashboard() {
                           </tr>
                           <tr className="mt-3">
                             <th scope="row"><a href="#"><img src="assets/img/product-10.jpg" alt=""/></a></th>
-                            <td>Furnitures,It parts</td>
+                            <td>JPMorgan Chase & Co.</td>
                             <td>19-Oct</td>
                             <td className="fw-bold">9842</td>
                             <td>Atlas Cargo Hub</td>
