@@ -34,6 +34,8 @@ import Dues from './pages/Dues';
 import Pay from './pages/Pay';
 import Staff from './pages/Staff';
 import Vendors from './pages/Vendors';
+import Freights from './pages/freights';
+import Freightsadd from './pages/freights/freightsadd';
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -77,6 +79,9 @@ function App() {
           <Route path="Pay" element={<Pay />} />
           <Route path="Staff" element={<Staff />} />
           <Route path="Vendors" element={<Vendors />} />
+          <Route path="Freights" element={<Freights />} />
+          <Route path={"/Freights/edit/:id"} element={<Freightsadd />} />
+          <Route path={"/Freights/add"} element={<Freightsadd />} />
           <Route path={"/"} element={
             <Protected isSignedIn={isSignedIn} >
               <Dashboard />
