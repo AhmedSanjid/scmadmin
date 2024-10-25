@@ -36,6 +36,10 @@ import Staff from './pages/Staff';
 import Vendors from './pages/Vendors';
 import Freights from './pages/freights';
 import Freightsadd from './pages/freights/freightsadd';
+import Country from './pages/Country';
+import Countryadd from './pages/Country/Countryadd';
+import Customer from './pages/Customer';
+import Customeradd from './pages/Customer/Customeradd';
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -44,19 +48,19 @@ function App() {
     <Routes>
     <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/Insurance" element={<Insurance />} />
+          <Route path="Insurance" element={<Insurance />} />
           <Route path={"/insurance/edit/:id"} element={<Insuranceadd />} />
           <Route path={"/insurance/add"} element={<Insuranceadd />} />
-          <Route path="/warehouse" element={<Warehouse />} />
+          <Route path="warehouse" element={<Warehouse />} />
           <Route path={"/warehouse/edit/:id"} element={<Warehouseadd />} />
           <Route path={"/warehouse/add"} element={<Warehouseadd />} />
-          <Route path={"/airfreight"} element={<Airfreight />} />
+          <Route path={"airfreight"} element={<Airfreight />} />
           <Route path={"/airfreight/edit/:id"} element={<Airfreightadd />} />
           <Route path={"/airfreight/add"} element={<Airfreightadd />} />
-          <Route path="/sailingfreight" element={<Sailingfreight />} />
+          <Route path="sailingfreight" element={<Sailingfreight />} />
           <Route path={"/sailingfreight/edit/:id"} element={<Sailingfreightadd />} />
           <Route path={"/sailingfreight/add"} element={<Sailingfreightadd />} />
-          <Route path="/highwayfreight" element={<Highwayfreight />} />
+          <Route path="highwayfreight" element={<Highwayfreight />} />
           <Route path={"/highwayfreight/edit/:id"} element={<Highwayfreightadd />} />
           <Route path={"/highwayfreight/add"} element={<Highwayfreightadd />} />
           <Route path="Companieslist" element={<Companieslist />} />
@@ -82,6 +86,12 @@ function App() {
           <Route path="Freights" element={<Freights />} />
           <Route path={"/Freights/edit/:id"} element={<Freightsadd />} />
           <Route path={"/Freights/add"} element={<Freightsadd />} />
+          <Route path={"Country"} element={<Country />} />
+          <Route path={"/Country/edit/:id"} element={<Countryadd />} />
+          <Route path={"/Country/add"} element={<Countryadd />} />
+          <Route path="customer" element={<Customer />} />
+          <Route path={"/customer/edit/:id"} element={<Customeradd />} />
+          <Route path={"/customer/add"} element={<Customeradd />} />
           <Route path={"/"} element={
             <Protected isSignedIn={isSignedIn} >
               <Dashboard />

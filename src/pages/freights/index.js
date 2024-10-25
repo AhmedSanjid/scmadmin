@@ -23,12 +23,12 @@ function Freights() {
     <AdminLayout>
   
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Insurance Information</h2>
+    <h2 class="text-center mb-4">Orders Information</h2>
     <Link to={'/freights/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-bordered table-striped table-hover">
       <thead class="table-success">
         <tr>
-        <th>SL</th>
+          <th>SL</th>
           <th>Company Name</th>
           <th>Shipment Type</th>
           <th>Pickup Location</th>
@@ -48,16 +48,16 @@ function Freights() {
         <tr key={d.id}>
             <td>{d.id}</td>
             <td>{d.customer_id}</td>
-            <td>{d.total_amount}</td>
-            <td>{d.vat}</td>
-            <td>{d.payment_method}</td>
             <td>{d.shipment_type}</td>
-            <td>{d.pickup_time}</td>
-            <td>{d.delivery_time}</td>
+            <td>{d.pickup_location}</td>
             <td>{d.total_qty}</td>
-            <td>{d.pickup_location	}</td>
-            <td>{d.delivery_location}</td>
+            <td>{d.pickup_time}</td>
             <td>{d.transport_type_id}</td>
+            <td>{d.delivery_location}</td>
+            <td>{d.delivery_time}</td>
+            <td>{d.payment_method	}</td>
+            <td>{d.vat}</td>
+            <td>{d.total_amount}</td>
             <td>
                 <Link to={`/freights/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>

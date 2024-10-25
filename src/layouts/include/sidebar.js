@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import AdminLayout from '../../layouts/AdminLayout';
-import { useLocation, Link} from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { useParams } from "react-router-dom";
+import axios from 'axios';
+import { useLocation } from 'react-router-dom';
 
 function Sidebar() {
   const activeMenu = (e) => {
@@ -33,7 +36,7 @@ const isLinkActive = (path) => {
             </Link>
           </li>
     
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
               <i className="bi bi-menu-button-wide"></i><span>Components</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
@@ -95,7 +98,7 @@ const isLinkActive = (path) => {
               <Link to="/vendors" className="sidebar-link"></Link>Help Desk</i>
               </li>
             </ul>
-          </li>{/*End Components Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
@@ -120,7 +123,7 @@ const isLinkActive = (path) => {
               <Link to="/Warehouse" className="sidebar-link">Warehouse</Link></p>
               </li>
             </ul>
-          </li>{/*End Forms Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
@@ -144,7 +147,7 @@ const isLinkActive = (path) => {
               <Link to="/Deals" className="sidebar-link">Transactions Summary</Link></p>
               </li>
             </ul>
-          </li>{/*End Tables Nav */}
+          </li>
     
           <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
@@ -160,9 +163,249 @@ const isLinkActive = (path) => {
               <Link to="/Companieslist" className="sidebar-link">Vendor Representative</Link></p>
               </li>
             </ul>
-          </li>{/*End Charts Nav */}
-    
+          </li>
+
           <li className="nav-item">
+                <a className="nav-link collapsed" data-bs-target="#customers-nav" data-bs-toggle="collapse" href="#">
+                  <i className="bi bi-bar-chart"></i><span>Customers</span><i className="bi bi-chevron-down ms-auto"></i>
+                </a>
+                <ul id="customers-nav" className="nav-content collapse" data-bs-parent="#sidebar-nav">
+                  <li>
+                    <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/customers1")}`}>
+                      <Link to="/customers1" className="sidebar-link">Customer List 1</Link>
+                    </p>
+                  </li>
+                  <li>
+                    <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/customers2")}`}>
+                      <Link to="/customers2" className="sidebar-link">Customer List 2</Link>
+              </p>
+              </li>
+            </ul>
+        </li> */}
+        <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-yin-yang"></i> Role
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i class="bi bi-person-raised-hand"></i> Users
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-people-fill"></i> Staffs
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/customer")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/customer" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-bank2"></i> Company
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-globe2"></i> State
+                      </Link>
+                  </button>
+              </div>
+
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-globe-asia-australia"></i> Country
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i class="bi bi-geo-alt-fill"></i> Location
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                       <i class="bi bi-houses"></i> Warehouse
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-house-add"></i> Warehouse Blocks
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-diagram-3"></i> Item Category
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i class="bi bi-backpack4-fill"></i> Items
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i class="bi bi-train-freight-front"></i> Transport Type
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/freights")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/freights" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-layout-text-sidebar-reverse"></i> Orders </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/freights")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/freights" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i class="bi bi-ui-checks"></i> Order Details </Link>
+                  </button>
+              </div>
+    
+          {/* <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
               <i className="bi bi-gem"></i><span>Authorised Person</span><i className="bi bi-chevron-down ms-auto"></i>
             </a>
@@ -186,18 +429,18 @@ const isLinkActive = (path) => {
                 
               </li>
             </ul>
-          </li>{/*End Icons Nav */}
+          </li> */}
+{/* 
+          <li className="nav-heading">Pages</li>
     
-          {/* <li className="nav-heading">Pages</li> */}
-    
-          {/* <li className="nav-item">
+           <li className="nav-item">
             <a className="nav-link collapsed" href="users-profile.html">
               <i className="bi bi-person"></i>
               <span>Profile</span>
             </a>
-          </li> */}
+          </li>
     
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <a className="nav-link collapsed" href="pages-faq.html">
               <i className="bi bi-question-circle"></i>
               <span>F.A.Q</span>
@@ -230,9 +473,9 @@ const isLinkActive = (path) => {
               <i className="bi bi-dash-circle"></i>
               <span>Error 404</span>
             </a>
-          </li> */}
+          </li>
     
-          {/* <li className="nav-item">
+          <li className="nav-item">
             <a className="nav-link collapsed" href="pages-blank.html">
               <i className="bi bi-file-earmark"></i>
               <span>Blank</span>

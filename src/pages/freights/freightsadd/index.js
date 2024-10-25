@@ -133,8 +133,8 @@ function Freightsadd() {
           <input defaultValue={inputs.total_amount} name="total_amount" onChange={handleChange} type="text" id="total_amount" className="form-control" required />
         </div>
       </fieldset>
-
-<button type="submit" class="btn btn-primary">Create</button>
+      
+      <button type="submit" class="btn btn-primary">Create</button>
   </form>
   </div>
 

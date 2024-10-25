@@ -75,7 +75,7 @@ function Dashboard() {
                     </div> */}
     
                     {/* <div className="card-body"> */}
-                      <h5 className="card-title">Ship<span></span></h5>
+                      <h5 className="card-title">Ship</h5>
     
                       <div className="d-flex align-items-center">
                         <div className="card-icon rounded-circle d-flex align-items-center justify-content-center">
