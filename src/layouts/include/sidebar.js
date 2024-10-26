@@ -193,7 +193,7 @@ const isLinkActive = (path) => {
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
                       <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-yin-yang"></i> Role
+                      <i className="bi bi-yin-yang"></i> Role
                       </Link>
                   </button>
               </div>
@@ -209,7 +209,7 @@ const isLinkActive = (path) => {
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
                       <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                        <i class="bi bi-person-raised-hand"></i> Users
+                        <i className="bi bi-person-raised-hand"></i> Users
                       </Link>
                   </button>
               </div>
@@ -217,15 +217,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/Staff")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-people-fill"></i> Staffs
+                      <Link to="/Staff" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i className="bi bi-people-fill"></i> Staffs
                       </Link>
                   </button>
               </div>
@@ -241,7 +241,23 @@ const isLinkActive = (path) => {
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
                       <Link to="/customer" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-bank2"></i> Company
+                      <i className="bi bi-bank2"></i> Company
+                      </Link>
+                  </button>
+              </div>
+
+              <div className="d-grid gap-2 mb-3">
+                <button
+                      onClick={activeMenu}
+                      className={`sidebar-item ${isLinkActive("/State")}`}
+                      style={{
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                        border: "none", // Optional: Remove the default border
+                        padding: "10px 20px", // Adjust padding for a better look
+                        borderRadius: "5px" // Optional: Rounded corners
+                        }}>
+                      <Link to="/State" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i className="bi bi-globe2"></i> State
                       </Link>
                   </button>
               </div>
@@ -257,24 +273,7 @@ const isLinkActive = (path) => {
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
                       <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-globe2"></i> State
-                      </Link>
-                  </button>
-              </div>
-
-
-              <div className="d-grid gap-2 mb-3">
-                <button
-                      onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
-                      style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
-                        }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-globe-asia-australia"></i> Country
+                      <i className="bi bi-globe-asia-australia"></i> Country
                       </Link>
                   </button>
               </div>
@@ -282,15 +281,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/Location")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                        <i class="bi bi-geo-alt-fill"></i> Location
+                      <Link to="/Location" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i className="bi bi-geo-alt-fill"></i> Location
                       </Link>
                   </button>
               </div>
@@ -298,15 +297,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/Warehouse")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                       <i class="bi bi-houses"></i> Warehouse
+                      <Link to="/Warehouse" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                       <i className="bi bi-houses"></i> Warehouse
                       </Link>
                   </button>
               </div>
@@ -314,15 +313,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/WarehouseBlock")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-house-add"></i> Warehouse Blocks
+                      <Link to="/WarehouseBlock" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i className="bi bi-house-add"></i> Warehouse Blocks
                       </Link>
                   </button>
               </div>
@@ -330,15 +329,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/Itemcategory")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-diagram-3"></i> Item Category
+                      <Link to="/Itemcategory" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i className="bi bi-diagram-3"></i> Item Category
                       </Link>
                   </button>
               </div>
@@ -346,15 +345,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/Item")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                        <i class="bi bi-backpack4-fill"></i> Items
+                      <Link to="/Item" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i className="bi bi-backpack4-fill"></i> Items
                       </Link>
                   </button>
               </div>
@@ -362,15 +361,15 @@ const isLinkActive = (path) => {
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
+                      className={`sidebar-item ${isLinkActive("/Transporttype")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                        <i class="bi bi-train-freight-front"></i> Transport Type
+                      <Link to="/Transporttype" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                        <i className="bi bi-train-freight-front"></i> Transport Type
                       </Link>
                   </button>
               </div>
@@ -386,22 +385,22 @@ const isLinkActive = (path) => {
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
                       <Link to="/freights" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-layout-text-sidebar-reverse"></i> Orders </Link>
+                      <i className="bi bi-layout-text-sidebar-reverse"></i> Orders </Link>
                   </button>
               </div>
 
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/freights")}`}
+                      className={`sidebar-item ${isLinkActive("/Orderdetails")}`}
                       style={{
                         boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
                         border: "none", // Optional: Remove the default border
                         padding: "10px 20px", // Adjust padding for a better look
                         borderRadius: "5px" // Optional: Rounded corners
                         }}>
-                      <Link to="/freights" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i class="bi bi-ui-checks"></i> Order Details </Link>
+                      <Link to="/Orderdetails" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i className="bi bi-ui-checks"></i> Order Details </Link>
                   </button>
               </div>
     

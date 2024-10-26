@@ -3,36 +3,36 @@ import axios from 'axios';
 import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
-function Staff() {
+function Transporttype() {
   const[data, setData]=useState([]);
   useEffect(() => {
       getDatas();
   }, []);
 
   function getDatas() {
-      axios.get(`${process.env.REACT_APP_API_URL}/Staff/`).then(function(response) {
+      axios.get(`${process.env.REACT_APP_API_URL}/Transporttype/`).then(function(response) {
           setData(response.data.data);
       });
   }
   const deleteData = (id) => {
-      axios.delete(`${process.env.REACT_APP_API_URL}/Staff/${id}`).then(function(response){
+      axios.delete(`${process.env.REACT_APP_API_URL}/Transporttype/${id}`).then(function(response){
           getDatas();
       });
   }
   return (
     <AdminLayout>
-      <div className="container mt-5">
-    <h2 className="text-center mb-4">Staff</h2>
-    <Link to={'/Staff/add'} className='btn btn-primary float-end' >Add New</Link>
-    <table className="table table-striped table-bordered">
-        <thead className="table-success">
+      <div class="container mt-5">
+    <h2 class="text-center mb-4">Transportations</h2>
+    <Link to={'/Transporttype/add'} className='btn btn-primary float-end' >Add New</Link>
+    <table class="table table-striped table-bordered table-hover">
+        <thead class="table-success">
         <tr>
             <th>SL</th>
             <th>Name</th>
-            <th>User</th>
-            <th>Title</th>
-            <th>Contact Number</th>
-            <th>Address</th>
+            <th>Type</th>
+            <th>Base Price</th>
+            <th>Per Unit Price</th>
+            <th>Average Duration</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -41,11 +41,12 @@ function Staff() {
         <tr key={d.id}>
             <td>{d.id}</td>
             <td>{d.name}</td>
-            <td>{d.title}</td>
-            <td>{d.contact_number}</td>
-            <td>{d.address}</td>
+            <td>{d.type}</td>
+            <td>{d.base_price}</td>
+            <td>{d.per_unit_price}</td>
+            <td>{d.average_duration}</td>
             <td>
-                <Link to={`/Staff/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <Link to={`/Transporttype/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
                 <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>
@@ -59,4 +60,4 @@ function Staff() {
   )
 }
 
-export default Staff
+export default Transporttype

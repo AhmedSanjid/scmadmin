@@ -4,13 +4,13 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 
-function Warehouseadd() {
-  const [inputs, setInputs] = useState({ id: '', name: '', address: '', contact_no: '', employee_id: ''});
+function Locationadd() {
+  const [inputs, setInputs] = useState({ id: '', country_id: '', state_id:'', address: ''});
     const navigate = useNavigate();
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/Location/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Warehouseadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/warehouse/edit/${inputs.id}`;
+                apiurl =`/Location/edit/${inputs.id}`;
             } else {
-                apiurl =`/warehouse/create`;
+                apiurl =`/Location/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Warehouseadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/warehouse')
+            navigate('/Location')
         }
         catch (e) {
             console.log(e);
@@ -54,13 +54,18 @@ function Warehouseadd() {
   return (
     <AdminLayout>
   
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">New Booking</h2>
+  <div className="container mt-5">
+    <h2 className="text-center mb-4">New Locations</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
-    <label forhtml="blog-date">Name</label>
-    <input defaultValue={inputs.name} name="name" onChange={handleChange} type="text" id="name" className="form-control" required />
+    <label forhtml="blog-date">Country Id</label>
+    <input defaultValue={inputs.country_id} name="country_id" onChange={handleChange} type="text" id="country_id" className="form-control" required />
+</div>
+
+<div className="form-group">
+    <label forhtml="blog-date">State Id</label>
+    <input defaultValue={inputs.state_id} name="state_id" onChange={handleChange} type="text" id="state_id" className="form-control" required />
 </div>
 
 <div className="form-group">
@@ -68,17 +73,7 @@ function Warehouseadd() {
     <input defaultValue={inputs.address} name="address" onChange={handleChange} type="text" id="address" className="form-control" required />
 </div>
 
-<div className="form-group">
-    <label forhtml="blog-date">Contact No</label>
-    <input defaultValue={inputs.contact_no} name="contact_no" onChange={handleChange} type="text" id="contact_no" className="form-control" required />
-</div>
-
-<div className="form-group">
-    <label forhtml="blog-date">Employee ID</label>
-    <input defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} type="text" id="employee_id" className="form-control" required />
-</div>
-
-<button type="submit" class="btn btn-primary">Create</button>
+<button type="submit" className="btn btn-primary">Create</button>
   </form>
   </div>
 
@@ -86,4 +81,4 @@ function Warehouseadd() {
   )
 }
 
-export default Warehouseadd
+export default Locationadd

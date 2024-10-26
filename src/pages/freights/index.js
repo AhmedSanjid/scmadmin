@@ -23,7 +23,7 @@ function Freights() {
     <AdminLayout>
   
   <div class="container mt-5">
-    <h2 class="text-center mb-4">Orders Information</h2>
+    <h2 class="text-center mb-4">Orders Info</h2>
     <Link to={'/freights/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-bordered table-striped table-hover">
       <thead class="table-success">

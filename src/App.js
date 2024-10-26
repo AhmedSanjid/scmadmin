@@ -29,10 +29,10 @@ import Johnson from './pages/Johnson';
 import UPS from './pages/UPS';
 import Admin from './pages/Admin';
 import Person from './pages/Person';
-import Staffs1 from './pages/Staffs1';
 import Dues from './pages/Dues';
 import Pay from './pages/Pay';
 import Staff from './pages/Staff';
+import Staffadd from './pages/Staff/Staffadd';
 import Vendors from './pages/Vendors';
 import Freights from './pages/freights';
 import Freightsadd from './pages/freights/freightsadd';
@@ -40,6 +40,20 @@ import Country from './pages/Country';
 import Countryadd from './pages/Country/Countryadd';
 import Customer from './pages/Customer';
 import Customeradd from './pages/Customer/Customeradd';
+import State from './pages/State';
+import Stateadd from './pages/State/Stateadd';
+import Location from './pages/Location';
+import Locationadd from './pages/Location/Locationadd';
+import WarehouseBlock from './pages/Warehouseblock';
+import WarehouseBlockadd from './pages/Warehouseblock/Warehouseblockadd';
+import Itemcategory from './pages/Itemcategory';
+import Itemcategoryadd from './pages/Itemcategory/Itemcategoryadd';
+import Item from './pages/Item';
+import Itemadd from './pages/Item/Itemadd';
+import Transporttype from './pages/Transporttype';
+import Transporttypeadd from './pages/Transporttype/Transporttypeadd';
+import Orderdetails from './pages/Orderdetails';
+import Orderdetailsadd from './pages/Orderdetails/Orderdetailsadd';
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -78,10 +92,11 @@ function App() {
           <Route path="UPS" element={<UPS />} />
           <Route path="Admin" element={<Admin />} />
           <Route path="Person" element={<Person />} />
-          <Route path="Staffs1" element={<Staffs1 />} />
           <Route path="Dues" element={<Dues />} />
           <Route path="Pay" element={<Pay />} />
           <Route path="Staff" element={<Staff />} />
+          <Route path={"/Staff/edit/:id"} element={<Staffadd />} />
+          <Route path={"/Staff/add"} element={<Staffadd />} />
           <Route path="Vendors" element={<Vendors />} />
           <Route path="Freights" element={<Freights />} />
           <Route path={"/Freights/edit/:id"} element={<Freightsadd />} />
@@ -92,6 +107,27 @@ function App() {
           <Route path="customer" element={<Customer />} />
           <Route path={"/customer/edit/:id"} element={<Customeradd />} />
           <Route path={"/customer/add"} element={<Customeradd />} />
+          <Route path="State" element={<State />} />
+          <Route path={"/State/edit/:id"} element={<Stateadd />} />
+          <Route path={"/State/add"} element={<Stateadd />} />
+          <Route path="Location" element={<Location />} />
+          <Route path={"/Location/edit/:id"} element={<Locationadd />} />
+          <Route path={"/Location/add"} element={<Locationadd />} />
+          <Route path="Warehouseblock" element={<WarehouseBlock />} />
+          <Route path={"/Warehouseblock/edit/:id"} element={<WarehouseBlockadd />} />
+          <Route path={"/Warehouseblock/add"} element={<WarehouseBlockadd />} />
+          <Route path="Itemcategory" element={<Itemcategory />} />
+          <Route path={"/Itemcategory/edit/:id"} element={<Itemcategoryadd />} />
+          <Route path={"/Itemcategory/add"} element={<Itemcategoryadd />} />
+          <Route path="Item" element={<Item />} />
+          <Route path={"/Item/edit/:id"} element={<Itemadd />} />
+          <Route path={"/Item/add"} element={<Itemadd />} />
+          <Route path="Transporttype" element={<Transporttype />} />
+          <Route path={"/Transporttype/edit/:id"} element={<Transporttypeadd />} />
+          <Route path={"/Transporttype/add"} element={<Transporttypeadd />} />
+          <Route path="Orderdetails" element={<Orderdetails />} />
+          <Route path={"/Orderdetails/edit/:id"} element={<Orderdetailsadd />} />
+          <Route path={"/Orderdetails/add"} element={<Orderdetailsadd />} />
           <Route path={"/"} element={
             <Protected isSignedIn={isSignedIn} >
               <Dashboard />

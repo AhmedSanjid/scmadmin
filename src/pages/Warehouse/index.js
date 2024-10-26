@@ -29,11 +29,9 @@ function Warehouse() {
         <tr>
             <th>SL</th>
             <th>Name</th>
-            <th>Company Name</th>
-            <th>Category</th>
-            <th>Product Details</th>
-            <th>Insurance Number</th>
-            <th>Invoice Number</th>
+            <th>address</th>
+            <th>Contact No</th>
+            <th>Employee ID</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -42,11 +40,9 @@ function Warehouse() {
         <tr key={d.id}>
             <td>{d.id}</td>
             <td>{d.name}</td>
-            <td>{d.company_name}</td>
-            <td>{d.category}</td>
-            <td>{d.product_details}</td>
-            <td>{d.insurance_number}</td>
-            <td>{d.invoice_number}</td>
+            <td>{d.address}</td>
+            <td>{d.contact_no}</td>
+            <td>{d.employee_id}</td>
             <td>
                 <Link to={`/warehouse/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>

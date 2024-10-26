@@ -4,13 +4,13 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useParams } from "react-router-dom";
 import axios from 'axios';
 
-function Warehouseadd() {
-  const [inputs, setInputs] = useState({ id: '', name: '', address: '', contact_no: '', employee_id: ''});
+function Transporttypeadd() {
+  const [inputs, setInputs] = useState({ id: '', name: '', type: '', base_price: '', per_unit_price: '', average_duration: ''});
     const navigate = useNavigate();
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/warehouse/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/Transporttype/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Warehouseadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/warehouse/edit/${inputs.id}`;
+                apiurl =`/Transporttype/edit/${inputs.id}`;
             } else {
-                apiurl =`/warehouse/create`;
+                apiurl =`/Transporttype/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Warehouseadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/warehouse')
+            navigate('/Transporttype')
         }
         catch (e) {
             console.log(e);
@@ -55,7 +55,7 @@ function Warehouseadd() {
     <AdminLayout>
   
   <div class="container mt-5">
-    <h2 class="text-center mb-4">New Booking</h2>
+    <h2 class="text-center mb-4">New Transport</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
@@ -64,18 +64,23 @@ function Warehouseadd() {
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Address</label>
-    <input defaultValue={inputs.address} name="address" onChange={handleChange} type="text" id="address" className="form-control" required />
+    <label forhtml="blog-date">Type</label>
+    <input defaultValue={inputs.type} name="type" onChange={handleChange} type="text" id="type" className="form-control" required />
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Contact No</label>
-    <input defaultValue={inputs.contact_no} name="contact_no" onChange={handleChange} type="text" id="contact_no" className="form-control" required />
+    <label forhtml="blog-date">Base Price</label>
+    <input defaultValue={inputs.base_price} name="base_price" onChange={handleChange} type="text" id="base_price" className="form-control" required />
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Employee ID</label>
-    <input defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} type="text" id="employee_id" className="form-control" required />
+    <label forhtml="blog-date">Per Unit Price</label>
+    <input defaultValue={inputs.per_unit_price} name="per_unit_price" onChange={handleChange} type="text" id="per_unit_price" className="form-control" required />
+</div>
+
+<div className="form-group">
+    <label forhtml="blog-date">Average Duration</label>
+    <input defaultValue={inputs.average_duration} name="average_duration" onChange={handleChange} type="text" id="average_duration" className="form-control" required />
 </div>
 
 <button type="submit" class="btn btn-primary">Create</button>
@@ -86,4 +91,4 @@ function Warehouseadd() {
   )
 }
 
-export default Warehouseadd
+export default Transporttypeadd
