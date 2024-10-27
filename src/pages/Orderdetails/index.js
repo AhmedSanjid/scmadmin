@@ -39,7 +39,7 @@ function Orderdetails() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.item_id}</td>
+            <td>{d.item?.name}</td>
             <td>{d.item_origin}</td>
             <td>{d.qty}</td>
             <td>{d.amount}</td>

@@ -28,7 +28,7 @@ function State() {
         <thead class="table-success">
         <tr>
             <th>SL</th>
-            <th>Country ID</th>
+            <th>Country</th>
             <th>Name</th>
             <th>Actions</th>
         </tr>
@@ -37,7 +37,7 @@ function State() {
         {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-             <td>{d.country_id}</td>
+             <td>{d.country?.name}</td>
            <td>{d.name}</td>
             <td>
                 <Link to={`/State/edit/${d.id}`} className='btn btn-secondary'>Edit</Link>

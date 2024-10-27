@@ -40,7 +40,7 @@ function Staff() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.user_id}</td>
+            <td>{d.user?.name}</td>
             <td>{d.name}</td>
             <td>{d.title}</td>
             <td>{d.contact_no}</td>

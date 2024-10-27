@@ -28,8 +28,8 @@ function Location() {
         <thead class="table-success">
         <tr>
             <th>SL</th>
-            <th>Country Id</th>
-            <th>State Id</th>
+            <th>Country</th>
+            <th>State</th>
             <th>address</th>
             <th>Actions</th>
         </tr>

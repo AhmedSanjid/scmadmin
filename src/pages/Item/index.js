@@ -38,7 +38,7 @@ function Item() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.item_category_id}</td>
+            <td>{d.item_category?.name}</td>
             <td>{d.item_name}</td>
             <td>{d.note}</td>
             <td>

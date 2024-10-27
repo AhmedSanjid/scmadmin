@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function Staffadd() {
   const [inputs, setInputs] = useState({ id: '', user_id: '', name:'', title:'', contact_no:'', address:'' });
+  const[user, setUser] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -15,10 +16,20 @@ function Staffadd() {
         });
     }
 
+    const getRelational = async () => {
+        try {
+            const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/User`);
+            setUser(userResponse.data.data);
+        } catch (error) {
+            console.error("Error fetching relational data", error);
+        }
+    };
+
     useEffect(() => {
         if (id) {
             getDatas();
         }
+        getRelational();
     }, []);
 
     const handleChange = (event) => {
@@ -58,10 +69,18 @@ function Staffadd() {
     <h2 className="text-center mb-4">New Staff</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
-<div className="form-group">
-    <label forhtml="blog-date">User ID</label>
-    <input defaultValue={inputs.user_id} name="user_id" onChange={handleChange} type="text" id="user_id" className="form-control" required />
-</div>
+    <div className="form-group row">
+<label htmlFor="fname" className=" ">User</label>
+    
+{user.length > 0 && 
+        <select className="form-control" id="user_id" name='user_id' defaultValue={inputs.user_id} onChange={handleChange}>
+            <option value="">Select User</option>
+            {user.map((d, key) =>
+                <option value={d.id}>{d.name}</option>
+            )}
+        </select>
+        }
+    </div>
 
 <div className="form-group">
     <label forhtml="blog-date">Name</label>

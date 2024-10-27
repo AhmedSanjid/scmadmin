@@ -42,12 +42,12 @@ function TableView() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.customer_id}</td>
+            <td>{d.customer?.name}</td>
             <td>{d.shipment_type}</td>
             <td>{d.pickup_location}</td>
             <td>{d.total_qty}</td>
             <td>{d.pickup_time}</td>
-            <td>{d.transport_type_id}</td>
+            <td>{d.transport_type?.name}</td>
             <td>{d.delivery_location}</td>
             <td>{d.delivery_time}</td>
             <td>{d.payment_method	}</td>

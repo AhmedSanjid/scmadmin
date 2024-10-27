@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function Orderdetailsadd() {
   const [inputs, setInputs] = useState({ id: '', item_id: '', item_origin: '', qty: '', amount: ''});
+  const[Item, setCountry] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -15,10 +16,20 @@ function Orderdetailsadd() {
         });
     }
 
+    const getRelational = async () => {
+        try {
+            const ItemResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Item`);
+            setCountry(ItemResponse.data.data);
+        } catch (error) {
+            console.error("Error fetching relational data", error);
+        }
+    };
+
     useEffect(() => {
         if (id) {
             getDatas();
         }
+        getRelational();
     }, []);
 
     const handleChange = (event) => {
@@ -58,32 +69,40 @@ function Orderdetailsadd() {
     <h2 class="text-center mb-4">New Details</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
-<div className="form-group">
-    <label forhtml="blog-date">Item</label>
-    <input defaultValue={inputs.item_id} name="item_id" onChange={handleChange} type="text" id="item_id" className="form-control" required />
-</div>
+    <div className="form-group row">
+    <label htmlFor="fname" className=" ">Country</label>
+        
+    {Item.length > 0 && 
+        <select className="form-control" id="item_id" name='item_id' defaultValue={inputs.item_id} onChange={handleChange}>
+            <option value="">Select Item</option>
+            {Item.map((d, key) =>
+                <option value={d.id}>{d.name}</option>
+            )}
+        </select>
+        }
+    </div>
 
-<div className="form-group">
-    <label forhtml="blog-date">Item Origin</label>
-    <input defaultValue={inputs.item_origin} name="item_origin" onChange={handleChange} type="text" id="item_origin" className="form-control" required />
-</div>
+    <div className="form-group">
+        <label forhtml="blog-date">Item Origin</label>
+        <input defaultValue={inputs.item_origin} name="item_origin" onChange={handleChange} type="text" id="item_origin" className="form-control" required />
+    </div>
 
-<div className="form-group">
-    <label forhtml="blog-date">Quantity</label>
-    <input defaultValue={inputs.qty} name="qty" onChange={handleChange} type="text" id="qty" className="form-control" required />
-</div>
+    <div className="form-group">
+        <label forhtml="blog-date">Quantity</label>
+        <input defaultValue={inputs.qty} name="qty" onChange={handleChange} type="text" id="qty" className="form-control" required />
+    </div>
 
-<div className="form-group">
-    <label forhtml="blog-date">Amount</label>
-    <input defaultValue={inputs.amount} name="amount" onChange={handleChange} type="text" id="amount" className="form-control" required />
-</div>
+    <div className="form-group">
+        <label forhtml="blog-date">Amount</label>
+        <input defaultValue={inputs.amount} name="amount" onChange={handleChange} type="text" id="amount" className="form-control" required />
+    </div>
 
-<button type="submit" class="btn btn-primary">Create</button>
-  </form>
-  </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+    </div>
 
     </AdminLayout>
   )
-}
+    }
 
 export default Orderdetailsadd

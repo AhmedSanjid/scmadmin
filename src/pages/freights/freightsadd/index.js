@@ -6,6 +6,8 @@ import axios from 'axios';
 
 function Freightsadd() {
   const [inputs, setInputs] = useState({ id: '', customer_id: '', total_amount: '', vat: '', payment_method: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
+  const[customer, setCustomer] = useState([]);
+  const[Transporttype, setTransportType] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -15,10 +17,22 @@ function Freightsadd() {
         });
     }
 
+    const getRelational = async () => {
+      try {
+          const customerResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Customer`);
+          const TransporttypeResponse = await axios.get(`${process.env.REACT_APP_API_URL}/TransportType`);
+          setCustomer(customerResponse.data.data);
+          setTransportType(TransporttypeResponse.data.data);
+      } catch (error) {
+          console.error("Error fetching relational data", error);
+      }
+  };
+
     useEffect(() => {
         if (id) {
             getDatas();
         }
+        getRelational();
     }, []);
 
     const handleChange = (event) => {
@@ -53,15 +67,19 @@ function Freightsadd() {
         }
   return (
     <AdminLayout>
-  
+  <form className="form form-vertical" onSubmit={handleSubmit}>
   <div class="container mt-5">
     <h2 class="text-center mb-4">New Order</h2>
-    <form className="form form-vertical" onSubmit={handleSubmit}>
-
-    <div class="col-md-6">
-            <label for="customer_id" class="form-label">Company Name</label>
-            <input defaultValue={inputs.customer_id} name="customer_id" onChange={handleChange} type="text" id="customer_id" className="form-control" required />
+       {customer.length > 0 && 
+        <select className="form-control" id="customer_id" name='customer_id' defaultValue={inputs.customer_id} onChange={handleChange}>
+            <option value="">Select Company</option>
+            {customer.map((d, key) =>
+                <option value={d.id}>{d.name}</option>
+            )}
+        </select>
+        }
     </div>
+
     <div class="col-md-6">
           <label for="shipment_type" class="form-label">Shipment Type</label>
              <select defaultValue={inputs.shipment_type} onChange={handleChange} name="shipment_type" className='form-control'> 
@@ -87,16 +105,17 @@ function Freightsadd() {
             <label for="pickup_time" class="form-label">Pickup Date/Time</label>
             <input defaultValue={inputs.pickup_time} name="pickup_time" onChange={handleChange} type="text" id="pickup_time" className="form-control" required />
           </div>
-          <div class="col-md-6">
-          <label for="total_qty" class="form-label">Transport</label>
-          <select defaultValue={inputs.transport_type_id} onChange={handleChange} name="transport_type_id" className='form-control'> 
-            <option value="">Select One</option>
-            <option value="creditCard">Air</option>
-            <option value="bankTransfer">Sailing</option>
-            <option value="creditCard">Highway</option>
-          </select>
-            </div>
-          </div>
+          <div class="container mt-5">
+       {Transporttype.length > 0 && 
+        <select className="form-control" id="transport_type_id" name='transport_type_id' defaultValue={inputs.transport_type_id} onChange={handleChange}>
+            <option value="">Select Transport</option>
+            {customer.map((d, key) =>
+                <option value={d.id}>{d.name}</option>
+            )}
+        </select>
+        }
+    </div>
+        </div>
         
         <div class="row mb-3">
           <div class="col-md-6">
@@ -136,7 +155,6 @@ function Freightsadd() {
       
       <button type="submit" class="btn btn-primary">Create</button>
   </form>
-  </div>
 
     </AdminLayout>
   )

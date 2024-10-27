@@ -6,6 +6,7 @@ import axios from 'axios';
 
 function Stateadd() {
   const [inputs, setInputs] = useState({ id: '', country_id: '', name:''});
+  const[country, setCountry] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -15,10 +16,20 @@ function Stateadd() {
         });
     }
 
+    const getRelational = async () => {
+        try {
+            const countryResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Country`);
+            setCountry(countryResponse.data.data);
+        } catch (error) {
+            console.error("Error fetching relational data", error);
+        }
+    };
+
     useEffect(() => {
         if (id) {
             getDatas();
         }
+        getRelational();
     }, []);
 
     const handleChange = (event) => {
@@ -60,9 +71,17 @@ function Stateadd() {
 
 
 
-<div className="form-group">
-    <label forhtml="blog-date">Country Id</label>
-    <input defaultValue={inputs.country_id} name="country_id" onChange={handleChange} type="text" id="country_id" className="form-control" required />
+    <div className="form-group row">
+    <label htmlFor="fname" className=" ">Country</label>
+        
+    {country.length > 0 && 
+        <select className="form-control" id="country_id" name='country_id' defaultValue={inputs.country_id} onChange={handleChange}>
+            <option value="">Select Country</option>
+            {country.map((d, key) =>
+                <option value={d.id}>{d.name}</option>
+            )}
+        </select>
+        }
 </div>
 
 <div className="form-group">
