@@ -19,8 +19,8 @@ function Locationadd() {
 
     const getRelational = async () => {
         try {
-            const countryResponse = await axios.get(`${process.env.REACT_APP_API_URL}/country`);
-            const stateResponse = await axios.get(`${process.env.REACT_APP_API_URL}/state`);
+            const countryResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Country`);
+            const stateResponse = await axios.get(`${process.env.REACT_APP_API_URL}/State`);
             setCountry(countryResponse.data.data);
             setState(stateResponse.data.data);
         } catch (error) {
@@ -31,8 +31,9 @@ function Locationadd() {
     useEffect(() => {
         if (id) {
             getDatas();
-            getRelational();
+           
         }
+        getRelational();
     }, []);
 
 
@@ -48,7 +49,7 @@ function Locationadd() {
 
         try {
             let apiurl = '';
-            if (inputs.id != '') {
+            if(inputs.id!=''){
                 apiurl =`/Location/edit/${inputs.id}`;
             } else {
                 apiurl =`/Location/create`;
@@ -73,31 +74,42 @@ function Locationadd() {
     <h2 className="text-center mb-4">New Locations</h2>
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
-<div className="form-group">
-<label for="instructor">Instructor </label>
-                                                            {country.length > 0 &&
-                                                                <select  id="country_id" className="form-control" defaultValue={inputs.country_id} name="country_id" onChange={handleChange} >
-                                                                    <option value="">Select Country</option>
-                                                                            {country.map((d, key) =>
-                                                                                <option value={d.id}>{d.name}</option>
-                                                                            )}
-                                                                </select>
-                                                            }
-</div>
+{/* <div className="form-group">
+<label for="Country">Country </label>
+{country.length > 0 &&
+                  <select  id="country_id" className="form-control" defaultValue={inputs.country_id} name="country_id" onChange={handleChange} >
+                     <option value="">Select Country</option>
+                             {country.map((d, key) =>
+                 <option value={d.id}>{d.name}</option>
+              )}
+    </select> 
+}            
+</div> */}
+
+<div className="form-group row">
+                                        <label htmlFor="fname" className=" ">Country</label>
+                                         
+                                        {country.length > 0 && 
+                                                <select className="form-control" id="country_id" name='country_id' defaultValue={inputs.country_id} onChange={handleChange}>
+                                                    <option value="">Select Country</option>
+                                                    {country.map((d, key) =>
+                                                        <option value={d.id}>{d.name}</option>
+                                                    )}
+                                                </select>
+                                            
+                                                }
+                                    </div>
 
 <div className="form-group">
-<label htmlFor="state_id">State</label>
-    {state.length > 0 ? (
-        <select id="state_id" className="form-control"
-            value={inputs.state_id} name="state_id" onChange={handleChange}>
-            <option value="">Select State</option>
-            {country.map((s) => (
-                <option key={s.id} value={s.id}>{s.name}</option>
-            ))}
-        </select>
-    ) : (
-        <p>Loading State...</p>
-    )}
+<label for="State">State </label>
+{country.length > 0 && 
+                  <select id="state_id" className="form-control" defaultValue={inputs.state_id} name="state_id" onChange={handleChange} >
+                     <option value="">Select State</option>
+                             {state.map((d, key) =>
+                 <option value={d.id}>{d.name}</option>
+              )}
+    </select>  
+}           
 </div>
 
 <div className="form-group">

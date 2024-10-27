@@ -28,8 +28,8 @@ function State() {
         <thead class="table-success">
         <tr>
             <th>SL</th>
-            <th>Name</th>
             <th>Country ID</th>
+            <th>Name</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -37,8 +37,8 @@ function State() {
         {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.name}</td>
-            <td>{d.country_id}</td>
+             <td>{d.country_id}</td>
+           <td>{d.name}</td>
             <td>
                 <Link to={`/State/edit/${d.id}`} className='btn btn-secondary'>Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>

@@ -66,9 +66,9 @@ function Freightsadd() {
           <label for="shipment_type" class="form-label">Shipment Type</label>
              <select defaultValue={inputs.shipment_type} onChange={handleChange} name="shipment_type" className='form-control'> 
               <option value="">Select One</option>
-              <option value="airfreight">Air Freight</option>
-              <option value="sea">Sailing Freight</option>
-              <option value="road">Highway Freight</option>
+              <option value="Air Freight">Air Freight</option>
+              <option value="Sailing Freight">Sailing Freight</option>
+              <option value="Highway Freight">Highway Freight</option>
               </select>
         </div>
         <fieldset class="border p-4 mb-4">
