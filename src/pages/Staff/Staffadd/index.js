@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Staffadd() {
-  const [inputs, setInputs] = useState({ id: '', name: '', title:'', contact_number:'', address:''});
+  const [inputs, setInputs] = useState({ id: '', user_id: '', name:'', title:'', contact_no:'', address:'' });
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -59,18 +59,23 @@ function Staffadd() {
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
+    <label forhtml="blog-date">User ID</label>
+    <input defaultValue={inputs.user_id} name="user_id" onChange={handleChange} type="text" id="user_id" className="form-control" required />
+</div>
+
+<div className="form-group">
     <label forhtml="blog-date">Name</label>
     <input defaultValue={inputs.name} name="name" onChange={handleChange} type="text" id="name" className="form-control" required />
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Tilte</label>
+    <label forhtml="blog-date">Title</label>
     <input defaultValue={inputs.title} name="title" onChange={handleChange} type="text" id="title" className="form-control" required />
 </div>
 
 <div className="form-group">
     <label forhtml="blog-date">Contact Number</label>
-    <input defaultValue={inputs.contact_number} name="contact_number" onChange={handleChange} type="text" id="contact_number" className="form-control" required />
+    <input defaultValue={inputs.contact_no} name="contact_no" onChange={handleChange} type="text" id="contact_no" className="form-control" required />
 </div>
 
 <div className="form-group">

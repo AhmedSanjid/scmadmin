@@ -6,6 +6,8 @@ import axios from 'axios';
 
 function Locationadd() {
   const [inputs, setInputs] = useState({ id: '', country_id: '', state_id:'', address: ''});
+  const[country, setCountry] = useState([]);
+  const[state, setState] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -15,11 +17,24 @@ function Locationadd() {
         });
     }
 
+    const getRelational = async () => {
+        try {
+            const countryResponse = await axios.get(`${process.env.REACT_APP_API_URL}/country`);
+            const stateResponse = await axios.get(`${process.env.REACT_APP_API_URL}/state`);
+            setCountry(countryResponse.data.data);
+            setState(stateResponse.data.data);
+        } catch (error) {
+            console.error("Error fetching relational data", error);
+        }
+    };
+
     useEffect(() => {
         if (id) {
             getDatas();
+            getRelational();
         }
     }, []);
+
 
     const handleChange = (event) => {
         const name = event.target.name;
@@ -59,13 +74,30 @@ function Locationadd() {
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
-    <label forhtml="blog-date">Country Id</label>
-    <input defaultValue={inputs.country_id} name="country_id" onChange={handleChange} type="text" id="country_id" className="form-control" required />
+<label for="instructor">Instructor </label>
+                                                            {country.length > 0 &&
+                                                                <select  id="country_id" className="form-control" defaultValue={inputs.country_id} name="country_id" onChange={handleChange} >
+                                                                    <option value="">Select Country</option>
+                                                                            {country.map((d, key) =>
+                                                                                <option value={d.id}>{d.name}</option>
+                                                                            )}
+                                                                </select>
+                                                            }
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">State Id</label>
-    <input defaultValue={inputs.state_id} name="state_id" onChange={handleChange} type="text" id="state_id" className="form-control" required />
+<label htmlFor="state_id">State</label>
+    {state.length > 0 ? (
+        <select id="state_id" className="form-control"
+            value={inputs.state_id} name="state_id" onChange={handleChange}>
+            <option value="">Select State</option>
+            {country.map((s) => (
+                <option key={s.id} value={s.id}>{s.name}</option>
+            ))}
+        </select>
+    ) : (
+        <p>Loading State...</p>
+    )}
 </div>
 
 <div className="form-group">
@@ -80,5 +112,6 @@ function Locationadd() {
     </AdminLayout>
   )
 }
+
 
 export default Locationadd

@@ -4,7 +4,7 @@ import AdminLayout from '../../layouts/AdminLayout';
 import { Link } from 'react-router-dom';
 
 function Location() {
-  const[data, setData]=useState([]);
+  const[data, setData] = useState([]);
   useEffect(() => {
       getDatas();
   }, []);
@@ -38,8 +38,8 @@ function Location() {
         {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.country_id}</td>
-            <td>{d.state_id}</td>
+            <td>{d.country?.name}</td>
+            <td>{d.state?.name}</td>
             <td>{d.address}</td>
             <td>
                 <Link to={`/Location/edit/${d.id}`} className='btn btn-secondary'>Edit</Link>
