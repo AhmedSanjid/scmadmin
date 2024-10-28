@@ -7,7 +7,7 @@ import axios from 'axios';
 function Freightsadd() {
   const [inputs, setInputs] = useState({ id: '', customer_id: '', total_amount: '', vat: '', payment_method: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
   const[customer, setCustomer] = useState([]);
-  const[Transporttype, setTransportType] = useState([]);
+  const[transport_type, setTransportType] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -19,8 +19,8 @@ function Freightsadd() {
 
     const getRelational = async () => {
       try {
-          const customerResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Customer`);
-          const TransporttypeResponse = await axios.get(`${process.env.REACT_APP_API_URL}/TransportType`);
+          const customerResponse = await axios.get(`${process.env.REACT_APP_API_URL}/customer`);
+          const TransporttypeResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Transporttype`);
           setCustomer(customerResponse.data.data);
           setTransportType(TransporttypeResponse.data.data);
       } catch (error) {
@@ -68,20 +68,22 @@ function Freightsadd() {
   return (
     <AdminLayout>
   <form className="form form-vertical" onSubmit={handleSubmit}>
-  <div class="container mt-5">
-    <h2 class="text-center mb-4">New Order</h2>
-       {customer.length > 0 && 
+  <div className="col-md-6 row">
+<label htmlFor="fname" className=" ">Customer</label>
+    
+    {customer.length > 0 && 
         <select className="form-control" id="customer_id" name='customer_id' defaultValue={inputs.customer_id} onChange={handleChange}>
-            <option value="">Select Company</option>
+            <option value="">Select Country</option>
             {customer.map((d, key) =>
-                <option value={d.id}>{d.name}</option>
+                <option value={d.id}>{d.company_name}</option>
             )}
         </select>
         }
     </div>
+        
 
-    <div class="col-md-6">
-          <label for="shipment_type" class="form-label">Shipment Type</label>
+    <div className="col-md-6">
+          <label for="shipment_type" className="form-label">Shipment Type</label>
              <select defaultValue={inputs.shipment_type} onChange={handleChange} name="shipment_type" className='form-control'> 
               <option value="">Select One</option>
               <option value="Air Freight">Air Freight</option>
@@ -89,27 +91,29 @@ function Freightsadd() {
               <option value="Highway Freight">Highway Freight</option>
               </select>
         </div>
-        <fieldset class="border p-4 mb-4">
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="pickup_location" class="form-label">Pickup Location</label>
+        <fieldset className="border p-4 mb-4">
+        <div className="row mb-3">
+          <div className="col-md-6">
+            <label for="pickup_location" className="form-label">Pickup Location</label>
             <input defaultValue={inputs.pickup_location} name="pickup_location" onChange={handleChange} type="text" id="pickup_location" className="form-control" required />
           </div>
-            <div class="col-md-6">
-              <label for="total_qty" class="form-label">Total Quantity</label>
+            <div className="col-md-6">
+              <label for="total_qty" className="form-label">Total Quantity</label>
               <input defaultValue={inputs.total_qty} name="total_qty" onChange={handleChange} type="text" id="total_qty" className="form-control" required />
             </div>
           </div>
-          <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="pickup_time" class="form-label">Pickup Date/Time</label>
+          <div className="row mb-3">
+          <div className="col-md-6">
+            <label for="pickup_time" className="form-label">Pickup Date/Time</label>
             <input defaultValue={inputs.pickup_time} name="pickup_time" onChange={handleChange} type="text" id="pickup_time" className="form-control" required />
           </div>
-          <div class="container mt-5">
-       {Transporttype.length > 0 && 
-        <select className="form-control" id="transport_type_id" name='transport_type_id' defaultValue={inputs.transport_type_id} onChange={handleChange}>
-            <option value="">Select Transport</option>
-            {customer.map((d, key) =>
+          <div className="col-md-6 row">
+<label htmlFor="fname" className=" ">Country</label>
+    
+{transport_type.length > 0 && 
+        <select className="form-control" id="customer_id" name='transport_type_id' defaultValue={inputs.transport_type_id} onChange={handleChange}>
+            <option value="">Select Country</option>
+            {transport_type.map((d, key) =>
                 <option value={d.id}>{d.name}</option>
             )}
         </select>
@@ -117,43 +121,43 @@ function Freightsadd() {
     </div>
         </div>
         
-        <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="delivery_location" class="form-label">Delivery Location</label>
+        <div className="row mb-3">
+          <div className="col-md-6">
+            <label for="delivery_location" className="form-label">Delivery Location</label>
             <input defaultValue={inputs.delivery_location} name="delivery_location" onChange={handleChange} type="text" id="delivery_location" className="form-control" required />
           </div>
-          <div class="col-md-6">
-            <label for="delivery_time" class="form-label">Delivery Date/Time</label>
+          <div className="col-md-6">
+            <label for="delivery_time" className="form-label">Delivery Date/Time</label>
             <input defaultValue={inputs.delivery_time} name="delivery_time" onChange={handleChange} type="text" id="delivery_time" className="form-control" required />
           </div>
         </div>
       </fieldset>
     
-        <fieldset class="border p-4 mb-4">
-        <div class="mb-3">
-          <label for="payment_method" class="form-label">Payment Method</label>
+        <fieldset className="border p-4 mb-4">
+        <div className="mb-3">
+          <label for="payment_method" className="form-label">Payment Method</label>
           <select defaultValue={inputs.payment_method} onChange={handleChange} name="payment_method" className='form-control'> 
             <option value="">Select payment method</option>
             <option value="creditCard">Credit Card</option>
             <option value="bankTransfer">Bank Transfer</option>
         </select>
         </div>
-        <div class="container mt-5">
-            <div class="mb-3">
-              <label for="vat" class="form-label text-center">VAT Percentage</label>
-              <div class="input-group col-md-6">
+        <div className="container mt-5">
+            <div className="mb-3">
+              <label for="vat" className="form-label text-center">VAT Percentage</label>
+              <div className="input-group col-md-6">
               <input defaultValue={inputs.vat} name="vat" onChange={handleChange} type="text" id="vat" className="form-control" required />
-                <span class="input-group-text">%</span>
+                <span className="input-group-text">%</span>
               </div>
             </div>
         </div>
-        <div class="mb-3">
-          <label for="total_amount" class="form-label">Total Amount</label>
+        <div className="mb-3">
+          <label for="total_amount" className="form-label">Total Amount</label>
           <input defaultValue={inputs.total_amount} name="total_amount" onChange={handleChange} type="text" id="total_amount" className="form-control" required />
         </div>
       </fieldset>
       
-      <button type="submit" class="btn btn-primary">Create</button>
+      <button type="submit" className="btn btn-primary">Create</button>
   </form>
 
     </AdminLayout>

@@ -5,23 +5,22 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 
 function DetailsView() {
-  const events = [
-    { title: 'Meeting', start: new Date() }
-  ]
+
+  const[events, setEvents]=useState([]);
   const[data, setData]=useState([]);
   useEffect(() => {
       getDatas();
   }, []);
 
   function getDatas() {
-      axios.get(`${process.env.REACT_APP_API_URL}/freights/`).then(function(response) {
-          setData(response.data.data);
-      });
+    axios.get(`${process.env.REACT_APP_API_URL}/freights/`).then(function(response) {
+      setEvents(response.data.data);
+    });
   }
   const deleteData = (id) => {
-      axios.delete(`${process.env.REACT_APP_API_URL}/freights/${id}`).then(function(response){
-          getDatas();
-      });
+    axios.delete(`${process.env.REACT_APP_API_URL}/freights/${id}`).then(function(response){
+      getDatas();
+    });
   }
   function renderEventContent(eventInfo) {
     return (
@@ -33,6 +32,7 @@ function DetailsView() {
   }
   return (
     <>
+    {events &&
       <FullCalendar
           plugins={[dayGridPlugin]}
           initialView='dayGridMonth'
@@ -40,7 +40,7 @@ function DetailsView() {
           events={events}
           eventContent={renderEventContent}
         />
-      
+    }
       {data && data.map((d, key) =>
           <tr key={d.id}>
               <td>{d.id}</td>

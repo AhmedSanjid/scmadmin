@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Customeradd() {
-  const [inputs, setInputs] = useState({ id: '', company_name: '', contact_no: '', email: '', address: ''});
+  const [inputs, setInputs] = useState({ id:'', company_name:'', contact_no: '', email:'', address:''});
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -70,7 +70,7 @@ function Customeradd() {
 
     <div class="col-md-6">
             <label for="email" class="form-label">Email</label>
-            <input defaultValue={inputs.email} name="customer_id" onChange={handleChange} type="text" id="email" className="form-control" required />
+            <input defaultValue={inputs.email} name="email" onChange={handleChange} type="text" id="email" className="form-control" required />
     </div>
 
     <div class="col-md-6">

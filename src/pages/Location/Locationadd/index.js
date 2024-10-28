@@ -101,7 +101,7 @@ function Locationadd() {
 
 <div className="form-group">
 <label for="State">State </label>
-{country.length > 0 && 
+{state.length > 0 && 
                   <select id="state_id" className="form-control" defaultValue={inputs.state_id} name="state_id" onChange={handleChange} >
                      <option value="">Select State</option>
                              {state.map((d, key) =>
