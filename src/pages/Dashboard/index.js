@@ -4,18 +4,8 @@ import AdminLayout from "../../layouts/AdminLayout";
 function Dashboard() {
     return(
         <AdminLayout>
-    
-       {/* <div className="pagetitle">
-      
-           <h1>Dashboard</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item"><a href="#">Home</a></li>
-              <li className="breadcrumb-item active">Dashboard</li>
-            </ol>
-          </nav>
-        </div> */}
-        <section className="section dashboard">
+
+<section className="section dashboard" style={{ backgroundImage: 'url("https://www.maersk.com/~/media_sc9/maersk/news/press-releases/images/2022/04/air-freight-v1_1024x576.jpg?w=877&hash=34381692A454FFFD4934B3438BD24C29")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
           <div className="row">
     
             {/*Left side columns */}
@@ -463,7 +453,6 @@ function Dashboard() {
       Shipment departed from <strong>New York</strong> en route to <a href="#" className="fw-bold text-dark">Port of Rotterdam</a>
     </div>
   </div>
-
 
   <div className="activity-item d-flex align-items-center mb-2">
     <div className="activity-label col-auto">56 min</div>
