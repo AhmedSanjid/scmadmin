@@ -18,7 +18,7 @@ function Staffadd() {
 
     const getRelational = async () => {
         try {
-            const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/User`);
+            const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/user`);
             setUser(userResponse.data.data);
         } catch (error) {
             console.error("Error fetching relational data", error);

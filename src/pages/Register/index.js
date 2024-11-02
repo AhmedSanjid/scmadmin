@@ -3,16 +3,9 @@ import AuthLayout from '../../layouts/AuthLayout';
 import { Link, useNavigate } from 'react-router-dom';
 import { register } from '../../Api/AllApi';
 
-
 function Register() {
     const [inputs, setInputs] = useState([]);
     const navigate = useNavigate();
-
-    // let signup = async(inputs) => {
-    //     await register(inputs);
-    //     navigate('/signin');
-    // }
-
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -22,7 +15,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await register(inputs);
-        navigate('/login')
+        // navigate('/login')
     }
   return (
     <AuthLayout>
