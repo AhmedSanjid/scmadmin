@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Dashboard from './pages/Dashboard';
-// import Register from './pages/Register';
-// import Login from './pages/Login';
+import Register from './pages/Register';
+import Login from './pages/Login';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import Protected from './components/protected';
 import Insurance from './pages/Insurance';
@@ -60,79 +60,79 @@ function App() {
   return (
     <BrowserRouter>
     <Routes>
-    {/* <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} /> */}
-          <Route path="Insurance" element={<Insurance />} />
-          <Route path={"/insurance/edit/:id"} element={<Insuranceadd />} />
-          <Route path={"/insurance/add"} element={<Insuranceadd />} />
-          <Route path="warehouse" element={<Warehouse />} />
-          <Route path={"/warehouse/edit/:id"} element={<Warehouseadd />} />
-          <Route path={"/warehouse/add"} element={<Warehouseadd />} />
-          <Route path={"airfreight"} element={<Airfreight />} />
-          <Route path={"/airfreight/edit/:id"} element={<Airfreightadd />} />
-          <Route path={"/airfreight/add"} element={<Airfreightadd />} />
-          <Route path="sailingfreight" element={<Sailingfreight />} />
-          <Route path={"/sailingfreight/edit/:id"} element={<Sailingfreightadd />} />
-          <Route path={"/sailingfreight/add"} element={<Sailingfreightadd />} />
-          <Route path="highwayfreight" element={<Highwayfreight />} />
-          <Route path={"/highwayfreight/edit/:id"} element={<Highwayfreightadd />} />
-          <Route path={"/highwayfreight/add"} element={<Highwayfreightadd />} />
-          <Route path="Companieslist" element={<Companieslist />} />
-          <Route path="Info" element={<Info />} />
-          <Route path="Deals" element={<Deals />} />
-          <Route path="Toyota" element={<Toyota />} />
-          <Route path="Pfizer" element={<Pfizer />} />
-          <Route path="Amazon" element={<Amazon />} />
-          <Route path="Unilever" element={<Unilever />} />
-          <Route path="Microsoft" element={<Microsoft />} />
-          <Route path="BASF" element={<BASF />} />
-          <Route path="Ford" element={<Ford />} />
-          <Route path="HSBC" element={<HSBC />} />
-          <Route path="Johnson" element={<Johnson />} />
-          <Route path="UPS" element={<UPS />} />
-          <Route path="Admin" element={<Admin />} />
-          <Route path="Person" element={<Person />} />
-          <Route path="Dues" element={<Dues />} />
-          <Route path="Pay" element={<Pay />} />
-          <Route path="Staff" element={<Staff />} />
-          <Route path={"/Staff/add"} element={<Staffadd />} />
-          <Route path={"/Staff/edit/:id"} element={<Staffadd />} />
-          <Route path="Vendors" element={<Vendors />} />
-          <Route path="Freights" element={<Freights />} />
-          <Route path={"/Freights/edit/:id"} element={<Freightsadd />} />
-          <Route path={"/Freights/add"} element={<Freightsadd />} />
-          <Route path={"Country"} element={<Country />} />
-          <Route path={"/Country/edit/:id"} element={<Countryadd />} />
-          <Route path={"/Country/add"} element={<Countryadd />} />
-          <Route path="customer" element={<Customer />} />
-          <Route path={"/customer/edit/:id"} element={<Customeradd />} />
-          <Route path={"/customer/add"} element={<Customeradd />} />
-          <Route path="State" element={<State />} />
-          <Route path={"/State/edit/:id"} element={<Stateadd />} />
-          <Route path={"/State/add"} element={<Stateadd />} />
-          <Route path="Location" element={<Location />} />
-          <Route path={"/Location/edit/:id"} element={<Locationadd />} />
-          <Route path={"/Location/add"} element={<Locationadd />} />
-          <Route path="Warehouseblock" element={<WarehouseBlock />} />
-          <Route path={"/Warehouseblock/edit/:id"} element={<WarehouseBlockadd />} />
-          <Route path={"/Warehouseblock/add"} element={<WarehouseBlockadd />} />
-          <Route path="Itemcategory" element={<Itemcategory />} />
-          <Route path={"/Itemcategory/edit/:id"} element={<Itemcategoryadd />} />
-          <Route path={"/Itemcategory/add"} element={<Itemcategoryadd />} />
-          <Route path="Item" element={<Item />} />
-          <Route path={"/Item/edit/:id"} element={<Itemadd />} />
-          <Route path={"/Item/add"} element={<Itemadd />} />
-          <Route path="Transporttype" element={<Transporttype />} />
-          <Route path={"/Transporttype/edit/:id"} element={<Transporttypeadd />} />
-          <Route path={"/Transporttype/add"} element={<Transporttypeadd />} />
-          <Route path="Orderdetails" element={<Orderdetails />} />
-          <Route path={"/Orderdetails/edit/:id"} element={<Orderdetailsadd />} />
-          <Route path={"/Orderdetails/add"} element={<Orderdetailsadd />} />
-          <Route path={"/"} element={
-            <Protected isSignedIn={isSignedIn} >
-              <Dashboard />
-            </Protected>
-          } />
+      <Route path="/register" element={<Register />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="Insurance" element={<Insurance />} />
+      <Route path={"/insurance/edit/:id"} element={<Insuranceadd />} />
+      <Route path={"/insurance/add"} element={<Insuranceadd />} />
+      <Route path="warehouse" element={<Warehouse />} />
+      <Route path={"/warehouse/edit/:id"} element={<Warehouseadd />} />
+      <Route path={"/warehouse/add"} element={<Warehouseadd />} />
+      <Route path={"airfreight"} element={<Airfreight />} />
+      <Route path={"/airfreight/edit/:id"} element={<Airfreightadd />} />
+      <Route path={"/airfreight/add"} element={<Airfreightadd />} />
+      <Route path="sailingfreight" element={<Sailingfreight />} />
+      <Route path={"/sailingfreight/edit/:id"} element={<Sailingfreightadd />} />
+      <Route path={"/sailingfreight/add"} element={<Sailingfreightadd />} />
+      <Route path="highwayfreight" element={<Highwayfreight />} />
+      <Route path={"/highwayfreight/edit/:id"} element={<Highwayfreightadd />} />
+      <Route path={"/highwayfreight/add"} element={<Highwayfreightadd />} />
+      <Route path="Companieslist" element={<Companieslist />} />
+      <Route path="Info" element={<Info />} />
+      <Route path="Deals" element={<Deals />} />
+      <Route path="Toyota" element={<Toyota />} />
+      <Route path="Pfizer" element={<Pfizer />} />
+      <Route path="Amazon" element={<Amazon />} />
+      <Route path="Unilever" element={<Unilever />} />
+      <Route path="Microsoft" element={<Microsoft />} />
+      <Route path="BASF" element={<BASF />} />
+      <Route path="Ford" element={<Ford />} />
+      <Route path="HSBC" element={<HSBC />} />
+      <Route path="Johnson" element={<Johnson />} />
+      <Route path="UPS" element={<UPS />} />
+      <Route path="Admin" element={<Admin />} />
+      <Route path="Person" element={<Person />} />
+      <Route path="Dues" element={<Dues />} />
+      <Route path="Pay" element={<Pay />} />
+      <Route path="Staff" element={<Staff />} />
+      <Route path={"/Staff/add"} element={<Staffadd />} />
+      <Route path={"/Staff/edit/:id"} element={<Staffadd />} />
+      <Route path="Vendors" element={<Vendors />} />
+      <Route path="Freights" element={<Freights />} />
+      <Route path={"/Freights/edit/:id"} element={<Freightsadd />} />
+      <Route path={"/Freights/add"} element={<Freightsadd />} />
+      <Route path={"Country"} element={<Country />} />
+      <Route path={"/Country/edit/:id"} element={<Countryadd />} />
+      <Route path={"/Country/add"} element={<Countryadd />} />
+      <Route path="customer" element={<Customer />} />
+      <Route path={"/customer/edit/:id"} element={<Customeradd />} />
+      <Route path={"/customer/add"} element={<Customeradd />} />
+      <Route path="State" element={<State />} />
+      <Route path={"/State/edit/:id"} element={<Stateadd />} />
+      <Route path={"/State/add"} element={<Stateadd />} />
+      <Route path="Location" element={<Location />} />
+      <Route path={"/Location/edit/:id"} element={<Locationadd />} />
+      <Route path={"/Location/add"} element={<Locationadd />} />
+      <Route path="Warehouseblock" element={<WarehouseBlock />} />
+      <Route path={"/Warehouseblock/edit/:id"} element={<WarehouseBlockadd />} />
+      <Route path={"/Warehouseblock/add"} element={<WarehouseBlockadd />} />
+      <Route path="Itemcategory" element={<Itemcategory />} />
+      <Route path={"/Itemcategory/edit/:id"} element={<Itemcategoryadd />} />
+      <Route path={"/Itemcategory/add"} element={<Itemcategoryadd />} />
+      <Route path="Item" element={<Item />} />
+      <Route path={"/Item/edit/:id"} element={<Itemadd />} />
+      <Route path={"/Item/add"} element={<Itemadd />} />
+      <Route path="Transporttype" element={<Transporttype />} />
+      <Route path={"/Transporttype/edit/:id"} element={<Transporttypeadd />} />
+      <Route path={"/Transporttype/add"} element={<Transporttypeadd />} />
+      <Route path="Orderdetails" element={<Orderdetails />} />
+      <Route path={"/Orderdetails/edit/:id"} element={<Orderdetailsadd />} />
+      <Route path={"/Orderdetails/add"} element={<Orderdetailsadd />} />
+      <Route path={"/"} element={
+        <Protected isSignedIn={isSignedIn} >
+          <Dashboard />
+        </Protected>
+      } />
       {/* <Route path="/" element={<Dashboard />} /> */}
     </Routes>
   </BrowserRouter>

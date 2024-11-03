@@ -6,6 +6,9 @@ import axios from 'axios';
 import { useLocation } from 'react-router-dom';
 
 function Sidebar() {
+  const logeduser=JSON.parse(localStorage.getItem("userdata"));
+  const role_id=logeduser.role_id;
+
   const activeMenu = (e) => {
     document.querySelectorAll('.submenu').forEach(
         function (e) {
@@ -17,7 +20,34 @@ function Sidebar() {
         childElement.classList.add('active');
     }
 }
-
+const nav=[
+  {
+    role:[1],
+    name:'Country',
+    link:'country',
+    icon:'bi bi-yin-yang'
+  },{
+    role:[2,1],
+    name:'User',
+    link:'user',
+    icon:'bi bi-person-raised-hand'
+  },{
+    role:[1],
+    name:'Staff',
+    link:'Staff',
+    icon:'bi bi-people-fill'
+  },{
+    role:[2],
+    name:'Customer',
+    link:'customer',
+    icon:'bi bi-bank2'
+  },{
+    role:[1],
+    name:'State',
+    link:'state',
+    icon:'bi bi-globe2'
+  }
+]
 const location = useLocation();
 const isLinkActive = (path) => {
     return location.pathname == path ? 'active':"";
@@ -36,216 +66,27 @@ const isLinkActive = (path) => {
             </Link>
           </li>
     
-          {/* <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-menu-button-wide"></i><span>Components</span><i className="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="components-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Insurance")}`}>
-                    <Link to="/Insurance" className="sidebar-link">Insurance</Link></p>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/staff")}`}>
-              <Link to="/staff" className="sidebar-link">Staff's Report</Link></p>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link">Vendor's Report</Link></p>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link">Service Providers</Link></i>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/freights")}`}>
-              <Link to="/freights" className="sidebar-link">Orders</Link></p>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Transactions</i>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Transportation Companies</i>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Warehouse Hubs</i>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>C&F Companies</i>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Renewals & Expirations</p>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Invoices</i>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Cost Insights</i>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Warehouse Stock Levels</i>
-              </li>
-              <li>
-              <i onClick={activeMenu} className={`sidebar-item ${isLinkActive("/vendors")}`}>
-              <Link to="/vendors" className="sidebar-link"></Link>Help Desk</i>
-              </li>
-            </ul>
-          </li>
-    
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#forms-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-journal-text"></i><span>Booking list</span><i className="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="forms-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Airfreight")}`}>
-              <Link to="/Airfreight" className="sidebar-link">Air Freight</Link></p>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Sailingfreight")}`}>
-              <Link to="/Sailingfreight" className="sidebar-link">Sailing Freight</Link></p>
-              </li>
-              
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Highwayfreight")}`}>
-              <Link to="/Highwayfreight" className="sidebar-link">Highway freight</Link></p>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Warehouse")}`}>
-              <Link to="/Warehouse" className="sidebar-link">Warehouse</Link></p>
-              </li>
-            </ul>
-          </li>
-    
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#tables-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-layout-text-window-reverse"></i><span>General Accounts</span><i className="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="tables-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-                
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Dues")}`}>
-              <Link to="/Dues" className="sidebar-link">Accounts Receivable</Link></p>
-              
-              </li>
-              <li>
-                
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Pay")}`}>
-              <Link to="/Pay" className="sidebar-link">Accounts Payable</Link></p>
-              
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Deals")}`}>
-              <Link to="/Deals" className="sidebar-link">Transactions Summary</Link></p>
-              </li>
-            </ul>
-          </li>
-    
-          <li className="nav-item">
-            <a className="nav-link collapsed" data-bs-target="#charts-nav" data-bs-toggle="collapse" href="#">
-              <i className="bi bi-bar-chart"></i><span>Vendors</span><i className="bi bi-chevron-down ms-auto"></i>
-            </a>
-            <ul id="charts-nav" className="nav-content collapse " data-bs-parent="#sidebar-nav">
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Info")}`}>
-              <Link to="/Info" className="sidebar-link">Established Vendors</Link></p>
-              </li>
-              <li>
-              <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/Companieslist")}`}>
-              <Link to="/Companieslist" className="sidebar-link">Vendor Representative</Link></p>
-              </li>
-            </ul>
-          </li>
-
-          <li className="nav-item">
-                <a className="nav-link collapsed" data-bs-target="#customers-nav" data-bs-toggle="collapse" href="#">
-                  <i className="bi bi-bar-chart"></i><span>Customers</span><i className="bi bi-chevron-down ms-auto"></i>
-                </a>
-                <ul id="customers-nav" className="nav-content collapse" data-bs-parent="#sidebar-nav">
-                  <li>
-                    <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/customers1")}`}>
-                      <Link to="/customers1" className="sidebar-link">Customer List 1</Link>
-                    </p>
-                  </li>
-                  <li>
-                    <p onClick={activeMenu} className={`sidebar-item ${isLinkActive("/customers2")}`}>
-                      <Link to="/customers2" className="sidebar-link">Customer List 2</Link>
-              </p>
-              </li>
-            </ul>
-        </li> */}
-        <div className="d-grid gap-2 mb-3">
-                <button
-                      onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
-                      style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
-                        }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i className="bi bi-yin-yang"></i> Role
-                      </Link>
+          {nav && nav.map((d, key) =>
+            <>
+              {d.role.find((element) => element == role_id) && 
+                <div className="d-grid gap-2 mb-3">
+                  <button onClick={activeMenu} className={`sidebar-item ${isLinkActive("/"+d.link)}`}
+                    style={{
+                      boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
+                      border: "none", // Optional: Remove the default border
+                      padding: "10px 20px", // Adjust padding for a better look
+                      borderRadius: "5px" // Optional: Rounded corners
+                      }}>
+                    <Link to={`/${d.link}`} className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
+                      <i className={`/${d.icon}`}></i> {d.name}
+                    </Link>
                   </button>
-              </div>
+                </div>
+              }
+            </>
+          )}
 
-              <div className="d-grid gap-2 mb-3">
-                <button
-                      onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/country")}`}
-                      style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
-                        }}>
-                      <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                        <i className="bi bi-person-raised-hand"></i> Users
-                      </Link>
-                  </button>
-              </div>
-
-              <div className="d-grid gap-2 mb-3">
-                <button
-                      onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/Staff")}`}
-                      style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
-                        }}>
-                      <Link to="/Staff" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i className="bi bi-people-fill"></i> Staffs
-                      </Link>
-                  </button>
-              </div>
-
-              <div className="d-grid gap-2 mb-3">
-                <button
-                      onClick={activeMenu}
-                      className={`sidebar-item ${isLinkActive("/customer")}`}
-                      style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
-                        }}>
-                      <Link to="/customer" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
-                      <i className="bi bi-bank2"></i> Company
-                      </Link>
-                  </button>
-              </div>
-
+              {/* 
               <div className="d-grid gap-2 mb-3">
                 <button
                       onClick={activeMenu}
@@ -402,7 +243,7 @@ const isLinkActive = (path) => {
                       <Link to="/Orderdetails" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-ui-checks"></i> Order Details </Link>
                   </button>
-              </div>
+              </div> */}
     
           {/* <li className="nav-item">
             <a className="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">

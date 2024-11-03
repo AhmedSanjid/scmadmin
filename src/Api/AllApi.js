@@ -11,10 +11,9 @@ const login = async (data) => {
             data: data
         });
         
-        console.log(response)
         if(response.data.data.token){
             localStorage.setItem("access_token", response.data.data.token);
-            localStorage.setItem("userdata", response.data.data.data);
+            localStorage.setItem("userdata", JSON.stringify(response.data.data.data));
             return true;
         }else{
             return false;

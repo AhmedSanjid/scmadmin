@@ -28,9 +28,9 @@ function Staff() {
         <thead className="table-success">
         <tr>
             <th>SL</th>
-            <th>User ID</th>
             <th>Name</th>
-            <th>Title</th>
+            <th>Email</th>
+            <th>Designation</th>
             <th>Contact Number</th>
             <th>Address</th>
             <th>Actions</th>
@@ -40,9 +40,9 @@ function Staff() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.user?.name}</td>
             <td>{d.name}</td>
-            <td>{d.title}</td>
+            <td>{d.user?.email}</td>
+            <td>{d.designation}</td>
             <td>{d.contact_no}</td>
             <td>{d.address}</td>
             <td>

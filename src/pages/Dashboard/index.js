@@ -5,7 +5,7 @@ function Dashboard() {
     return(
         <AdminLayout>
 
-<section className="section dashboard" style={{ backgroundImage: 'url("https://www.maersk.com/~/media_sc9/maersk/news/press-releases/images/2022/04/air-freight-v1_1024x576.jpg?w=877&hash=34381692A454FFFD4934B3438BD24C29")', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }}>
+<section className="section dashboard" >
           <div className="row">
     
             {/*Left side columns */}

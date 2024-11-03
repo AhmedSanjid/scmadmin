@@ -5,8 +5,9 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Staffadd() {
-  const [inputs, setInputs] = useState({ id: '', user_id: '', name:'', title:'', contact_no:'', address:'' });
+  const [inputs, setInputs] = useState({ id: '', user_id: '', name:'', contact_no:'', address:'',email:'',designation:'' });
   const[user, setUser] = useState([]);
+  const[roles, setroles] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -14,12 +15,13 @@ function Staffadd() {
         axios.get(`${process.env.REACT_APP_API_URL}/Staff/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
+        
     }
 
     const getRelational = async () => {
         try {
-            const userResponse = await axios.get(`${process.env.REACT_APP_API_URL}/user`);
-            setUser(userResponse.data.data);
+            const rResponse = await axios.get(`${process.env.REACT_APP_API_URL}/roles`);
+            setroles(rResponse.data.data);
         } catch (error) {
             console.error("Error fetching relational data", error);
         }
@@ -70,15 +72,15 @@ function Staffadd() {
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
     <div className="form-group row">
-<label htmlFor="fname" className=" ">User</label>
+        <label htmlFor="fname" className=" ">Role</label>
     
-{user.length > 0 && 
-        <select className="form-control" id="user_id" name='user_id' defaultValue={inputs.user_id} onChange={handleChange}>
-            <option value="">Select User</option>
-            {user.map((d, key) =>
-                <option value={d.id}>{d.name}</option>
-            )}
-        </select>
+        {roles.length > 0 && 
+            <select className="form-control" id="role_id" name='role_id' defaultValue={inputs.role_id} onChange={handleChange}>
+                <option value="">Select role</option>
+                {roles.map((d, key) =>
+                    <option value={d.id}>{d.name}</option>
+                )}
+            </select>
         }
     </div>
 
@@ -88,18 +90,26 @@ function Staffadd() {
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Title</label>
-    <input defaultValue={inputs.title} name="title" onChange={handleChange} type="text" id="title" className="form-control" required />
+    <label forhtml="blog-date">Destination</label>
+    <input defaultValue={inputs.designation} name="designation" onChange={handleChange} type="text" id="designation" className="form-control" required />
 </div>
 
 <div className="form-group">
     <label forhtml="blog-date">Contact Number</label>
     <input defaultValue={inputs.contact_no} name="contact_no" onChange={handleChange} type="text" id="contact_no" className="form-control" required />
 </div>
+<div className="form-group">
+    <label forhtml="blog-date">Email</label>
+    <input defaultValue={inputs.email} name="email" onChange={handleChange} type="text" id="email" className="form-control" required />
+</div>
 
 <div className="form-group">
     <label forhtml="blog-date">Address</label>
     <input defaultValue={inputs.address} name="address" onChange={handleChange} type="text" id="address" className="form-control" required />
+</div>
+<div className="form-group">
+    <label forhtml="blog-date">Password</label>
+    <input defaultValue={inputs.password} name="password" onChange={handleChange} type="text" id="password" className="form-control" required />
 </div>
 
 <button type="submit" className="btn btn-primary">Create</button>

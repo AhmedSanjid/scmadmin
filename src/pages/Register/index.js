@@ -29,8 +29,8 @@ function Register() {
             <div className="row">
                 <div className="col-12">
                     <div className="form-group">
-                        <label htmlFor="name_en">First Name</label>
-                        <input type="text" id="name_en" className="form-control" name="name_en" onChange={handleChange} />
+                        <label htmlFor="name">First Name</label>
+                        <input type="text" id="name" className="form-control" name="name" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="col-12">
