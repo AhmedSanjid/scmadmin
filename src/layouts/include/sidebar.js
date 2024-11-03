@@ -23,14 +23,14 @@ function Sidebar() {
 const nav=[
   {
     role:[1],
-    name:'Country',
-    link:'country',
-    icon:'bi bi-yin-yang'
-  },{
-    role:[2,1],
     name:'User',
     link:'user',
     icon:'bi bi-person-raised-hand'
+  },{
+    role:[2,1],
+    name:'Country',
+    link:'country',
+    icon:'bi bi-globe-asia-australia'
   },{
     role:[1],
     name:'Staff',
@@ -46,6 +46,51 @@ const nav=[
     name:'State',
     link:'state',
     icon:'bi bi-globe2'
+  },{
+    role:[1],
+    name:'Location',
+    link:'Location',
+    icon:'bi bi-geo-alt-fill'
+  },{
+    role:[1],
+    name:'Warehouse',
+    link:'Warehouse',
+    icon:'bi bi-houses'
+  },{
+    role:[1],
+    name:'Warehouse Block',
+    link:'WarehouseBlock',
+    icon:'bi bi-house-add'
+  },{
+    role:[1],
+    name:'Item',
+    link:'Item',
+    icon:'bi bi-backpack4-fill'
+  },{
+    role:[1],
+    name:'Item Category',
+    link:'Itemcategory',
+    icon:'bi bi-diagram-3'
+  },{
+    role:[1],
+    name:'Transport Type',
+    link:'Transporttype',
+    icon:'bi bi-train-freight-front'
+  },{
+    role:[1],
+    name:'Location',
+    link:'Location',
+    icon:'bi bi-geo-alt-fill'
+  },{
+    role:[1],
+    name:'Orders',
+    link:'freights',
+    icon:'bi bi-layout-text-sidebar-reverse'
+  },{
+    role:[1],
+    name:'Order Details',
+    link:'Orderdetails',
+    icon:'bi bi-ui-checks'
   }
 ]
 const location = useLocation();
@@ -72,10 +117,9 @@ const isLinkActive = (path) => {
                 <div className="d-grid gap-2 mb-3">
                   <button onClick={activeMenu} className={`sidebar-item ${isLinkActive("/"+d.link)}`}
                     style={{
-                      boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                      border: "none", // Optional: Remove the default border
-                      padding: "10px 20px", // Adjust padding for a better look
-                      borderRadius: "5px" // Optional: Rounded corners
+                      boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)",
+                      border: "none",
+                      borderRadius: "5px" 
                       }}>
                     <Link to={`/${d.link}`} className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className={`/${d.icon}`}></i> {d.name}
@@ -92,10 +136,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/State")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/State" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-globe2"></i> State
@@ -108,10 +152,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/country")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)",
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/country" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-globe-asia-australia"></i> Country
@@ -124,10 +168,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/Location")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/Location" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                         <i className="bi bi-geo-alt-fill"></i> Location
@@ -140,10 +184,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/Warehouse")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/Warehouse" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                        <i className="bi bi-houses"></i> Warehouse
@@ -156,10 +200,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/WarehouseBlock")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/WarehouseBlock" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-house-add"></i> Warehouse Blocks
@@ -172,10 +216,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/Itemcategory")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/Itemcategory" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-diagram-3"></i> Item Category
@@ -188,10 +232,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/Item")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/Item" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                         <i className="bi bi-backpack4-fill"></i> Items
@@ -204,10 +248,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/Transporttype")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/Transporttype" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                         <i className="bi bi-train-freight-front"></i> Transport Type
@@ -220,10 +264,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/freights")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/freights" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-layout-text-sidebar-reverse"></i> Orders </Link>
@@ -235,10 +279,10 @@ const isLinkActive = (path) => {
                       onClick={activeMenu}
                       className={`sidebar-item ${isLinkActive("/Orderdetails")}`}
                       style={{
-                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", // Creates a blurred border
-                        border: "none", // Optional: Remove the default border
-                        padding: "10px 20px", // Adjust padding for a better look
-                        borderRadius: "5px" // Optional: Rounded corners
+                        boxShadow: "0 0 10px 5px rgba(0, 0, 0, 0.2)", 
+                        border: "none", 
+                        padding: "10px 20px", 
+                        borderRadius: "5px" 
                         }}>
                       <Link to="/Orderdetails" className="sidebar-link" style={{ textDecoration: "none", color: "black" }}>
                       <i className="bi bi-ui-checks"></i> Order Details </Link>
