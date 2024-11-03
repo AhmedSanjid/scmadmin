@@ -68,7 +68,6 @@ function Freightsadd() {
   return (
     <AdminLayout>
   <form className="form form-vertical" onSubmit={handleSubmit}>
-
         
   <fieldset className="border p-4 mb-4">
     <div className="row mb-3">
