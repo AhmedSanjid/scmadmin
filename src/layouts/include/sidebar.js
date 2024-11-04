@@ -22,70 +22,75 @@ function Sidebar() {
 }
 const nav=[
   {
-    role:[1,2],
+    role:[1,2,3],
     name:'User',
     link:'user',
     icon:'bi bi-person-raised-hand'
   },{
-    role:[2,3],
-    name:'Country',
-    link:'country',
-    icon:'bi bi-globe-asia-australia'
-  },{
-    role:[1,3],
+    role:[1,2,3],
     name:'Staff',
     link:'Staff',
     icon:'bi bi-people-fill'
   },{
-    role:[2,3],
-    name:'Customer',
-    link:'customer',
-    icon:'bi bi-bank2'
-  },{
-    role:[1,9],
-    name:'State',
-    link:'state',
-    icon:'bi bi-globe2'
-  },{
-    role:[1],
-    name:'Location',
-    link:'Location',
-    icon:'bi bi-geo-alt-fill'
-  },{
-    role:[1],
+    role:[1,2,3],
     name:'Warehouse',
     link:'Warehouse',
     icon:'bi bi-houses'
   },{
-    role:[1],
+    role:[1,2,3],
     name:'Warehouse Block',
     link:'WarehouseBlock',
     icon:'bi bi-house-add'
   },{
-    role:[1],
-    name:'Item',
-    link:'Item',
-    icon:'bi bi-backpack4-fill'
+    role:[1,2,3],
+    name:'Country',
+    link:'country',
+    icon:'bi bi-globe-asia-australia'
   },{
-    role:[1],
-    name:'Item Category',
-    link:'Itemcategory',
-    icon:'bi bi-diagram-3'
+    role:[1,2,3],
+    name:'State',
+    link:'state',
+    icon:'bi bi-globe2'
   },{
-    role:[1],
+    role:[1,2,3],
+    name:'Location',
+    link:'Location',
+    icon:'bi bi-geo-alt-fill'
+  },{
+    role:[1,2,3],
+    name:'Customer',
+    link:'customer',
+    icon:'bi bi-bank2'
+  },{
+   role:[1,2,3],
     name:'Transport Type',
     link:'Transporttype',
     icon:'bi bi-train-freight-front'
   },{
-    role:[1],
+    role:[1,2,3],
     name:'Orders',
     link:'freights',
     icon:'bi bi-layout-text-sidebar-reverse'
   },{
-    role:[1],
+    role:[1,2,3],
+    name:'Item',
+    link:'Item',
+    icon:'bi bi-backpack4-fill'
+  },{
+    role:[1,2,3],
+    name:'Item Category',
+    link:'Itemcategory',
+    icon:'bi bi-diagram-3'
+  },{
+    role:[1,2,3],
     name:'Order Details',
-    link:'Orderdetails',
+    link:'orderdetails',
     icon:'bi bi-ui-checks'
+  },{
+    role:[1,2,3],
+    name:'Cargo Track',
+    link:'cargotrack',
+    icon:'bi bi-microsoft-teams'
   }
 ]
 const location = useLocation();

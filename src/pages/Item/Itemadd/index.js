@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Itemadd() {
-  const [inputs, setInputs] = useState({ id: '', item_category_id: '', item_name: '', note:''});
+  const [inputs, setInputs] = useState({ id: '', status: '', note: '', location:'', location_time: '', lat_id:'', long_id:'', recived_by:'', warehouse_id:'', warehouse_block_id:''});
   const[Itemcategory,  setItemCategory] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();

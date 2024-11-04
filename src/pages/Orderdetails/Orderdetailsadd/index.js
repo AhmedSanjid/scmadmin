@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function Orderdetailsadd() {
   const [inputs, setInputs] = useState({ id: '', item_id: '', item_origin: '', qty: '', amount: ''});
-  const[Item, setCountry] = useState([]);
+  const[Item, setItem] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -19,7 +19,7 @@ function Orderdetailsadd() {
     const getRelational = async () => {
         try {
             const ItemResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Item`);
-            setCountry(ItemResponse.data.data);
+            setItem(ItemResponse.data.data);
         } catch (error) {
             console.error("Error fetching relational data", error);
         }
@@ -45,9 +45,9 @@ function Orderdetailsadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/Orderdetails/edit/${inputs.id}`;
+                apiurl =`/orderdetails/edit/${inputs.id}`;
             } else {
-                apiurl =`/Orderdetails/create`;
+                apiurl =`/orderdetails/create`;
             }
 
             let response = await axios({
@@ -56,7 +56,7 @@ function Orderdetailsadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/Orderdetails')
+            navigate('/orderdetails')
         }
         catch (e) {
             console.log(e);
@@ -70,7 +70,7 @@ function Orderdetailsadd() {
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
     <div className="form-group row">
-    <label htmlFor="fname" className=" ">Country</label>
+    <label htmlFor="fname" className=" ">Items</label>
         
     {Item.length > 0 && 
         <select className="form-control" id="item_id" name='item_id' defaultValue={inputs.item_id} onChange={handleChange}>
