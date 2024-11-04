@@ -78,11 +78,6 @@ const nav=[
     icon:'bi bi-train-freight-front'
   },{
     role:[1],
-    name:'Location',
-    link:'Location',
-    icon:'bi bi-geo-alt-fill'
-  },{
-    role:[1],
     name:'Orders',
     link:'freights',
     icon:'bi bi-layout-text-sidebar-reverse'
@@ -102,14 +97,6 @@ const isLinkActive = (path) => {
         <aside id="sidebar" className="sidebar"img src="../assets/img/img2.png">
     
         <ul className="sidebar-nav" id="sidebar-nav">
-    
-          <li className="nav-item">
-            <Link className="nav-link " to="/">
-              <i className="bi bi-grid"></i>
-              
-              <span>Dashboard</span>
-            </Link>
-          </li>
     
           {nav && nav.map((d, key) =>
             <>
