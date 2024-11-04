@@ -54,8 +54,7 @@ import Transporttype from './pages/Transporttype';
 import Transporttypeadd from './pages/Transporttype/Transporttypeadd';
 import Orderdetails from './pages/Orderdetails';
 import Orderdetailsadd from './pages/Orderdetails/Orderdetailsadd';
-import User from './pages/User';
-import Useradd from './pages/User/useradd';
+
 
 function App() {
   const isSignedIn = localStorage.getItem("access_token") || false;
@@ -130,9 +129,6 @@ function App() {
       <Route path="Orderdetails" element={<Orderdetails />} />
       <Route path={"/Orderdetails/edit/:id"} element={<Orderdetailsadd />} />
       <Route path={"/Orderdetails/add"} element={<Orderdetailsadd />} />
-      <Route path="User" element={<User />} />
-      <Route path={"/User/edit/:id"} element={<Useradd />} />
-      <Route path={"/User/add"} element={<Useradd />} />
       <Route path={"/"} element={
         <Protected isSignedIn={isSignedIn} >
           <Dashboard />

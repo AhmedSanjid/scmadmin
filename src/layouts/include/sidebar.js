@@ -22,27 +22,27 @@ function Sidebar() {
 }
 const nav=[
   {
-    role:[1],
+    role:[1,2],
     name:'User',
     link:'user',
     icon:'bi bi-person-raised-hand'
   },{
-    role:[2,1],
+    role:[2,3],
     name:'Country',
     link:'country',
     icon:'bi bi-globe-asia-australia'
   },{
-    role:[1],
+    role:[1,3],
     name:'Staff',
     link:'Staff',
     icon:'bi bi-people-fill'
   },{
-    role:[2],
+    role:[2,3],
     name:'Customer',
     link:'customer',
     icon:'bi bi-bank2'
   },{
-    role:[1],
+    role:[1,9],
     name:'State',
     link:'state',
     icon:'bi bi-globe2'
