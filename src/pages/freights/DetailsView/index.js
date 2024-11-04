@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import timeGridPlugin from '@fullcalendar/timegrid'
+import interactionPlugin from '@fullcalendar/interaction'
 
 function DetailsView() {
 
@@ -13,8 +15,24 @@ function DetailsView() {
   }, []);
 
   function getDatas() {
+    let caldata=[];
     axios.get(`${process.env.REACT_APP_API_URL}/freights/`).then(function(response) {
-      setEvents(response.data.data);
+      if(response.data.data){
+        response.data.data.forEach(element => {
+          let nobj={
+            "id":element.id,
+            "title":element.customer?.company_name,
+            "company_name":element.customer?.company_name,
+            "delivery_location":element.delivery_location,
+            "pickup_location":element.pickup_location,
+            "start":element.pickup_time,
+            "end":element.delivery_time
+          }
+          caldata.push(nobj);
+        });
+      }
+      
+      setEvents(caldata);
     });
   }
   const deleteData = (id) => {
@@ -25,8 +43,9 @@ function DetailsView() {
   function renderEventContent(eventInfo) {
     return (
       <>
-        <b>{eventInfo.timeText}</b>
-        <i>{eventInfo.event.title}</i>
+        <b>{eventInfo.event?._def?.extendedProps?.company_name}</b><br/>
+        <i><b>Pickup:</b> {eventInfo.event?._def?.extendedProps?.pickup_location}</i><br/>
+        <i><b>Delivery:</b> {eventInfo.event?._def?.extendedProps?.delivery_location}</i>
       </>
     )
   }
@@ -34,36 +53,24 @@ function DetailsView() {
     <>
     {events &&
       <FullCalendar
-          plugins={[dayGridPlugin]}
+          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
+          headerToolbar={{
+            left: 'prev,next today',
+            center: 'title',
+            right: 'dayGridMonth,timeGridWeek,timeGridDay'
+          }}
           initialView='dayGridMonth'
-          weekends={false}
+          editable={true}
+          selectable={true}
+          selectMirror={true}
+          dayMaxEvents={true}
           events={events}
           eventContent={renderEventContent}
         />
     }
-      {data && data.map((d, key) =>
-          <tr key={d.id}>
-              <td>{d.id}</td>
-              <td>{d.customer_id}</td>
-              <td>{d.shipment_type}</td>
-              <td>{d.pickup_location}</td>
-              <td>{d.total_qty}</td>
-              <td>{d.pickup_time}</td>
-              <td>{d.transport_type_id}</td>
-              <td>{d.delivery_location}</td>
-              <td>{d.delivery_time}</td>
-              <td>{d.payment_method	}</td>
-              <td>{d.vat}</td>
-              <td>{d.total_amount}</td>
-              <td>
-                  <Link to={`/freights/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
-                  <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
-                  <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
-              </td>
-          </tr>
-      )}
     </>
   )
 }
 
 export default DetailsView
+
