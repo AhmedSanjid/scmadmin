@@ -86,18 +86,18 @@ function Locationadd() {
 }            
 </div> */}
 
-<div className="form-group row">
-<label htmlFor="fname" className=" ">Country</label>
-    
-{country.length > 0 && 
-        <select className="form-control" id="country_id" name='country_id' defaultValue={inputs.country_id} onChange={handleChange}>
-            <option value="">Select Country</option>
-            {country.map((d, key) =>
-                <option value={d.id}>{d.name}</option>
-            )}
-        </select>
-        }
-    </div>
+    <div className="form-group row">
+    <label htmlFor="fname" className=" ">Country</label>
+        
+    {country.length > 0 && 
+            <select className="form-control" id="country_id" name='country_id' defaultValue={inputs.country_id} onChange={handleChange}>
+                <option value="">Select Country</option>
+                {country.map((d, key) =>
+                    <option value={d.id}>{d.name}</option>
+                )}
+            </select>
+            }
+        </div>
 
 <div className="form-group">
 <label for="State">State </label>

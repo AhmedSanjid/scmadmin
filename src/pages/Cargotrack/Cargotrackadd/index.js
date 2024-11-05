@@ -6,6 +6,8 @@ import axios from 'axios';
 
 function Cargotrackadd() {
   const [inputs, setInputs] = useState({ id: '', status: '', note: '', location:'', location_time:'', lat_id:'', long_id:'', recived_by:'', warehouse_id:'', warehouse_block_id:''});
+  const[warehouse, setWarehouse] = useState([]);
+  const[warehouseblock, setWarehouseBlock_] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -15,10 +17,22 @@ function Cargotrackadd() {
         });
     }
 
+    const getRelational = async () => {
+        try {
+            const warehouseResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Warehouse`);
+            const warehouseblockResponse = await axios.get(`${process.env.REACT_APP_API_URL}/WarehouseBlock`);
+            setWarehouse(warehouseResponse.data.data);
+            setWarehouseBlock_(warehouseblockResponse.data.data);
+        } catch (error) {
+            console.error("Error fetching relational data", error);
+        }
+    };
+
     useEffect(() => {
         if (id) {
             getDatas();
         }
+        getRelational();
     }, []);
 
     const handleChange = (event) => {
@@ -93,15 +107,29 @@ function Cargotrackadd() {
     <input defaultValue={inputs.recived_by} name="recived_by" onChange={handleChange} type="text" id="recived_by" className="form-control" required />
 </div>
 
-<div className="form-group">
-    <label forhtml="blog-date">Warehouse</label>
-    <input defaultValue={inputs.warehouse_id} name="warehouse_id" onChange={handleChange} type="text" id="warehouse_id" className="form-control" required />
-</div>
+    <div className="form-group row">
+            <label htmlFor="fname" className=" ">Warehouse</label>  
+                {warehouse.length > 0 && 
+                    <select className="form-control" id="warehouse_id" name='warehouse_id' defaultValue={inputs.warehouse_id} onChange={handleChange}>
+                        <option value="">Warehouse</option>
+                        {warehouse.map((d, key) =>
+                        <option value={d.id}>{d.name}</option>
+                        )}
+                    </select>
+                }
+        </div>
 
-<div className="form-group">
-    <label forhtml="blog-date">Warehouse Block</label>
-    <input defaultValue={inputs.warehouse_block_id} name="warehouse_block_id" onChange={handleChange} type="text" id="warehouse_block_id" className="form-control" required />
-</div>
+        <div className="form-group row">
+            <label htmlFor="fname" className=" ">Warehouse Block</label>    
+            {warehouseblock.length > 0 && 
+                    <select className="form-control" id="warehouse_block_id" name='warehouse_block_id' defaultValue={inputs.warehouse_block_id} onChange={handleChange}>
+                        <option value="">Warehouse Block</option>
+                            {warehouseblock.map((d, key) =>
+                                <option value={d.id}>{d.name}</option>
+                            )}
+                    </select>
+                    }
+        </div>
 
 <button type="submit" class="btn btn-primary">Create</button>
   </form>

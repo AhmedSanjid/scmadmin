@@ -51,8 +51,8 @@ function Cargotrack() {
             <td>{d.lat_id}</td>
             <td>{d.long_id}</td>
             <td>{d.recived_by}</td>
-            <td>{d.warehouse_id}</td>
-            <td>{d.warehouse_block_id}</td>
+            <td>{d.warehouse?.name}</td>
+            <td>{d.WarehouseBlock?.name}</td>
             <td>{d.note}</td>
             <td>
                 <Link to={`/cargotrack/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
