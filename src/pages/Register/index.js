@@ -52,6 +52,13 @@ function Register() {
                     </div>
                 </div>
 
+                <div className="col-12">
+                    <div className="form-group">
+                        <label htmlFor="password">Confirm Password</label>
+                        <input type="text" id="password" className="form-control" name="c_password" onChange={handleChange} />
+                    </div>
+                </div>
+
             </div>
             <Link to="/login">Have an account? Login</Link>
             <div className="clearfix">
