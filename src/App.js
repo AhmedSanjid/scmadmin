@@ -52,8 +52,6 @@ import Item from './pages/Item';
 import Itemadd from './pages/Item/Itemadd';
 import Transporttype from './pages/Transporttype';
 import Transporttypeadd from './pages/Transporttype/Transporttypeadd';
-import Orderdetails from './pages/Orderdetails';
-import Orderdetailsadd from './pages/Orderdetails/Orderdetailsadd';
 import Cargotrack from './pages/Cargotrack';
 import Cargotrackadd from './pages/Cargotrack/Cargotrackadd';
 
@@ -128,9 +126,6 @@ function App() {
       <Route path="Transporttype" element={<Transporttype />} />
       <Route path={"/Transporttype/edit/:id"} element={<Transporttypeadd />} />
       <Route path={"/Transporttype/add"} element={<Transporttypeadd />} />
-      <Route path="orderdetails" element={<Orderdetails />} />
-      <Route path={"/orderdetails/edit/:id"} element={<Orderdetailsadd />} />
-      <Route path={"/orderdetails/add"} element={<Orderdetailsadd />} />
       <Route path="Cargotrack" element={<Cargotrack />} />
       <Route path={"/Cargotrack/edit/:id"} element={<Cargotrackadd />} />
       <Route path={"/Cargotrack/add"} element={<Cargotrackadd />} />
