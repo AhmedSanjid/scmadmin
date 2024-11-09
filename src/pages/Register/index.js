@@ -15,7 +15,7 @@ function Register() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         await register(inputs);
-        // navigate('/login')
+        navigate('/login')
     }
   return (
     <AuthLayout>
@@ -42,7 +42,7 @@ function Register() {
                 <div className="col-12">
                     <div className="form-group">
                         <label htmlFor="contact_no_en">Contact Number</label>
-                        <input type="text" id="contact_no_en" className="form-control" name="contact_no_en" onChange={handleChange} />
+                        <input type="text" id="contact_no" className="form-control" name="contact_no" onChange={handleChange} />
                     </div>
                 </div>
                 <div className="col-12">

@@ -109,7 +109,7 @@ function Freightsadd() {
     <div className="row mb-3">
         <div className="col-md-6">
             <label htmlFor="pickup_time" className="form-label">Pickup Date/Time</label>
-            <input defaultValue={inputs.pickup_time} name="pickup_time" onChange={handleChange} type="text" id="pickup_time" className="form-control" required />
+            <input defaultValue={inputs.pickup_time} name="pickup_time" onChange={handleChange} type="datetime-local" id="pickup_time" className="form-control" required />
         </div>
 
         <div className="col-md-6">
@@ -133,7 +133,7 @@ function Freightsadd() {
 
         <div className="col-md-6">
             <label htmlFor="delivery_time" className="form-label">Delivery Date/Time</label>
-            <input defaultValue={inputs.delivery_time} name="delivery_time" onChange={handleChange} type="text" id="delivery_time" className="form-control" required />
+            <input defaultValue={inputs.delivery_time} name="delivery_time" onChange={handleChange} type="datetime-local" id="delivery_time" className="form-control" required />
         </div>
     </div>
 </fieldset>
