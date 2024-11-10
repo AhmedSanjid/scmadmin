@@ -32,15 +32,8 @@ const isLinkActive = (path) => {
         <img src="assets/img/logo.png" alt=""/>
         <span className="d-none d-lg-block">ThiKana</span>
       </Link>
-      {/* <i className="bi bi-list toggle-sidebar-btn"></i> */}
-    </div>{/*End Logo */}
+    </div>
 
-    {/* <div className="search-bar">
-      <form className="search-form d-flex align-items-center" method="POST" action="#">
-        <input type="text" name="query" placeholder="Search" title="Enter search keyword"/>
-        <button type="submit" title="Search"><i className="bi bi-search"></i></button>
-      </form>
-    </div> */}
 
     <nav className="header-nav ms-auto">
       <ul className="d-flex align-items-center">
@@ -49,14 +42,14 @@ const isLinkActive = (path) => {
           <a className="nav-link nav-icon search-bar-toggle " href="#">
             <i className="bi bi-search"></i>
           </a>
-        </li>{/*End Search Icon*/}
+        </li>
 
         <li className="nav-item dropdown">
 
           <a className="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i className="bi bi-bell"></i>
             <span className="badge bg-dark badge-number">4</span>
-          </a>{/*End Notification Icon */}
+          </a>
 
           <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li className="dropdown-header">
@@ -122,16 +115,16 @@ const isLinkActive = (path) => {
               <a href="#">Show all notifications</a>
             </li>
 
-          </ul>{/*End Notification Dropdown Items */}
+          </ul>
 
-        </li>{/*End Notification Nav */}
+        </li>
 
         <li className="nav-item dropdown">
 
           <a className="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i className="bi bi-chat-left-text"></i>
             <span className="badge bg-dark badge-number">3</span>
-          </a>{/*End Messages Icon */}
+          </a>
 
           <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li className="dropdown-header">
@@ -188,16 +181,16 @@ const isLinkActive = (path) => {
               <a href="#">Show all messages</a>
             </li>
 
-          </ul>{/*End Messages Dropdown Items */}
+          </ul>
 
-        </li>{/*End Messages Nav */}
+        </li>
 
         <li className="nav-item dropdown pe-3">
 
           <a className="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="assets/img/profile-img.jpg" alt="Profile" className="rounded-circle"/>
             <span className="d-none d-md-block dropdown-toggle ps-2">Admin</span>
-          </a>{/*End Profile Iamge Icon */}
+          </a>
 
           <ul className="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li className="dropdown-header">
@@ -238,28 +231,12 @@ const isLinkActive = (path) => {
               <hr className="dropdown-divider"/>
             </li>
 
-            {/* <li>
-              <a className="dropdown-item d-flex align-items-center" href="#">
-                <i className="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
-            </li> */}
-
             <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/login")}`}>
               <Link to="/login" className="sidebar-link dropdown-item d-flex align-items-center" onClick={handelLogout}>
                 <i className="bi bi-box-arrow-right"></i>
                 <span>Sign Out</span>
               </Link>
             </li>
-
-            {/* <li onClick={activeMenu} className={`sidebar-item ${isLinkActive("/login")}`}>
-              <Link to="/login" className="sidebar-link" onClick={handelLogout}>
-                <i data-feather="home" width="20"></i>
-                <span>Log out</span>
-              </Link>
-            </li> */}
-
-
           </ul>
         </li>
 

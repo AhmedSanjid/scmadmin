@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Freightsadd() {
-  const [inputs, setInputs] = useState({ id: '', customer_id: '', total_amount: '', vat: '', payment_method: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
+  const [inputs, setInputs] = useState({ id: '', customer_id: '', payment_method: '', address:'', item:'', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
   const[customer, setCustomer] = useState([]);
   const[transport_type, setTransportType] = useState([]);
     const navigate = useNavigate();
@@ -153,18 +153,17 @@ function Freightsadd() {
 
     <div className="row mb-3">
         <div className="col-md-6">
-            <label htmlFor="vat" className="form-label">VAT Percentage</label>
+            <label htmlFor="Item" className="form-label">Item</label>
             <div className="input-group">
-                <input defaultValue={inputs.vat} name="vat" onChange={handleChange} type="text" id="vat" className="form-control" required />
-                <span className="input-group-text">%</span>
+                <input defaultValue={inputs.Item} name="Item" onChange={handleChange} type="text" id="Item" className="form-control" required />
             </div>
         </div>
     </div>
 
     <div className="row mb-3">
         <div className="col-md-6">
-            <label htmlFor="total_amount" className="form-label">Total Amount</label>
-            <input defaultValue={inputs.total_amount} name="total_amount" onChange={handleChange} type="text" id="total_amount" className="form-control" required />
+            <label htmlFor="address" className="form-label">Address</label>
+            <input defaultValue={inputs.address} name="address" onChange={handleChange} type="text" id="address" className="form-control" required />
         </div>
     </div>
 </fieldset>
