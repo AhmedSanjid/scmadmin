@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Freightsadd() {
-  const [inputs, setInputs] = useState({ id: '', customer_id: '', total_amount: '', vat: '', payment_method: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
+  const [inputs, setInputs] = useState({ id: '', customer_id: '', contact_no: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
   const[customer, setCustomer] = useState([]);
   const[transport_type, setTransportType] = useState([]);
     const navigate = useNavigate();
@@ -140,16 +140,6 @@ function Freightsadd() {
 
     
 <fieldset className="border p-4 mb-4">
-    <div className="row mb-3">
-        <div className="col-md-6">
-            <label htmlFor="payment_method" className="form-label">Payment Method</label>
-            <select defaultValue={inputs.payment_method} onChange={handleChange} name="payment_method" className="form-control"> 
-                <option value="">Select payment method</option>
-                <option value="creditCard">Credit Card</option>
-                <option value="bankTransfer">Bank Transfer</option>
-            </select>
-        </div>
-    </div>
 
     <div className="row mb-3">
         <div className="col-md-6">
