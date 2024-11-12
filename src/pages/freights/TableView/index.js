@@ -26,15 +26,13 @@ function TableView() {
           <th>SL</th>
           <th>Company Name</th>
           <th>Shipment Type</th>
+          <th>Item</th>
           <th>Pickup Location</th>
           <th>Total Quantity</th>
           <th>Pickup Date/Time</th>
           <th>Transport</th>
           <th>Delivery Location</th>
           <th>Delivery Date/Time</th>
-          <th>Payment Method</th>
-          <th>VAT Percentage</th>
-          <th>Total Amount</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -42,17 +40,15 @@ function TableView() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.customer?.name}</td>
+            <td>{d.customer?.company_name}</td>
             <td>{d.shipment_type}</td>
+            <td>{d.item}</td>
             <td>{d.pickup_location}</td>
             <td>{d.total_qty}</td>
             <td>{d.pickup_time}</td>
-            <td>{d.transport_type?.name}</td>
+            <td>{d.transporttype?.name}</td>
             <td>{d.delivery_location}</td>
             <td>{d.delivery_time}</td>
-            <td>{d.payment_method	}</td>
-            <td>{d.vat}</td>
-            <td>{d.total_amount}</td>
             <td>
                 <Link to={`/freights/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
