@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Freightsadd() {
-  const [inputs, setInputs] = useState({ id: '', customer_id: '', contact_no: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
+  const [inppage editeduts, setInputs] = useState({ id: '', customer_id: '', contact_no: '', shipment_type: '', pickup_time: '', delivery_time: '', total_qty: '', pickup_location: '', delivery_location: '', transport_type_id: ''});
   const[customer, setCustomer] = useState([]);
   const[transport_type, setTransportType] = useState([]);
     const navigate = useNavigate();
