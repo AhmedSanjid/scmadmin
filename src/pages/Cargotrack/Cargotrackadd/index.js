@@ -5,9 +5,9 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 
 function Cargotrackadd() {
-  const [inputs, setInputs] = useState({ id: '', status: '', note: '', location:'', location_time:'', lat_id:'', long_id:'', recived_by:'', warehouse_id:'', warehouse_block_id:''});
+  const [inputs, setInputs] = useState({ id: '', order_id:'', status: '', note: '', location:'', location_time:'', lat_id:'', long_id:'', recived_by:'', warehouse_id:'', warehouse_block_id:''});
   const[warehouse, setWarehouse] = useState([]);
-  const[warehouseblock, setWarehouseBlock_] = useState([]);
+  const[warehouse_block, setWarehouseBlock] = useState([]);
     const navigate = useNavigate();
     const { id } = useParams();
 
@@ -19,10 +19,10 @@ function Cargotrackadd() {
 
     const getRelational = async () => {
         try {
-            const warehouseResponse = await axios.get(`${process.env.REACT_APP_API_URL}/Warehouse`);
-            const warehouseblockResponse = await axios.get(`${process.env.REACT_APP_API_URL}/WarehouseBlock`);
+            const warehouseResponse = await axios.get(`${process.env.REACT_APP_API_URL}/warehouse`);
+            const warehouseblockResponse = await axios.get(`${process.env.REACT_APP_API_URL}/warehouseblock`);
             setWarehouse(warehouseResponse.data.data);
-            setWarehouseBlock_(warehouseblockResponse.data.data);
+            setWarehouseBlock(warehouseblockResponse.data.data);
         } catch (error) {
             console.error("Error fetching relational data", error);
         }
@@ -73,13 +73,8 @@ function Cargotrackadd() {
     <form className="form form-vertical" onSubmit={handleSubmit}>
 
 <div className="form-group">
-    <label forhtml="blog-date">Status</label>
-    <input defaultValue={inputs.status} name="status" onChange={handleChange} type="text" id="status" className="form-control" required />
-</div>
-
-<div className="form-group">
-    <label forhtml="blog-date">Note</label>
-    <input defaultValue={inputs.note} name="note" onChange={handleChange} type="text" id="note" className="form-control" required />
+    <label forhtml="blog-date">Order Number</label>
+    <input defaultValue={inputs.order_id} name="order_id" onChange={handleChange} type="text" id="order_id" className="form-control" required />
 </div>
 
 <div className="form-group">
@@ -89,17 +84,7 @@ function Cargotrackadd() {
 
 <div className="form-group">
     <label forhtml="blog-date">Date/Time</label>
-    <input defaultValue={inputs.location_time} name="location_time" onChange={handleChange} type="text" id="location_time" className="form-control" required />
-</div>
-
-<div className="form-group">
-    <label forhtml="blog-date">Latitude</label>
-    <input defaultValue={inputs.lat_id} name="lat_id" onChange={handleChange} type="text" id="lat_id" className="form-control" required />
-</div>
-
-<div className="form-group">
-    <label forhtml="blog-date">Longitude </label>
-    <input defaultValue={inputs.long_id} name="long_id" onChange={handleChange} type="text" id="long_id" className="form-control" required />
+    <input defaultValue={inputs.location_time} name="location_time" onChange={handleChange} type="date" id="location_time" className="form-control" required />
 </div>
 
 <div className="form-group">
@@ -107,7 +92,7 @@ function Cargotrackadd() {
     <input defaultValue={inputs.recived_by} name="recived_by" onChange={handleChange} type="text" id="recived_by" className="form-control" required />
 </div>
 
-    <div className="form-group row">
+<div className="form-group row">
             <label htmlFor="fname" className=" ">Warehouse</label>  
                 {warehouse.length > 0 && 
                     <select className="form-control" id="warehouse_id" name='warehouse_id' defaultValue={inputs.warehouse_id} onChange={handleChange}>
@@ -121,15 +106,35 @@ function Cargotrackadd() {
 
         <div className="form-group row">
             <label htmlFor="fname" className=" ">Warehouse Block</label>    
-            {warehouseblock.length > 0 && 
+            {warehouse_block.length > 0 && 
                     <select className="form-control" id="warehouse_block_id" name='warehouse_block_id' defaultValue={inputs.warehouse_block_id} onChange={handleChange}>
                         <option value="">Warehouse Block</option>
-                            {warehouseblock.map((d, key) =>
+                            {warehouse_block.map((d, key) =>
                                 <option value={d.id}>{d.name}</option>
                             )}
                     </select>
                     }
         </div>
+
+<div className="form-group">
+    <label forhtml="blog-date">Status</label>
+    <input defaultValue={inputs.status} name="status" onChange={handleChange} type="text" id="status" className="form-control" required />
+</div>
+
+<div className="form-group">
+    <label forhtml="blog-date">Note</label>
+    <input defaultValue={inputs.note} name="note" onChange={handleChange} type="text" id="note" className="form-control" required />
+</div>
+
+<div className="form-group">
+    <label forhtml="blog-date">Latitude</label>
+    <input defaultValue={inputs.lat_id} name="lat_id" onChange={handleChange} type="text" id="lat_id" className="form-control" required />
+</div>
+
+<div className="form-group">
+    <label forhtml="blog-date">Longitude </label>
+    <input defaultValue={inputs.long_id} name="long_id" onChange={handleChange} type="text" id="long_id" className="form-control" required />
+</div>
 
 <button type="submit" class="btn btn-primary">Create</button>
   </form>

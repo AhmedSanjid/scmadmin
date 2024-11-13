@@ -28,15 +28,16 @@ function Cargotrack() {
         <thead class="table-success">
         <tr>
             <th>SL</th>
-            <th>Status</th>
-            <th>Note</th>
+            <th>Order Number</th>
             <th>Location</th>
-            <th>Date/Time</th>
-            <th>Latitude</th>
-            <th>Longitude</th>
-            <th>Reciver</th>
+            <th>Receiving Time</th>
+            <th>Receiver</th>
             <th>Warehouse</th>
             <th>Warehouse Block</th>
+            <th>Note</th>
+            <th>Status</th>
+            <th>Lat.No</th>
+            <th>Long.No</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -44,16 +45,16 @@ function Cargotrack() {
     {data && data.map((d, key) =>
         <tr key={d.id}>
             <td>{d.id}</td>
-            <td>{d.status}</td>
-            <td>{d.note}</td>
+            <td>{d.order_id}</td>
             <td>{d.location}</td>
             <td>{d.location_time}</td>
-            <td>{d.lat_id}</td>
-            <td>{d.long_id}</td>
             <td>{d.recived_by}</td>
             <td>{d.warehouse?.name}</td>
-            <td>{d.WarehouseBlock?.name}</td>
+            <td>{d.warehouse_block?.name}</td>
             <td>{d.note}</td>
+            <td>{d.status}</td>
+            <td>{d.lat_id}</td>
+            <td>{d.long_id}</td>
             <td>
                 <Link to={`/cargotrack/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>

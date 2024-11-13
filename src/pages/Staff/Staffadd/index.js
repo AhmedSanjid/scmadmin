@@ -90,7 +90,7 @@ function Staffadd() {
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Destination</label>
+    <label forhtml="blog-date">Designation</label>
     <input defaultValue={inputs.designation} name="designation" onChange={handleChange} type="text" id="designation" className="form-control" required />
 </div>
 
