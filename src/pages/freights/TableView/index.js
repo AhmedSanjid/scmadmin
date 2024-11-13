@@ -26,6 +26,7 @@ function TableView() {
           <th>SL</th>
           <th>Company Name</th>
           <th>Shipment Type</th>
+          <th>Item</th>
           <th>Pickup Location</th>
           <th>Total Quantity</th>
           <th>Pickup Date/Time</th>
@@ -41,6 +42,7 @@ function TableView() {
             <td>{d.id}</td>
             <td>{d.customer?.company_name}</td>
             <td>{d.shipment_type}</td>
+            <td>{d.item}</td>
             <td>{d.pickup_location}</td>
             <td>{d.total_qty}</td>
             <td>{d.pickup_time}</td>

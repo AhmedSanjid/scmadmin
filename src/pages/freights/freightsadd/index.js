@@ -26,7 +26,7 @@ function Freightsadd() {
       } catch (error) {
           console.error("Error fetching relational data", error);
       }
-  };
+    };
 
     useEffect(() => {
         if (id) {
@@ -138,14 +138,14 @@ function Freightsadd() {
     </div>
 </fieldset>
 
-    
+
 <fieldset className="border p-4 mb-4">
 
     <div className="row mb-3">
         <div className="col-md-6">
             <label htmlFor="Item" className="form-label">Item</label>
             <div className="input-group">
-                <input defaultValue={inputs.Item} name="Item" onChange={handleChange} type="text" id="Item" className="form-control" required />
+                <input defaultValue={inputs.item} name="item" onChange={handleChange} type="text" id="item" className="form-control" required />
             </div>
         </div>
     </div>
@@ -157,7 +157,6 @@ function Freightsadd() {
         </div>
     </div>
 </fieldset>
-
       
       <button type="submit" className="btn btn-success">Create</button>
   </form>
