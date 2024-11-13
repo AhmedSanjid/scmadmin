@@ -10,7 +10,7 @@ function Warehouseblockadd() {
     const { id } = useParams();
 
     function getDatas() {
-        axios.get(`${process.env.REACT_APP_API_URL}/Warehouseblock/${id}`).then(function (response) {
+        axios.get(`${process.env.REACT_APP_API_URL}/warehouseblock/${id}`).then(function (response) {
             setInputs(response.data.data);
         });
     }
@@ -34,9 +34,9 @@ function Warehouseblockadd() {
         try {
             let apiurl = '';
             if (inputs.id != '') {
-                apiurl =`/Warehouseblock/edit/${inputs.id}`;
+                apiurl =`/warehouseblock/edit/${inputs.id}`;
             } else {
-                apiurl =`/Warehouseblock/create`;
+                apiurl =`/warehouseblock/create`;
             }
 
             let response = await axios({
@@ -45,7 +45,7 @@ function Warehouseblockadd() {
                 url: `${process.env.REACT_APP_API_URL}${apiurl}`,
                 data: inputs
             });
-            navigate('/Warehouseblock')
+            navigate('/warehouseblock')
         }
         catch (e) {
             console.log(e);

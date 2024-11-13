@@ -10,12 +10,12 @@ function Warehouseblock() {
   }, []);
 
   function getDatas() {
-      axios.get(`${process.env.REACT_APP_API_URL}/Warehouseblock/`).then(function(response) {
+      axios.get(`${process.env.REACT_APP_API_URL}/warehouseblock/`).then(function(response) {
           setData(response.data.data);
       });
   }
   const deleteData = (id) => {
-      axios.delete(`${process.env.REACT_APP_API_URL}/Warehouseblock/${id}`).then(function(response){
+      axios.delete(`${process.env.REACT_APP_API_URL}/warehouseblock/${id}`).then(function(response){
           getDatas();
       });
   }
@@ -23,7 +23,7 @@ function Warehouseblock() {
     <AdminLayout>
       <div class="container mt-5">
     <h2 class="text-center mb-4">Warehouse Block</h2>
-    <Link to={'/Warehouseblock/add'} className='btn btn-primary float-end' >Add New</Link>
+    <Link to={'/warehouseblock/add'} className='btn btn-primary float-end' >Add New</Link>
     <table class="table table-striped table-bordered table-hover">
         <thead class="table-success">
         <tr>
@@ -48,7 +48,7 @@ function Warehouseblock() {
             <td>{d.location}</td>
             <td>{d.note}</td>
             <td>
-                <Link to={`/Warehouseblock/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
+                <Link to={`/warehouseblock/edit/${d.id}`} className='btn btn-secondary' >Edit</Link>
                 <button type='button' onClick={() => deleteData(d.id)} className='btn btn-warning'>Delete</button>
                 <button type='button' onClick={() => (d.id)} className='btn btn-success'>Approve</button>
             </td>
