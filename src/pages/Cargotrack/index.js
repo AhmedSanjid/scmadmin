@@ -50,7 +50,7 @@ function Cargotrack() {
             <td>{d.location_time}</td>
             <td>{d.recived_by}</td>
             <td>{d.warehouse?.name}</td>
-            <td>{d.warehouse_block?.name}</td>
+            <td>{d.warehouse_blocks?.name}</td>
             <td>{d.note}</td>
             <td>{d.status}</td>
             <td>{d.lat_id}</td>
