@@ -54,6 +54,8 @@ import Transporttype from './pages/Transporttype';
 import Transporttypeadd from './pages/Transporttype/Transporttypeadd';
 import Cargotrack from './pages/Cargotrack';
 import Cargotrackadd from './pages/Cargotrack/Cargotrackadd';
+import Alert from './pages/Alert';
+import Alertadd from './pages/Alert/Alertadd';
 
 
 function App() {
@@ -129,6 +131,9 @@ function App() {
       <Route path="Cargotrack" element={<Cargotrack />} />
       <Route path={"/Cargotrack/edit/:id"} element={<Cargotrackadd />} />
       <Route path={"/Cargotrack/add"} element={<Cargotrackadd />} />
+      <Route path="Alert" element={<Alert />} />
+      <Route path={"/Alert/add"} element={<Alertadd />} />
+      <Route path={"/Alert/edit/:id"} element={<Alertadd />} />
       <Route path={"/"} element={
         <Protected isSignedIn={isSignedIn} >
           <Dashboard />

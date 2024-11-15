@@ -80,7 +80,7 @@ function Itemadd() {
             )}
         </select>
         }
-</div>
+    </div>
 
 <div className="form-group">
     <label forhtml="blog-date">Item Name</label>

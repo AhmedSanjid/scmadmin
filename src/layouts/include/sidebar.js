@@ -22,32 +22,32 @@ function Sidebar() {
 }
 const nav=[
   {
-    role:[1,2,3],
+    role:[1,2],
     name:'User',
     link:'user',
     icon:'bi bi-person-raised-hand'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'Staff',
     link:'Staff',
     icon:'bi bi-people-fill'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'Warehouse',
     link:'Warehouse',
     icon:'bi bi-houses'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'Warehouse Block',
     link:'WarehouseBlock',
     icon:'bi bi-house-add'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'Country',
     link:'country',
     icon:'bi bi-globe-asia-australia'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'State',
     link:'state',
     icon:'bi bi-globe2'
@@ -57,7 +57,7 @@ const nav=[
     link:'Location',
     icon:'bi bi-geo-alt-fill'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'Customer',
     link:'customer',
     icon:'bi bi-bank2'
@@ -82,10 +82,15 @@ const nav=[
     link:'Item',
     icon:'bi bi-backpack4-fill'
   },{
-    role:[1,2,3],
+    role:[1,2],
     name:'Cargo Track',
     link:'cargotrack',
     icon:'bi bi-microsoft-teams'
+  },{
+    role:[1,2],
+    name:'Notifications',
+    link:'Alert',
+    icon:'bi bi-app-indicator'
   }
 ]
 const location = useLocation();
