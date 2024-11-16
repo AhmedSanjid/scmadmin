@@ -91,6 +91,11 @@ const nav=[
     name:'Notifications',
     link:'Alert',
     icon:'bi bi-app-indicator'
+  },{
+    role:[1,2],
+    name:'History',
+    link:'history',
+    icon:'bi bi-calendar-range-fill'
   }
 ]
 const location = useLocation();

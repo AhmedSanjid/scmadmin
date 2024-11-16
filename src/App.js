@@ -56,6 +56,8 @@ import Cargotrack from './pages/Cargotrack';
 import Cargotrackadd from './pages/Cargotrack/Cargotrackadd';
 import Alert from './pages/Alert';
 import Alertadd from './pages/Alert/Alertadd';
+import History from './pages/History';
+import Historyadd from './pages/History/Historyadd';
 
 
 function App() {
@@ -134,6 +136,9 @@ function App() {
       <Route path="Alert" element={<Alert />} />
       <Route path={"/Alert/add"} element={<Alertadd />} />
       <Route path={"/Alert/edit/:id"} element={<Alertadd />} />
+      <Route path="History" element={<History />} />
+      <Route path={"/History/add"} element={<Historyadd />} />
+      <Route path={"/History/edit/:id"} element={<Historyadd />} />
       <Route path={"/"} element={
         <Protected isSignedIn={isSignedIn} >
           <Dashboard />
