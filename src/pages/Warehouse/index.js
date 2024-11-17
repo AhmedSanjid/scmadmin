@@ -31,7 +31,7 @@ function Warehouse() {
             <th>Name</th>
             <th>address</th>
             <th>Contact No</th>
-            <th>Employee ID</th>
+            <th>Employee</th>
             <th>Actions</th>
         </tr>
         </thead>

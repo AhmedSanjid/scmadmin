@@ -74,7 +74,7 @@ function Warehouseadd() {
 </div>
 
 <div className="form-group">
-    <label forhtml="blog-date">Employee ID</label>
+    <label forhtml="blog-date">Employee</label>
     <input defaultValue={inputs.employee_id} name="employee_id" onChange={handleChange} type="text" id="employee_id" className="form-control" required />
 </div>
 
