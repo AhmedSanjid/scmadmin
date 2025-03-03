@@ -101,13 +101,10 @@ const nav=[
 const location = useLocation();
 const isLinkActive = (path) => {
     return location.pathname == path ? 'active':"";
-  }
-                
+  }       
     return(
         <aside id="sidebar" className="sidebar"img src="../assets/img/img2.png">
-    
         <ul className="sidebar-nav" id="sidebar-nav">
-    
           {nav && nav.map((d, key) =>
             <>
               {d.role.find((element) => element == role_id) && 
@@ -132,5 +129,4 @@ const isLinkActive = (path) => {
       </aside>
     )
 }
-
 export default Sidebar

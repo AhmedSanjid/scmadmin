@@ -3,7 +3,6 @@ import React from 'react';
 function AuthLayout({ children}) {
     return(
         <div id="auth">
-
             <div className="container">
                 <div className="row">
                     <div className="col-md-5 col-sm-12 mx-auto">
@@ -18,5 +17,4 @@ function AuthLayout({ children}) {
         </div>
     );
 }
-
 export default AuthLayout

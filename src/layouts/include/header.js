@@ -19,7 +19,6 @@ const activeMenu = (e) => {
       childElement.classList.add('active');
   }
 }
-
 const location = useLocation();
 const isLinkActive = (path) => {
   return location.pathname == path ? 'active' :" ";
@@ -33,7 +32,6 @@ const isLinkActive = (path) => {
         <span className="d-none d-lg-block">ThiKana</span>
       </Link>
     </div>
-
 
     <nav className="header-nav ms-auto">
       <ul className="d-flex align-items-center">
